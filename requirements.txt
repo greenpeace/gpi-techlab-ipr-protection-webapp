@@ -1,0 +1,29 @@
+flask
+firebase_admin
+google-api-python-client
+google-cloud-secret-manager
+googletrans==4.0.0-rc1
+google-auth
+google-auth-oauthlib
+google-cloud-logging
+werkzeug
+waitress
+pytz
+oauthlib
+requests
+requests-oauthlib
+flask-ckeditor
+flask-wtf
+Flask-Mail
+# Multi languages
+flask_babel
+
+# Stripe
+stripe
+
+# for AI google cloud platform
+openai
+# Sickit Learn
+scikit-learn==1.0.2
+pandas
+matplotlib

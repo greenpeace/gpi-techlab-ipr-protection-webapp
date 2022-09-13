@@ -1,0 +1,106 @@
+{% include "header.html" %}
+{% include "sidebar.html" %}
+{% include "menufooternav.html" %}
+{% include "topnavigation.html" %}
+
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>List <small>of fakenews providers</small></h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="container">
+    <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+              {{ message }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <hr>
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="card" id="output">
+                <div class="card-body">
+                    <a class="btn btn-sm btn-success" href="/fakenewsadd" title="Add" ><i class="glyphicon glyphicon-pencil"></i> Add Another Fakenews Provider</a>
+                    <br />
+                    <br />
+                      <table id="listdata" class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Active</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Language</th>
+                            <th scope="col">Media</th>
+                            <th scope="col">URL</th>
+                            <th style="width:200px;">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% if output %}
+                            {% for ngo in output %}
+                            <tr>
+                              <td>
+                                {% if ngo.active == True %}
+                                  <a class="btn btn-sm btn-success" href="/fakenewsactive?id={{ ngo.docid }}" title="Edit">Active</a>
+                                {% else %}
+                                  <a class="btn btn-sm btn-danger" href="/fakenewsactive?id={{ ngo.docid }}" title="Edit" >Inactive</a>
+                                {% endif %}
+                              </td>
+                              <td>{{ ngo.country }}</td>
+                              <td>{{ ngo.description }}</td>
+                              <td>{{ ngo.language }}</td>
+                              <td>{{ ngo.name }}</td>
+                              <td><a href="{{ entry.url }}" target="new">{{ entry.name }}</a></td>
+                              <td>
+                                <a class="btn btn-sm btn-success" href="/fakenewsedit?id={{ ngo.docid }}" title="Edit" ><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                                <a class="btn btn-sm btn-danger" href="/fakenewsdelete?id={{ ngo.docid }}" title="Delete">Delete</a>
+                              </td>
+                            </tr>
+                            {% endfor %}
+                          {% endif %}      
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+      </div> <!-- /container -->
+    </div>
+    {% block scripts %}
+      <script>
+        $(document).ready(function () {
+          $('#listdata').DataTable({      
+            columns: [
+                {data: 'active'},
+                {data: 'country'},
+                {data: 'description'},
+                {data: 'language'},
+                {data: 'name'},
+                {data: 'action', orderable: false}
+            ],
+          });
+        });
+      </script>
+    {% endblock scripts %}
+
+    {% include "footertable.html" %}
