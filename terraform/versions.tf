@@ -7,7 +7,7 @@ terraform {
     google = ">= 3.3"
   }
   backend "gcs" {
-    bucket = "sct-terraform-state"
+    bucket = "global-ipr-terraform-state"
     # Structure:
     # state/<application/<entity>/<environment>/
     prefix = "state/socialclimatetech/editportal/test/"

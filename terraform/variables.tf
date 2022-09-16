@@ -1,6 +1,6 @@
 variable "entity" {
   type = string
-  default = "iprprotection"
+  default = "ipr"
 }
 variable "environment" {
   type = string

@@ -3,59 +3,95 @@
 {% include "menufooternav.html" %}
 {% include "topnavigation.html" %}
 
-
 <!-- page content -->
 <div class="right_col" role="main">
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Add <small>fakenews provider</small></h3>
-      </div>
-
-      <div class="title_right">
-        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button">Go!</button>
-            </span>
-          </div>
-        </div>
+        <h3>List <small>of Merchant Sites</small></h3>
       </div>
     </div>
 
     <div class="clearfix"></div>
-    
-      <div class="container">
-            <form action="/fakenewscreate" method="post">
-              <hr>
-              <div class="form-group">
-                <label for="keyword">Keyword</label>  
-                <input class="form-control" name="keyword" placeholder="Keyword"></input>
-              </div>
-                <hr>
-              <div class="form-group">
-                <label for="campaign">Campaign</label>  
-                <input type="text" class="form-control" name="campaign" placeholder="Campaign Name"></input>
-              </div>
-                <hr>
-              <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" class="form-control" name="language" placeholder="What languages"></input>
-              </div>
-                <hr>
-              <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" class="form-control" name="country"  placeholder="Country"></input>
-              </div>
-                <br>
-                <br>
-                <input type="submit" value="Add"></input>
-            </form>
+
+    <div class="container">
+    <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+              {{ message }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <hr>
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="card" id="output">
+                <div class="card-body">
+                      <table id="listdata" class="table table-striped" style="width:100%">
+                        <thead>
+                          <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Seller</th>
+                            <th scope="col">Shop URL</th>
+                            <th scope="col">Status</th>
+                            <th style="width:200px;">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% if output %}
+                            {% for ngo in output %}
+                            <tr>
+                              <td><img src="{{ngo.item_image_url}}" width="50" height="50"></td>
+                              <td><a href="/brandlinkdetails?id={{ ngo.docid }}" target="_blank">{{ ngo.item_image_title }}</a></td>
+                              <td>{{ ngo.location }}</td>
+                              <td>{{ ngo.timestamp }}</td>
+                              <td>{{ ngo.contact_seller }}</td>
+                              <td><a href="{{ ngo.item_url }}"  target="_blank">{{ ngo.shop }}</a></td>
+                              <td>
+                                {% if ngo.status == True %}
+                                  <a class="btn btn-sm btn-success" href="/brandlinksactive?id={{ ngo.docid }}" title="Edit">Active</a>
+                                {% else %}
+                                  <a class="btn btn-sm btn-danger" href="/brandlinksactive?id={{ ngo.docid }}" title="Edit" >Inactive</a>
+                                {% endif %}
+                              </td>
+                              <td>
+                                <a class="btn btn-sm btn-success" href="/brandlinksedit?id={{ ngo.docid }}" title="Edit" ><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                                <a class="btn btn-sm btn-danger" href="/brandlinksdelete?id={{ ngo.docid }}" title="Delete">Delete</a>
+                              </td>
+                            </tr>
+                            {% endfor %}
+                          {% endif %}      
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
             </div>
+        </div>
         <hr>
       </div> <!-- /container -->
     </div>
+    {% block scripts %}
+      <script>
+        $(document).ready(function () {
+          $('#listdata').DataTable({      
+            columns: [
+                null,
+                {data: 'active'},
+                {data: 'title'},
+                {data: 'country'},
+                {data: 'date'},
+                {data: 'contact_seller'},
+                {data: 'url'},
+                {data: 'action', orderable: false}
+            ],
+          });
+        });
+      </script>
+    {% endblock scripts %}
 
-    {% include "footer.html" %}
+    {% include "footertable.html" %}
     

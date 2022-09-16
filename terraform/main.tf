@@ -22,7 +22,7 @@ resource "google_project_service" "enabled_service" {
 }
 
 locals {
-  image = "eu.gcr.io/${var.project_id}/${var.image_name}:v0.1.0"
+  image = "eu.gcr.io/${var.project_id}/${var.image_name}:v0.1"
 }
 
 resource "null_resource" "docker_build" {
@@ -32,7 +32,7 @@ resource "null_resource" "docker_build" {
 
 provisioner "local-exec" {
     working_dir = path.module
-    command     = "docker buildx build --platform linux/amd64 --push -t eu.gcr.io/torbjorn-zetterlund/iprprotection:v0.1.0 ../."
+    command     = "docker buildx build --platform linux/amd64 --push -t eu.gcr.io/torbjorn-zetterlund/iprprotection:v0.1 ../."
   }
 }
 

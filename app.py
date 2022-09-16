@@ -4,8 +4,11 @@ import logging
 import werkzeug
 
 # Third-party libraries
-from flask import Flask, render_template, session, flash
-# Get Babel
+from flask import Flask, request, render_template, session, flash
+from flask_mail import Message, Mail
+
+# Get Form
+from forms import BrandForm
 
 # Add Editor
 from flask_ckeditor import CKEditor
@@ -44,6 +47,8 @@ def page_not_found(e):
 def internal_server_error(e):
   return render_template('systemmsg/500.html'), 500
 
+mail = Mail()
+
 # Initialize Flask App
 app = Flask(__name__)
 
@@ -59,6 +64,18 @@ app.register_blueprint(dashboardblue)
 
 #it is necessary to set a password when dealing with OAuth 2.0
 app.secret_key = app_secret_key
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'your_email@gmail.com'
+app.config["MAIL_PASSWORD"] = '****************' # password generated in Google Account Settings under 'Security', 'App passwords',
+                                                 # choose 'other' in the app menu, create a name (here: 'FlaskMail'),
+                                                 # and generate password. The password has 16 characters. 
+                                                 # Copy/paste it under app.config["MAIL_PASSWORD"].
+                                                 # It will give you access to your gmail when you have two steps verification.
+mail.init_app(app)
+
 # Intiate the editor
 ckeditor = CKEditor(app)
 
@@ -84,6 +101,28 @@ def not_found_error(error):
 def internal_error(error):
     logging.info(f'500 System Error')
     return render_template('systemmsg/500.html'), 500
+
+### Brand
+###  Brand Section
+@brandsblue.route('/brandcontact', methods=['GET', 'POST'], endpoint='brandcontact')
+def brandcontact():
+    form = BrandForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('All fields are required.')
+            return render_template('contact.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='contact@example.com', recipients=['your_email@gmail.com'])
+            msg.body = """
+            From: %s <%s>
+            %s
+            """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+            return render_template('brandcontact.html', success=True)
+
+    elif request.method == 'GET':
+        return render_template('brandcontact.html', form=form)
 
 #
 # Setting up to serve on port 8080
