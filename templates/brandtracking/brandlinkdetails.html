@@ -71,25 +71,29 @@
                 </div>
             </div>
         </div>
-        <hr>
-      </div> <!-- /container -->
-    </div>
+
     {% block scripts %}
       <script>
-        $(document).ready(function () {
-          $('#listdata').DataTable({      
-            columns: [
-                null,
-                {data: 'active'},
-                {data: 'title'},
-                {data: 'country'},
-                {data: 'date'},
-                {data: 'contact_seller'},
-                {data: 'url'},
-                {data: 'action', orderable: false}
-            ],
-          });
-        });
+          $(document).ready( function () {
+              var table = $('#listdata').dataTable({
+                  "fixedHeader": true,
+                  "colReorder": true,
+                  "responsive": true,
+                  "sPaginationType": "full_numbers",
+                  "bLengthChange": true,
+                  "aLengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, , "All"]],
+                  "iDisplayLength": 20,
+                  "aaSorting": [1, 'asc'],
+                  "dom": 'Blfrtip',
+                  "bProcessing": true,
+                  buttons: [
+                      'copy', 'print', 'csv'
+                  ],
+            });
+            $('#btn-place').html(table.buttons().container()); 
+} );
+
+
       </script>
     {% endblock scripts %}
 
