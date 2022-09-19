@@ -140,7 +140,7 @@
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-node-resolve": "4.0.0",
     "shelljs": "0.8.5",
-    "shx": "0.3.2",
+    "shx": "0.3.4",
     "sinon": "7.2.3",
     "stylelint": "9.10.1",
     "stylelint-config-twbs-bootstrap": "0.3.0",
