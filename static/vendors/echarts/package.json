@@ -42,7 +42,7 @@
     "escodegen": "1.14.3",
     "esprima": "2.7.3",
     "estraverse": "4.3.0",
-    "fs-extra": "0.26.7",
+    "fs-extra": "0.30.0",
     "glob": "7.2.3",
     "webpack": "1.15.0"
   }
