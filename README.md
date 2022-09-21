@@ -41,6 +41,10 @@ KEY-FILE is the service account key file. See the Identity and Access Management
 
 documentation for information about creating a key.
 
+gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
+   --member="serviceAccount:${SERVICE_ACCOUNT_EMAIL}" \
+   --role="roles/run.admin"
+
 Configure Docker with the following command:
 
 ```
