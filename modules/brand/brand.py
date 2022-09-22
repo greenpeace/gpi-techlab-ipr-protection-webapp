@@ -12,7 +12,7 @@ from system.firstoredb import brandsearchquery_ref
 from system.firstoredb import brandstopwords_ref
 
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
-brandsblue = Blueprint('brandsblue', __name__)
+brandsblue = Blueprint('brandsblue', __name__, template_folder='templates')
 #from codecarbon import track_emissions
 # Import Folium mapping 
 from folium.plugins import FastMarkerCluster
@@ -37,7 +37,7 @@ from modules.auth.auth import login_is_required
 #@track_emissions
 @login_is_required
 def brandsearchqueryadd():
-    return render_template('brandtracking/brandsearchqueryadd.html', **locals())
+    return render_template('brandsearchqueryadd.html', **locals())
     
 #
 # API Route add a searchlink by ID - requires json file body with id and count
@@ -80,7 +80,7 @@ def brandsearchquery():
                 don["docid"] = doc.id
                 all_brandsearchquerylinks.append(don)
             
-            return render_template('brandtracking/brandsearchquery.html', output=all_brandsearchquerylinks)
+            return render_template('brandsearchquery.html', output=all_brandsearchquerylinks)
     except Exception as e:
         return f"An Error Occured: {e}"
 
@@ -97,7 +97,7 @@ def brandsearchqueryedit():
         brandsearchquerylink = brandsearchquery_ref.document(id).get()
         output=brandsearchquerylink.to_dict()
         output["docid"] = id
-        return render_template('brandtracking/brandsearchqueryedit.html', ngo=output)
+        return render_template('brandsearchqueryedit.html', ngo=output)
     except Exception as e:
         return f"An Error Occured: {e}"
     
@@ -167,7 +167,7 @@ def brandsearchqueryactive():
 #@track_emissions
 @login_is_required
 def brandstopwordsadd():
-    return render_template('brandtracking/brandstopwordsadd.html', **locals())
+    return render_template('brandstopwordsadd.html', **locals())
     
 #
 # API Route add a counter by ID - requires json file body with id and count
@@ -203,7 +203,7 @@ def brandstopwords():
             don = doc.to_dict()
             don["docid"] = doc.id
             all_brandstopwords.append(don)
-        return render_template('brandtracking/brandstopwords.html', output=all_brandstopwords)
+        return render_template('brandstopwords.html', output=all_brandstopwords)
     except Exception as e:
         return f"An Error Occured: {e}"
 
@@ -220,7 +220,7 @@ def brandstopwordsedit():
         brandstopwords = brandstopwords_ref.document(id).get()
         output=brandstopwords.to_dict()
         output["docid"] = id
-        return render_template('brandtracking/brandstopwordsedit.html', ngo=output)
+        return render_template('brandstopwordsedit.html', ngo=output)
     except Exception as e:
         return f"An Error Occured: {e}"
     
@@ -293,7 +293,7 @@ def brandstopwordsactive():
 #@track_emissions
 @login_is_required
 def brandlinksadd():
-    return render_template('brandtracking/brandlinksadd.html', **locals())
+    return render_template('brandlinksadd.html', **locals())
     
 #
 # API Route add a searchlink by ID - requires json file body with id and count
@@ -337,7 +337,7 @@ def brandlinks():
                 don["docid"] = doc.id
                 all_brandlinks.append(don)
             
-            return render_template('brandtracking/brandlinks.html', output=all_brandlinks)
+            return render_template('brandlinks.html', output=all_brandlinks)
     except Exception as e:
         return f"An Error Occured: {e}"
 
@@ -352,7 +352,7 @@ def brandlinksedit():
         # Check if ID was passed to URL query
         id = request.args.get('id')
         brandlinks = brandlinks_ref.document(id).get()
-        return render_template('brandtracking/brandlinksedit.html', ngo=brandlinks.to_dict())
+        return render_template('brandlinksedit.html', ngo=brandlinks.to_dict())
     except Exception as e:
         return f"An Error Occured: {e}"
     
@@ -469,7 +469,7 @@ def brandmap():
     start_coords = (56.30507180,14.13632150)
     folium_map = folium.Map(location=start_coords, zoom_start=14)
     return folium_map._repr_html_()
-#    return render_template('brandtracking/brandmap.html', m=m)
+#    return render_template('brandmap.html', m=m)
 
 
 ###  Brand Links Details Section
@@ -481,7 +481,7 @@ def brandmap():
 #@track_emissions
 @login_is_required
 def brandlinkdetailsadd():
-    return render_template('brandtracking/brandlinkdetailsadd.html', **locals())
+    return render_template('brandlinkdetailsadd.html', **locals())
     
 #
 # API Route add a searchlink by ID - requires json file body with id and count
@@ -518,7 +518,7 @@ def brandlinkdetails():
         if id:
             brandlinkdetails = brandlinkdetails_ref.document(id).get()
             output=brandlinkdetails.to_dict()
-            return render_template('brandtracking/brandlinkdetail.html', output=brandlinkdetails.to_dict())
+            return render_template('brandlinkdetail.html', output=brandlinkdetails.to_dict())
         else:
             all_brandlinkdetails = []     
             for doc in brandlinkdetails_ref.stream():
@@ -526,7 +526,7 @@ def brandlinkdetails():
                 don["docid"] = doc.id
                 all_brandlinkdetails.append(don)
             
-            return render_template('brandtracking/brandlinkdetails.html', output=all_brandlinkdetails)
+            return render_template('brandlinkdetails.html', output=all_brandlinkdetails)
     except Exception as e:
         return f"An Error Occured: {e}"
 
@@ -541,7 +541,7 @@ def brandlinksedit():
         # Check if ID was passed to URL query
         id = request.args.get('id')
         brandlinkdetails = brandlinkdetails_ref.document(id).get()
-        return render_template('brandtracking/brandlinkdetailsedit.html', ngo=brandlinkdetails.to_dict())
+        return render_template('brandlinkdetailsedit.html', ngo=brandlinkdetails.to_dict())
     except Exception as e:
         return f"An Error Occured: {e}"
     
