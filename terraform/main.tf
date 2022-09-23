@@ -1,11 +1,4 @@
 
-locals {
-  services = [
-    "run.googleapis.com",
-    "iam.googleapis.com",
-  ]
-}
-
 resource "google_project_service" "enabled_service" {
   for_each = toset(local.services)
   project  = var.project_id
@@ -19,10 +12,6 @@ resource "google_project_service" "enabled_service" {
     when    = destroy
     command = "sleep 15"
   }
-}
-
-locals {
-  image = "eu.gcr.io/${var.project_id}/${var.image_name}:v0.2"
 }
 
 resource "null_resource" "docker_build" {
@@ -84,11 +73,6 @@ resource "google_cloud_run_service_iam_policy" "all_users_policy" {
   service     = google_cloud_run_service.service.name
 
   policy_data = data.google_iam_policy.all_users_policy.policy_data
-}
-
-# SECRETS
-locals {
-  app_name = "iprprotection"
 }
 
 resource "google_secret_manager_secret" "iprprotection" {

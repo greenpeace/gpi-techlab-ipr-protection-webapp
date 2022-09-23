@@ -10,6 +10,6 @@ terraform {
     bucket = "global-ipr-terraform-state"
     # Structure:
     # state/<application/<entity>/<environment>/
-    prefix = "state/socialclimatetech/editportal/test/"
+    prefix = "state/torbjorn-zetterlund/test/"
   }
 }
