@@ -118,8 +118,8 @@ Run the git remote -v command to ensure that both remotes were successfully adde
 Now you are able to perform a push to the selected remote by specifying it in the git push command:
 
 ```
-git push origin master
-git push copy master
+git push origin main
+git push copy main
 ```
 
 Create a new remote named "all", and add GitLab and GitHub URLs to it

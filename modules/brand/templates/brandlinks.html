@@ -34,12 +34,12 @@
                       <table id="listdata" class="table table-striped" style="width:100%">
                         <thead>
                           <tr>
+                            <th scope="col">Status</th>
                             <th scope="col">Title</th>
                             <th scope="col">Country</th>
                             <th scope="col">Date</th>
                             <th scope="col">Search Term</th>
                             <th scope="col">Shop URL</th>
-                            <th scope="col">Status</th>
                             <th style="width:200px;">Action</th>
                           </tr>
                         </thead>
@@ -47,11 +47,6 @@
                           {% if output %}
                             {% for ngo in output %}
                             <tr>
-                              <td>{{ ngo.title }}</td>
-                              <td>{{ ngo.country }}</td>
-                              <td>{{ ngo.date }}</td>
-                              <td>{{ ngo.category }}</td>
-                              <td><a href="{{ ngo.url }}" target="_blank">{{ ngo.shop }}</a></td>
                               <td>
                                 {% if ngo.status == True %}
                                   <a class="btn btn-sm btn-success" href="/brandlinksactive?id={{ ngo.docid }}" title="Edit">Active</a>
@@ -59,6 +54,12 @@
                                   <a class="btn btn-sm btn-danger" href="/brandlinksactive?id={{ ngo.docid }}" title="Edit" >Inactive</a>
                                 {% endif %}
                               </td>
+                              <td>{{ ngo.title }}</td>
+                              <td>{{ ngo.country }}</td>
+                              <td>{{ ngo.date }}</td>
+                              <td>{{ ngo.category }}</td>
+                              <td><a href="{{ ngo.url }}" target="_blank">{{ ngo.shop }}</a></td>
+
                               <td>
                                 <a class="btn btn-sm btn-success" href="/brandlinksedit?id={{ ngo.docid }}" title="Edit" ><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                                 <a class="btn btn-sm btn-danger" href="/brandlinksdelete?id={{ ngo.docid }}" title="Delete">Delete</a>
@@ -76,21 +77,35 @@
       </div> <!-- /container -->
     </div>
     {% block scripts %}
-      <script>
-        $(document).ready(function () {
-          $('#listdata').DataTable({      
-            columns: [
-                {data: 'active'},
-                {data: 'title'},
-                {data: 'country'},
-                {data: 'date'},
-                {data: 'category'},
-                {data: 'url'},
-                {data: 'action', orderable: false}
-            ],
+    <script>
+      $(document).ready( function () {
+            var table = $('#listdata').dataTable({
+                "fixedHeader": false,
+                "colReorder": false,
+                "responsive": true,
+                "sPaginationType": "full_numbers",
+                "bLengthChange": true,
+                "aLengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, , "All"]],
+                "iDisplayLength": 20,
+                "aaSorting": [1, 'asc'],
+                "dom": 'Blfrtip',
+                "bProcessing": true,
+                buttons: [
+                    'copy', 'csv'
+                ],
+                columns: [
+                  {data: 'active'},
+                  {data: 'title'},
+                  {data: 'country'},
+                  {data: 'date'},
+                  {data: 'category'},
+                  {data: 'url'},
+                  {data: 'action', orderable: false}
+              ]
           });
-        });
-      </script>
+    } );
+
+  </script>
     {% endblock scripts %}
 
     {% include "footertable.html" %}

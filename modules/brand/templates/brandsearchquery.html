@@ -72,10 +72,23 @@
       </div> <!-- /container -->
     </div>
     {% block scripts %}
-      <script>
-        $(document).ready(function () {
-          $('#listdata').DataTable({      
-            columns: [
+    <script>
+      $(document).ready( function () {
+            var table = $('#listdata').dataTable({
+                "fixedHeader": true,
+                "colReorder": true,
+                "responsive": true,
+                "sPaginationType": "full_numbers",
+                "bLengthChange": true,
+                "aLengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, , "All"]],
+                "iDisplayLength": 20,
+                "aaSorting": [1, 'asc'],
+                "dom": 'Blfrtip',
+                "bProcessing": true,
+                buttons: [
+                    'copy', 'print', 'csv'
+                ],
+                columns: [
                 {data: 'active'},
                 {data: 'queryterm'},
                 {data: 'querytype'},
@@ -83,8 +96,9 @@
                 {data: 'action', orderable: false}
             ],
           });
-        });
-      </script>
+      });
+
+    </script>
     {% endblock scripts %}
 
     {% include "footertable.html" %}

@@ -73,23 +73,37 @@
             </div>
         </div>
         <hr>
-      </div> <!-- /container -->
-    </div>
+    </div> <!-- /container -->
+  </div>
     {% block scripts %}
       <script>
-        $(document).ready(function () {
-          $('#listdata').DataTable({      
-            columns: [
-                {data: 'active'},
-                {data: 'country'},
-                {data: 'description'},
-                {data: 'language'},
-                {data: 'name'},
-                {data: 'action', orderable: false}
-            ],
-          });
-        });
-      </script>
+        $(document).ready( function () {
+              var table = $('#listdata').dataTable({
+                  "fixedHeader": false,
+                  "colReorder": false,
+                  "responsive": true,
+                  "sPaginationType": "full_numbers",
+                  "bLengthChange": true,
+                  "aLengthMenu": [[5, 10, 15, 20, -1], [5, 10, 15, 20, , "All"]],
+                  "iDisplayLength": 20,
+                  "aaSorting": [1, 'asc'],
+                  "dom": 'Blfrtip',
+                  "bProcessing": true,
+                  buttons: [
+                      'copy', 'csv'
+                  ],
+                  columns: [
+                    {data: 'active'},
+                    {data: 'country'},
+                    {data: 'description'},
+                    {data: 'language'},
+                    {data: 'name'},
+                    {data: 'action', orderable: false}
+                ]
+            });
+      } );
+
+    </script>
     {% endblock scripts %}
 
     {% include "footertable.html" %}
