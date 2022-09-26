@@ -16,5 +16,5 @@ variable "image_name" {
 }
 variable "project_id" {
   type = string
-  default = "torbjorn-zetterlund"
+  default = "techlab-coding-team"
 }

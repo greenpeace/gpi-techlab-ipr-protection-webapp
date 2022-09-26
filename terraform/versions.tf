@@ -7,9 +7,9 @@ terraform {
     google = ">= 3.3"
   }
   backend "gcs" {
-    bucket = "global-ipr-terraform-state"
+    bucket = "global-ipr-terraform-states"
     # Structure:
     # state/<application/<entity>/<environment>/
-    prefix = "state/torbjorn-zetterlund/test/"
+    prefix = "state/techlab-coding-team/iprweb/"
   }
 }
