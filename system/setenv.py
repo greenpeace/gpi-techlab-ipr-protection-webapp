@@ -6,6 +6,6 @@ try:
     project_id = os.environ["GCP_PROJECT"]
 except:
     # Set Local Environment Variables (Local)
-    os.environ['GCP_PROJECT'] = 'torbjorn-zetterlund'    
+    os.environ['GCP_PROJECT'] = 'techlab-coding-team'    
     # Get project id to intiate
     project_id = os.environ["GCP_PROJECT"]

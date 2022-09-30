@@ -9,7 +9,7 @@ COPY . /app
 
 ENV PYTHONUNBUFFERED=1 \
     GOOGLE_APPLICATION_CREDENTIALS=key.json \
-    GCP_PROJECT="torbjorn-zetterlund"
+    GCP_PROJECT="techlab-coding-team"
 
 RUN pip install -r requirements.txt
 

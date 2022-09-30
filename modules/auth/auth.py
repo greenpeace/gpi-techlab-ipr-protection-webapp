@@ -18,27 +18,26 @@ from system.setenv import project_id
 authsblue = Blueprint('authsblue', __name__)
 
 # Get the secret for Service Account
-client_secret_key = getsecrets("client_secret_key",project_id)
+client_id = getsecrets("client_id",project_id)
 app_secret_key = getsecrets("app_secret_key",project_id)
 restrciteddomain = getsecrets("restrciteddomain",project_id)
 
 #this is to set our environment to https because OAuth 2.0 only supports https environments
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 #enter your client id you got from Google console
-GOOGLE_CLIENT_ID = client_secret_key
+GOOGLE_CLIENT_ID = client_id
 #set the path to where the .json file you got Google console is
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 #Flow is OAuth 2.0 a class that stores all the information on how we want to authorize our users
 flow = Flow.from_client_secrets_file( 
     client_secrets_file=client_secrets_file,
-    scopes=["https://www.googleapis.com/auth/userinfo.profile", 
-            "https://www.googleapis.com/auth/gmail.readonly",
+    scopes=["https://www.googleapis.com/auth/userinfo.profile",
             "https://www.googleapis.com/auth/userinfo.email",
             "openid"
             ],
     #and the redirect URI is the point where the user will end up after the authorization
     redirect_uri="http://127.0.0.1:8080/callback"
-    #redirect_uri="https://ipr-protection.greenpeace.org/callback"
+    #redirect_uri="https://iprprotection-gfwyo3nbea-lz.a.run.app/callback"
 )
 
 #
