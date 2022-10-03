@@ -1,3 +1,6 @@
 # .json authentication files
 client_secret.json
 techlab-coding-team*.*json
+
+# __pycache__
+__pycache__
