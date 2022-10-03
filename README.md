@@ -5,11 +5,18 @@ This is the IPR Protection web application
 
 # How it works
 
-# AI Blog Writer with OpenAI GPT-3
-
-
-
 # Build and launch to Cloud Run
+
+# Local development
+
+Before local development is possible, you'll need a couple of configuration files from a person with admin access
+to GCP. Specfically, you'll need two `.json` files:
+
+1. `client_secret.json`, which you'll need to move to `/modules/auth/`
+2. `techlab-coding-team-XXXX.json`, which you'll need to set as an environment variable like so: `export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/key/key.json`. To avoid having to set this
+environment variable each time you start a new terminal session, we recommend that you add it to your `.bash_profile`.
+
+It goes without saying, but we'll repeat it anyway: don't commit these keys to github :)!
 
 # Deploy
 Log in to gcloud as the user that will run Docker commands. To configure authentication with user credentials, run the following command:
