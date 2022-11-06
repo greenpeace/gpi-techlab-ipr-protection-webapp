@@ -1,32 +1,29 @@
 # Get the Flask Files Required
 from functools import partial
-from typing import List, Dict, Callable, Any
+from typing import Dict, Callable, Any, Union
 
-from flask import Blueprint, g, request, render_template
+from flask import Blueprint, render_template
 import datetime
 
-# Carbon tracking
-# from codecarbon import track_emissions
-
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
-from system.firstoredb import brandlinks_ref, brandlinkdetails_ref
+from modules.dashboard.config import CollectionStreams
 
 dashboardblue = Blueprint("dashboardblue", __name__)
 
 from modules.auth.auth import login_is_required
-from google.cloud.firestore_v1 import CollectionReference
+from google.cloud.firestore_v1 import Query
 
-# unpack total number of docs
-def unpack_doc_and_return_total_number(
-    firestore_collection: CollectionReference,
+
+def return_total_number_in_query_stream(
+    query_stream: Query.stream,
 ) -> int:
-    return len(list(firestore_collection.stream()))
+    return len(list(query_stream)) if query_stream is not None else None
 
 
-def find_count_diff_vs_x_period_ago(firestore_collection: CollectionReference):
-    create_time_month = [
-        doc.create_time.month for doc in list(firestore_collection.stream())
-    ]
+def find_count_diff_vs_x_period_ago(query_stream: Query.stream) -> Union[str, None]:
+    if query_stream is None:
+        return None
+    create_time_month = [doc.create_time.month for doc in list(query_stream)]
     current_month = datetime.date.today().month
     if current_month == 1:
         previous_month = 12
@@ -40,13 +37,16 @@ def find_count_diff_vs_x_period_ago(firestore_collection: CollectionReference):
 
 CONFIG_DICT = {
     "count_illegal_items": partial(
-        unpack_doc_and_return_total_number, firestore_collection=brandlinks_ref
+        return_total_number_in_query_stream,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     "change_vs_previous_month_count_illegal_items": partial(
-        find_count_diff_vs_x_period_ago, firestore_collection=brandlinks_ref
+        find_count_diff_vs_x_period_ago,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     "count_total_merch": partial(
-        unpack_doc_and_return_total_number, firestore_collection=brandlinkdetails_ref
+        return_total_number_in_query_stream,
+        query_stream=CollectionStreams.brandlinkdetails_ref_stream.value,
     ),
 }
 
