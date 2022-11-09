@@ -1,29 +1,32 @@
 # Get the Flask Files Required
+import collections
 from functools import partial
-from typing import Dict, Callable, Any, Union
+from typing import Dict, Callable, Any, Union, List, Tuple
 
 from flask import Blueprint, render_template
 import datetime
 
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
-from modules.dashboard.config import CollectionStreams
+from modules.dashboard.config import Collections, CollectionStreams, SEARCHLINK_KEYS
 
 dashboardblue = Blueprint("dashboardblue", __name__)
 
 from modules.auth.auth import login_is_required
-from google.cloud.firestore_v1 import Query
+from google.cloud.firestore_v1 import Query, DocumentSnapshot
 
 
 def return_total_number_in_query_stream(
-    query_stream: Query.stream,
+    query_stream: List[DocumentSnapshot],
 ) -> int:
-    return len(list(query_stream)) if query_stream is not None else None
+    return len(query_stream) if query_stream is not None else None
 
 
-def find_count_diff_vs_x_period_ago(query_stream: Query.stream) -> Union[str, None]:
+def calculate_count_diff_vs_x_period_ago(
+    query_stream: List[DocumentSnapshot],
+) -> Union[str, None]:
     if query_stream is None:
         return None
-    create_time_month = [doc.create_time.month for doc in list(query_stream)]
+    create_time_month = [doc.create_time.month for doc in query_stream]
     current_month = datetime.date.today().month
     if current_month == 1:
         previous_month = 12
@@ -35,19 +38,41 @@ def find_count_diff_vs_x_period_ago(query_stream: Query.stream) -> Union[str, No
     return f"{100 * (create_time_month.count(current_month) - previous_month_count) / previous_month_count}%"
 
 
+def calculate_most_frequent_field_in_collection(
+    query_stream: List[DocumentSnapshot], key: str
+) -> List[Tuple[str, int]]:
+    list_of_selected_keys = [doc._data.get(key) for doc in query_stream]
+    top_key_count = collections.Counter(list_of_selected_keys).most_common(5)
+    return top_key_count
+
+
+KEY_COUNT_DICT = {
+    f"searchlink_{key}_count": partial(
+        calculate_most_frequent_field_in_collection,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
+        key=key,
+    )
+    for key in SEARCHLINK_KEYS
+}
+
 CONFIG_DICT = {
     "count_illegal_items": partial(
         return_total_number_in_query_stream,
         query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     "change_vs_previous_month_count_illegal_items": partial(
-        find_count_diff_vs_x_period_ago,
+        calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     "count_total_merch": partial(
         return_total_number_in_query_stream,
         query_stream=CollectionStreams.brandlinkdetails_ref_stream.value,
     ),
+    "count_total_stopwords": partial(
+        return_total_number_in_query_stream,
+        query_stream=CollectionStreams.brandstopwords_ref_stream.value,
+    ),
+    **KEY_COUNT_DICT,
 }
 
 
