@@ -3,7 +3,6 @@
     {% include "menufooternav.html" %}
     {% include "topnavigation.html" %}
 
-
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -20,7 +19,7 @@
                 {% if output %}
                 {{output.change_vs_previous_month_count_illegal_items}}
                 {% else %} 4%
-                {% endif %} </i> From last Week</span>
+                {% endif %} </i> From last month</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-clock-o"></i> Search Items</span>
@@ -32,8 +31,12 @@
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-              <div class="count green">2,500</div>
+              <span class="count_top"><i class="fa fa-user"></i> Total Search Terms</span>
+              <div class="count green">
+                {% if output %} {{output.count_total_stopwords}}
+                {% else %} 2500
+                {% endif %}
+              </div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
@@ -82,36 +85,52 @@
 
                   <div class="col-md-12 col-sm-12 ">
                     <div>
-                      <p>Facebook Campaign</p>
+                      <p>
+                        {% if output %} {{output.searchlink_shop_count[0][0]}}
+                        {% else %} "Twitter"
+                        {% endif %}
+                      </p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal={{output.searchlink_shop_count[0][1]}}></div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <p>Twitter Campaign</p>
+                      <p>
+                        {% if output %} {{output.searchlink_shop_count[1][0]}}
+                        {% else %} "Twitter"
+                        {% endif %}
+                      </p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal={{output.searchlink_shop_count[1][1]}}></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12 ">
                     <div>
-                      <p>Conventional Media</p>
+                      <p>
+                        {% if output %} {{output.searchlink_shop_count[2][0]}}
+                        {% else %} "Twitter"
+                        {% endif %}
+                      </p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal={{output.searchlink_shop_count[2][1]}}></div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <p>Bill boards</p>
+                      <p>
+                        {% if output %} {{output.searchlink_shop_count[3][0]}}
+                        {% else %} "Twitter"
+                        {% endif %}
+                      </p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal={{output.searchlink_shop_count[3][1]}}></div>
                         </div>
                       </div>
                     </div>
