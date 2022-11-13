@@ -8,7 +8,7 @@ import datetime
 
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
 from modules.dashboard.config import Collections, CollectionStreams, SEARCHLINK_KEYS
-
+import numpy as np
 dashboardblue = Blueprint("dashboardblue", __name__)
 
 from modules.auth.auth import login_is_required
@@ -35,7 +35,7 @@ def calculate_count_diff_vs_x_period_ago(
     previous_month_count = create_time_month.count(previous_month)
     if previous_month_count == 0:
         previous_month_count = 1.0
-    return f"{100 * (create_time_month.count(current_month) - previous_month_count) / previous_month_count}%"
+    return f"{np.round(100 * (create_time_month.count(current_month) - previous_month_count) / previous_month_count, 1)}%"
 
 
 def calculate_most_frequent_field_in_collection(
@@ -68,8 +68,16 @@ CONFIG_DICT = {
         return_total_number_in_query_stream,
         query_stream=CollectionStreams.brandlinkdetails_ref_stream.value,
     ),
+    "change_vs_previous_month_count_total_merch": partial(
+        calculate_count_diff_vs_x_period_ago,
+        query_stream=CollectionStreams.brandlinkdetails_ref_stream.value,
+    ),
     "count_total_stopwords": partial(
         return_total_number_in_query_stream,
+        query_stream=CollectionStreams.brandstopwords_ref_stream.value,
+    ),
+    "change_vs_previous_month_count_total_stopwords": partial(
+        calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandstopwords_ref_stream.value,
     ),
     **KEY_COUNT_DICT,
