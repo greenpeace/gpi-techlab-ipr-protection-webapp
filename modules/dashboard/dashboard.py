@@ -46,6 +46,21 @@ def calculate_most_frequent_field_in_collection(
     return top_key_count
 
 
+def create_date_array(query_stream: List[DocumentSnapshot]) -> List[datetime.date]:
+    return [datetime.datetime.date(_date.create_time) for _date in query_stream]
+
+
+def find_date_range(query_stream: List[DocumentSnapshot]) -> List[str]:
+    datelist = create_date_array(query_stream)
+    return [str(min(datelist)), str(max(datelist))]
+
+
+def format_data_for_flot_graph(query_stream: List[DocumentSnapshot]) -> List[Dict[str, Any]]:
+    datelist = create_date_array(query_stream)
+    collections.Counter(datelist)
+
+
+
 KEY_COUNT_DICT = {
     f"searchlink_{key}_count": partial(
         calculate_most_frequent_field_in_collection,
@@ -79,6 +94,14 @@ CONFIG_DICT = {
     "change_vs_previous_month_count_total_stopwords": partial(
         calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandstopwords_ref_stream.value,
+    ),
+    "min_max_dates": partial(
+        find_date_range,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
+    ),
+    "by_date_counts": partial(
+        format_data_for_flot_graph,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     **KEY_COUNT_DICT,
 }
