@@ -333,22 +333,20 @@ function gd(year, month, day) {
 
 function init_flot_chart() {
 
+    var arr_data1 = $.ajax({
+        type:"GET",
+        url: baseurl + "format_data_for_flot_graph",
+        success: function (data) {
+            var result = $.parseJSON(data);
+        }
+    });
+
     if (typeof ($.plot) === 'undefined') { return; }
 
     console.log('init_flot_chart');
     var randNum = function () {
         return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
     };
-
-    var arr_data1 = [
-        [gd(2012, 1, 1), 17],
-        [gd(2012, 1, 2), 74],
-        [gd(2012, 1, 3), 6],
-        [gd(2012, 1, 4), 39],
-        [gd(2012, 1, 5), 20],
-        [gd(2012, 1, 6), 85],
-        [gd(2012, 1, 7), 7]
-    ];
 
     var arr_data2 = [
         [gd(2012, 1, 1), 82],
@@ -544,7 +542,7 @@ function init_flot_chart() {
     if ($("#chart_plot_01").length) {
         console.log('Plot1');
 
-        $.plot($("#chart_plot_01"), [arr_data1, arr_data2], chart_plot_01_settings);
+        $.plot($("#chart_plot_01"), arr_data1, chart_plot_01_settings);
     }
 
 

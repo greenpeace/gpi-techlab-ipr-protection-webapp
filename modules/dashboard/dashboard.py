@@ -54,10 +54,17 @@ def find_date_range(query_stream: List[DocumentSnapshot]) -> List[str]:
     datelist = create_date_array(query_stream)
     return [str(min(datelist)), str(max(datelist))]
 
-
-def format_data_for_flot_graph(query_stream: List[DocumentSnapshot]) -> List[Dict[str, Any]]:
+def format_data_for_flot_graph(query_stream: List[DocumentSnapshot]) -> Dict[str, int]:
     datelist = create_date_array(query_stream)
-    collections.Counter(datelist)
+    return {str(key): value for key, value in sorted(collections.Counter(datelist).items())}
+
+format_data_flot_partial = partial(format_data_for_flot_graph,
+                                   query_stream=CollectionStreams.brandlinks_ref_stream.value)
+
+@dashboardblue.route("/grabflotdata", methods=["GET"], endpoint="/grabflotdata")
+@login_is_required
+def format_data_for_flot_graph() -> Dict[str, int]:
+    return format_data_flot_partial()
 
 
 
@@ -94,10 +101,6 @@ CONFIG_DICT = {
     "change_vs_previous_month_count_total_stopwords": partial(
         calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandstopwords_ref_stream.value,
-    ),
-    "min_max_dates": partial(
-        find_date_range,
-        query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     "by_date_counts": partial(
         format_data_for_flot_graph,
