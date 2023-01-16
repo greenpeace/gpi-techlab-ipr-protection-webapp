@@ -1,7 +1,7 @@
 # Get the Flask Files Required
 import collections
 from functools import partial
-from typing import Dict, Callable, Any, Union, List, Tuple
+from typing import Dict, Callable, Any, Union, List, Tuple, Optional
 
 from flask import Blueprint, render_template
 import datetime
@@ -70,6 +70,36 @@ def format_data_for_flot_graph(
     ]
 
 
+def get_latest_n_entries(
+    query_stream: List[DocumentSnapshot],
+    n: int = 5,
+) -> List[DocumentSnapshot]:
+    return sorted(query_stream, key=lambda x: x.create_time, reverse=True)[:n]
+
+
+def get_info_for_news_feed(
+    document_snapshot: DocumentSnapshot, news_feed_fields: Optional[List[str]] = None
+):
+    if news_feed_fields is None:
+        news_feed_fields: List[str] = ["shop", "search", "url", "country", "category"]
+    nf_dict = {}
+    nf_dict["time_diff"] = (
+        datetime.datetime.now(datetime.timezone.utc) - document_snapshot.create_time
+    )
+    return {
+        **nf_dict,
+        **{field: document_snapshot for field in news_feed_fields},
+    }
+
+
+def construct_news_feed(
+    query_stream: List[DocumentSnapshot],
+    n: int = 5,
+):
+    latest_n_entries = get_latest_n_entries(query_stream, n)
+    return [get_info_for_news_feed(entry) for entry in latest_n_entries]
+
+
 format_data_flot_partial = partial(
     format_data_for_flot_graph,
     query_stream=CollectionStreams.brandlinks_ref_stream.value,
@@ -115,6 +145,9 @@ CONFIG_DICT = {
     "change_vs_previous_month_count_total_stopwords": partial(
         calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandstopwords_ref_stream.value,
+    ),
+    "news_feed": partial(
+        construct_news_feed, query_stream=CollectionStreams.brandlinks_ref_stream.value
     ),
     **KEY_COUNT_DICT,
 }
