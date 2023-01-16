@@ -330,8 +330,40 @@ function gd(year, month, day) {
     return new Date(year, month - 1, day).getTime();
 }
 
+/* I can't get this to not be 'undefined' when running the code. I think the payload hasn't arrived yet.
+
+Once it's working, you can get it to plot!
+
+
+var true_flot_data = $.ajax({
+    type:"GET",
+    url: "getdatecounts",
+    success: function (data) {
+        var result = data;
+    }
+    async: false,
+});
+
+var transformed_flot_data = true_flot_data.responseJSON.map(x => [gd(x[1][0], x[1][1], x[1][2]), x[2]]);
+$.plot($("#chart_plot_01"), [transformed_flot_data, transformed_flot_data], chart_plot_01_settings);
+*/
+
+
+
+
 
 function init_flot_chart() {
+
+    var true_flot_data = $.ajax({
+        type:"GET",
+        url: "getdatecounts",
+        success: function (data) {
+            var result = data;
+        },
+        async: false,
+    });
+
+    var transformed_flot_data = true_flot_data.responseJSON.map(x => [gd(x[1][0], x[1][1], x[1][2]), x[2]]);
 
     if (typeof ($.plot) === 'undefined') { return; }
 
@@ -438,11 +470,11 @@ function init_flot_chart() {
         xaxis: {
             tickColor: "rgba(51, 51, 51, 0.06)",
             mode: "time",
-            tickSize: [1, "day"],
-            //tickLength: 10,
+            tickSize: [7, "day"],
+            tickLength: 10,
             axisLabel: "Date",
             axisLabelUseCanvas: true,
-            axisLabelFontSizePixels: 12,
+            axisLabelFontSizePixels: 5,
             axisLabelFontFamily: 'Verdana, Arial',
             axisLabelPadding: 10
         },
@@ -544,7 +576,8 @@ function init_flot_chart() {
     if ($("#chart_plot_01").length) {
         console.log('Plot1');
 
-        $.plot($("#chart_plot_01"), [arr_data1, arr_data2], chart_plot_01_settings);
+        $.plot($("#chart_plot_01"), [transformed_flot_data, transformed_flot_data], chart_plot_01_settings);
+
     }
 
 

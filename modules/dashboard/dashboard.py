@@ -9,6 +9,7 @@ import datetime
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
 from modules.dashboard.config import Collections, CollectionStreams, SEARCHLINK_KEYS
 import numpy as np
+
 dashboardblue = Blueprint("dashboardblue", __name__)
 
 from modules.auth.auth import login_is_required
@@ -55,10 +56,30 @@ def find_date_range(query_stream: List[DocumentSnapshot]) -> List[str]:
     return [str(min(datelist)), str(max(datelist))]
 
 
-def format_data_for_flot_graph(query_stream: List[DocumentSnapshot]) -> List[Dict[str, Any]]:
-    datelist = create_date_array(query_stream)
-    collections.Counter(datelist)
+def format_date_key_for_js_rendering(date_key: datetime.date) -> Tuple[int, int, int]:
+    return date_key.year, date_key.month, date_key.day
 
+
+def format_data_for_flot_graph(
+    query_stream: List[DocumentSnapshot],
+) -> List[Tuple[str, Tuple[int, int, int], int]]:
+    datelist = create_date_array(query_stream)
+    return [
+        (str(key), format_date_key_for_js_rendering(key), value)
+        for key, value in sorted(collections.Counter(datelist).items())
+    ]
+
+
+format_data_flot_partial = partial(
+    format_data_for_flot_graph,
+    query_stream=CollectionStreams.brandlinks_ref_stream.value,
+)
+
+
+@dashboardblue.route("/getdatecounts", methods=["GET"], endpoint="/getdatecounts")
+@login_is_required
+def format_data_for_flot_graph() -> Dict[str, int]:
+    return format_data_flot_partial()
 
 
 KEY_COUNT_DICT = {
@@ -94,14 +115,6 @@ CONFIG_DICT = {
     "change_vs_previous_month_count_total_stopwords": partial(
         calculate_count_diff_vs_x_period_ago,
         query_stream=CollectionStreams.brandstopwords_ref_stream.value,
-    ),
-    "min_max_dates": partial(
-        find_date_range,
-        query_stream=CollectionStreams.brandlinks_ref_stream.value,
-    ),
-    "by_date_counts": partial(
-        format_data_for_flot_graph,
-        query_stream=CollectionStreams.brandlinks_ref_stream.value,
     ),
     **KEY_COUNT_DICT,
 }

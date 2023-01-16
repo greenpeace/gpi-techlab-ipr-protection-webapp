@@ -56,7 +56,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3>Network Activities <small>Graph title sub-title</small></h3>
+                    <h3>Search Hits <small>Per Day</small></h3>
                   </div>
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
@@ -67,19 +67,8 @@
                 </div>
 
                 <div class="col-md-9 col-sm-9 ">
-                  <ga-dashboard-graph-flot graph-title="Contest Activity"
-                         graph-sub-title="subscriptions total, valid over time"
-                         graph-legend-title="Validity"
-                         graph-range=output.min_max_dates[0]-min_max_dates[1]
-                         graph-data=output.change_vs_previous_month_count_total_merch>
-                    <div class="col-md-12 col-sm-12 col-xs-6">
-                    </div><p>Users</p>
-                    <ga-progress progress-value="$ctrl.userValidity"></ga-progress>
-                <div class="col-md-12 col-sm-12 col-xs-6">
-                  <p>Subscriptions</p>
-                  <ga-progress progress-value="$ctrl.subscriptionValidity"></ga-progress>
-                </div>
-                </ga-dashboard-graph-flot>
+                  <div id="chart_plot_01" class="demo-placeholder"></div>
+
                 </div>
                 <div class="col-md-3 col-sm-3  bg-white">
                   <div class="x_title">
