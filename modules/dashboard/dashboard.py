@@ -22,6 +22,7 @@ def return_total_number_in_query_stream(
     return len(query_stream) if query_stream is not None else None
 
 
+# TODO (richard) add unit tests for this fn
 def calculate_count_diff_vs_x_period_ago(
     query_stream: List[DocumentSnapshot],
 ) -> Union[str, None]:
@@ -83,12 +84,17 @@ def get_info_for_news_feed(
     if news_feed_fields is None:
         news_feed_fields: List[str] = ["shop", "search", "url", "country", "category"]
     nf_dict = {}
-    nf_dict["time_diff"] = (
+    time_diff_raw = (
         datetime.datetime.now(datetime.timezone.utc) - document_snapshot.create_time
+    )
+    nf_dict["time_diff"] = (
+        f"{time_diff_raw.total_seconds()//3600 - 24.0} hours ago"
+        if time_diff_raw.days < 1
+        else f"{time_diff_raw.days} day(s) ago"
     )
     return {
         **nf_dict,
-        **{field: document_snapshot for field in news_feed_fields},
+        **{field: document_snapshot._data.get(field) for field in news_feed_fields},
     }
 
 
