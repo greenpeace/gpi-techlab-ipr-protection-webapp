@@ -112,4 +112,3 @@ new_zip.load(content);
 // you now have every files contained in the loaded zip
 new_zip.file("hello.txt").asText(); // "Hello World\n"
 ```
-

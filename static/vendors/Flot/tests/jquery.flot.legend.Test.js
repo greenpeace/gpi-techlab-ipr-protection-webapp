@@ -104,4 +104,3 @@ describe("flot legend plugin", function() {
         expect(legendSvg).toBe(undefined);
     });
 });
-

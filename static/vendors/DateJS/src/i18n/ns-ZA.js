@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ns-ZA
  * Name: Northern Sotho (South Africa)

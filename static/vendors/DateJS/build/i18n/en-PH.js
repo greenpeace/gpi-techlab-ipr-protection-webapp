@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: en-PH
  * Name: English (Republic of the Philippines)

@@ -3,7 +3,7 @@
 
 	/**
 	 * @desc Converts the specified string value into its JavaScript Date equivalent using CultureInfo specific format information.
-	 * 
+	 *
 	 * Example
 	<pre><code>
 	///////////
@@ -81,7 +81,7 @@
 	var d1 = Date.parse("today - 1 year");
 
 	// Today - 1 year
-	var d1 = Date.parse("t-1y"); 
+	var d1 = Date.parse("t-1y");
 
 
 	/////////////////////////////
@@ -114,7 +114,7 @@
 			} catch (e) {
 				return null;
 			}
-			
+
 			return ((r[1].length === 0) ? r[0] : null);
 		},
 		nativeFallback: function(s) {
@@ -176,11 +176,11 @@
 			return null;
 		};
 	};
-	
+
 	/**
 	 * Converts the specified string value into its JavaScript Date equivalent using the specified format {String} or formats {Array} and the CultureInfo specific format information.
 	 * The format of the string value must match one of the supplied formats exactly.
-	 * 
+	 *
 	 * Example
 	<pre><code>
 	// 15-Oct-2004

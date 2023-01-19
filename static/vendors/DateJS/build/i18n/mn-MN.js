@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: mn-MN
  * Name: Mongolian (Cyrillic, Mongolia)

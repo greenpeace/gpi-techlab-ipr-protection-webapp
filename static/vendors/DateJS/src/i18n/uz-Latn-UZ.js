@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: uz-Latn-UZ
  * Name: Uzbek (Latin, Uzbekistan)

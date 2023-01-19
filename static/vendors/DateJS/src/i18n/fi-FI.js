@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: fi-FI
  * Name: Finnish (Finland)

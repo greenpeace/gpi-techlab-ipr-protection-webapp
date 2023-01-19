@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: he-IL
  * Name: Hebrew (Israel)

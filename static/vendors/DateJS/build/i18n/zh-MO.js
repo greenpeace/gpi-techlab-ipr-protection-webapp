@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: zh-MO
  * Name: Chinese (Macao S.A.R.)

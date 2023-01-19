@@ -39,5 +39,3 @@ zip.filter(function (relativePath, file){
   return true/false;
 });
 ```
-
-

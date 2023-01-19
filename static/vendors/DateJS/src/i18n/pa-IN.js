@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: pa-IN
  * Name: Punjabi (India)

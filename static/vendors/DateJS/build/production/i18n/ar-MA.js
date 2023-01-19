@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ar-MA
  * Name: Arabic (Morocco)

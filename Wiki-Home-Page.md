@@ -1,6 +1,6 @@
 # Greenpeace Service
 
-* ## Service Name 
+* ## Service Name
 
         A name for the service (Standard across greenpeace org)
 
@@ -10,7 +10,7 @@
     * **Short name**
         * _Short Name_
 
-    * **Description** 
+    * **Description**
 
         <Two line Description>
 
@@ -50,7 +50,7 @@
 
             <NRO / FAM / Ops>
 
-    
+
 
         3rd Party Contact
 
@@ -62,7 +62,7 @@
 
                 <email / Phone Number>
 
-            Support Details 
+            Support Details
 
                 <link>
 
@@ -71,18 +71,18 @@
 
  (list or people)
 
-* ## Backups 
+* ## Backups
 
     * Data Restore
         * _[Dummy Data Restore Link](https://en.wikipedia.org/wiki/Data_recovery "Data Restore")_
 
     * Disaster Recovery
         * _[Dummy Disaster Recovery Link](https://en.wikipedia.org/wiki/Disaster_recovery "Disaster Recovery")_
-          
+
     * Business Continuity
         * _[Dummy Business Continuity Link](https://en.wikipedia.org/wiki/Business_continuity_planning#Business_continuity "Business Continuity")_
 
-* ## Monitoring 
+* ## Monitoring
     * Observability
         * _[Dummy Observability Link](https://en.wikipedia.org/wiki/Observability "Observability")_
 
@@ -90,7 +90,7 @@
         * _[Dummy Logging Link](https://en.wikipedia.org/wiki/Log_management "Logging")_
 
     * Monitoring
-      
+
         * [Test https connectivaty](https://op5.amer.gl3/monitor/index.php/extinfo/details?host=vault.greenpeace.net "Monitoring")
 
     * Alerting
@@ -104,7 +104,7 @@
 * ## CI/CD Pipelines
     * Explanation
         * _[Dummy Alerting Link](https://en.wikipedia.org/wiki/Continuous_integration "CI/CD")_
-          
+
     * Release QA test Documents
         * _[Dummy Alerting Link](https://blog.scottlogic.com/2020/02/10/continuous-testing.html "Release QA Tests")_
 

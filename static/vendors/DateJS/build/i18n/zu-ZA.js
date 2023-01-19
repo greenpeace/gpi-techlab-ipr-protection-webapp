@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: zu-ZA
  * Name: Zulu (South Africa)

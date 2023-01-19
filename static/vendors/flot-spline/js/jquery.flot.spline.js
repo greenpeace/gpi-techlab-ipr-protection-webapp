@@ -97,7 +97,7 @@
     ctx.lineTo(points[0][0], height);
 
     ctx.closePath();
-    
+
     if (fill !== false) {
       ctx.fillStyle = c;
       ctx.fill();

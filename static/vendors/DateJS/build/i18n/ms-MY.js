@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ms-MY
  * Name: Malay (Malaysia)

@@ -65,7 +65,7 @@
     "white": false,
 
     "predef": [
-        "define", 
+        "define",
         "require"
     ]
 }

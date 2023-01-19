@@ -121,7 +121,7 @@ Returns the currently set moment of the `options.minDate` or `false` if not set
 
 #### minDate(minDate)
 
-Takes a minDate `string, Date, moment, boolean:false` parameter and disallows the user to select a moment that is before that moment. If a `boolean:false` value is passed the `options.minDate` parameter is cleared and there is no restriction to the miminum moment the user can select. 
+Takes a minDate `string, Date, moment, boolean:false` parameter and disallows the user to select a moment that is before that moment. If a `boolean:false` value is passed the `options.minDate` parameter is cleared and there is no restriction to the miminum moment the user can select.
 
 **Note:** If the minDate parameter is after the currently selected moment the currently selected moment changes to minDate parameter
 
@@ -240,7 +240,7 @@ Returns a `moment` with the `options.defaultDate` option configuration or `false
 
 #### defaultDate(defaultDate)
 
-Takes a `string, Date, moment, boolean:false`. Will set the picker's inital date. If a `boolean:false` value is passed the `options.defaultDate` parameter is cleared. 
+Takes a `string, Date, moment, boolean:false`. Will set the picker's inital date. If a `boolean:false` value is passed the `options.defaultDate` parameter is cleared.
 
 * `TypeError` - if the provided date pass validation, including `disabledDates`, `enabledDates`, `minDate`, `maxDate`, and `daysOfWeekDisabled`
 
@@ -297,7 +297,7 @@ Change the default icons for the pickers functions.
 
 #### icons()
 
-Returns an `Ojbect` of `options.icons` 
+Returns an `Ojbect` of `options.icons`
 
 #### icons(icons)
 
@@ -663,7 +663,7 @@ Allows for several keyBinding functions to be specified for ease of access or ac
 ----------------------
 
 
-### debug 
+### debug
 
 <small>4.7.14</small>
 
@@ -694,7 +694,7 @@ Set this to `true` to allow the picker to be used even if the input field is `re
 
 ----------------------
 
-### disabledTimeIntervals 
+### disabledTimeIntervals
 
 <small>4.14.30</small>
 
@@ -720,7 +720,7 @@ Will disable times between 12-8am and 6-12pm today
 
 ----------------------
 
-### allowInputToggle 
+### allowInputToggle
 
 <small>4.14.30</small>
 
@@ -740,7 +740,7 @@ If `true`, the picker will show on textbox focus and icon click when used in a b
 
 ----------------------
 
-### focusOnShow 
+### focusOnShow
 
 <small>4.14.30</small>
 
@@ -782,7 +782,7 @@ Like `en/disabledDates`, these options are mutually exclusive and will reset one
 
 ----------------------
 
-### viewDate 
+### viewDate
 
 <small>4.14.30</small>
 
@@ -832,9 +832,9 @@ var parseInputDate = function(inputDate) {
         var relativeDate = inputDate.match(relativeDatePattern),
             parseDate = null;
 
-        if (relativeDate !== null) 
+        if (relativeDate !== null)
           parseDate = this.parseRelativeDate(inputDate.match(relativeDatePattern)[0]);
-        else 
+        else
           parseDate = moment();
 
         resultDate = moment(parseDate, "YYYY-MM-DD");
@@ -846,7 +846,7 @@ var parseInputDate = function(inputDate) {
 
 ----------------------
 
-### tooltips 
+### tooltips
 
 <small>4.15.35</small>
 
@@ -873,7 +873,7 @@ This will change the `tooltips` over each icon to a custom string.
 
 #### tooltips()
 
-Returns an `Ojbect` of `options.tooltips` 
+Returns an `Ojbect` of `options.tooltips`
 
 #### tooltips(tooltips)
 
@@ -886,7 +886,7 @@ Takes an `Ojbect` of `strings`.
 ----------------------
 
 
-### timeZone 
+### timeZone
 
 <small>4.17.37</small>
 
@@ -898,7 +898,7 @@ Allows the setting of the Time Zone. You must include [`moment-timezone.js`](htt
 
 #### timeZone()
 
-Returns an `string` of `options.timeZone` 
+Returns an `string` of `options.timeZone`
 
 #### timeZone(timeZone)
 

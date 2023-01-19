@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: fr-CH
  * Name: French (Switzerland)

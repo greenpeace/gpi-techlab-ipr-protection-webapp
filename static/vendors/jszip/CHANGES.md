@@ -74,4 +74,3 @@ section: main
 # v1.0.0, 2013-02-14
 
 - First release after a long period without version.
-

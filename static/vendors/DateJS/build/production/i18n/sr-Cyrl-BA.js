@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sr-Cyrl-BA
  * Name: Serbian (Cyrillic) (Bosnia and Herzegovina)

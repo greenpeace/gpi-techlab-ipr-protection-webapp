@@ -11,17 +11,16 @@
   - 首先是否在这些文档中寻找过问题的答案：[option文档](http://echarts.baidu.com/option.html)，[API文档](http://echarts.baidu.com/api.html)，[教程](http://echarts.baidu.com/tutorial.html)
   - 简单的问题，可以在QQ群中求助（群号：465958031）
 
-- 如何取得能运行的 `ECharts option` 
+- 如何取得能运行的 `ECharts option`
 
   一个参考方式：
-  在你的程序的 
-  ```javascript 
-  chart.setOption(option); 
-  ``` 
-  前加入这句话 
-  ```javascript 
+  在你的程序的
+  ```javascript
+  chart.setOption(option);
+  ```
+  前加入这句话
+  ```javascript
   console.log(JSON.stringify(option, null, 4));
   ```
-  
-  然后打开浏览器的调试工具（如 `Chrome Deverloper Tool`）的 `控制台(console)`，可以得到option输出。
 
+  然后打开浏览器的调试工具（如 `Chrome Deverloper Tool`）的 `控制台(console)`，可以得到option输出。

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: is-IS
  * Name: Icelandic (Iceland)

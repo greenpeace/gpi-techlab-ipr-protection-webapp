@@ -102,4 +102,3 @@ exports.findCompression = function(compressionMethod) {
 exports.isRegExp = function (object) {
     return utils.isRegExp(object);
 };
-

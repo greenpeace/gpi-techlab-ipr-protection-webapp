@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: bg-BG
  * Name: Bulgarian (Bulgaria)

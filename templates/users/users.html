@@ -53,7 +53,7 @@
                               </td>
                               <td>{{(ngo.firstName)}}</td>
                               <td>{{ ngo.lastName }}</td>
-                              <td>{{ ngo.email }}</td> 
+                              <td>{{ ngo.email }}</td>
                               <td>{{ ngo.role }}</td>
                               <td>
                                 <a class="btn btn-sm btn-success" href="/usersedit?id={{ ngo.id }}" title="Edit" ><i class="glyphicon glyphicon-pencil"></i> Edit</a>
@@ -61,7 +61,7 @@
                               </td>
                             </tr>
                             {% endfor %}
-                          {% endif %}      
+                          {% endif %}
                         </tbody>
                       </table>
                     </div>
@@ -88,7 +88,7 @@
           });
         });
     </script>
-  
+
     {% endblock scripts %}
 
     {% include "footertable.html" %}

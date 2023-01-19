@@ -40,11 +40,11 @@ fixed #1066
 
 fixed #1087 `sideBySide` properly supports `toolbarPlacement [top, bottom]`
 
-fixed #1119 
+fixed #1119
 
 fixed #1069 added input.blur()
 
-fixed #1049 fixed doc example 
+fixed #1049 fixed doc example
 
 fixed #999 picker now looks for an element with `.input-group-addon`
 
@@ -65,7 +65,7 @@ public `viewDate` function #872
 
 `dp.update` fires when `viewDate` is changed (in most cases) #937
 
-`viewMode` now supports a decades view. 
+`viewMode` now supports a decades view.
 
    **Note**: because the year picker shows 12 years at a time, I've elected to make this view show blocks of 12 years
 
@@ -100,7 +100,7 @@ changed in/decrement behavior to check if the new date is valid at that granular
 ## 4.7.14
 
 Added several in new features:
-    
+
     `keybinds`, `inline`, `debug`, `clear()`, `showClose`, `ingoreReadOnly`, `datepickerInput` and `keepInvalid`.
 
 Bug squashing

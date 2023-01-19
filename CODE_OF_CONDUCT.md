@@ -1,6 +1,6 @@
 # Greenpeace TechLab Code Team Code of Conduct
 
-We are a community of, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability, class, religion, culture, subculture, political opinion, age, skill level, occupation, and background. We acknowledge that not everyone has the time, financial means, or capacity to actively participate, but we recognize and encourage involvement of all kinds. We facilitate and foster access and empowerment. We are all learners. 
+We are a community of, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability, class, religion, culture, subculture, political opinion, age, skill level, occupation, and background. We acknowledge that not everyone has the time, financial means, or capacity to actively participate, but we recognize and encourage involvement of all kinds. We facilitate and foster access and empowerment. We are all learners.
 
 This Code of Conduct applies to every environment and platform relating to the Greenpeace TechLab Code team project.
 
@@ -18,7 +18,7 @@ This Code of Conduct applies to every environment and platform relating to the G
 
 ## Moderation
 
-These are the policies for upholding our community’s standards of conduct. If you feel that a thread needs moderation, please contact the Greenpeace TechLab Code team moderation team. 
+These are the policies for upholding our community’s standards of conduct. If you feel that a thread needs moderation, please contact the Greenpeace TechLab Code team moderation team.
 1. Remarks that violate the Greenpeace standards of conduct, including hateful, hurtful, oppressive, or exclusionary remarks, are not allowed. (Cursing is allowed, but never targeting another user, and never in a hateful manner.)
 2. Remarks that moderators find inappropriate, whether listed in the code of conduct or not, are also not allowed.
 3. Moderators will first respond to such remarks with a warning.
@@ -30,7 +30,7 @@ These are the policies for upholding our community’s standards of conduct. If 
 
 In the Greenpeace community we strive to go the extra step to look out for each other. Don’t just aim to be technically unimpeachable, try to be your best self. In particular, avoid flirting with offensive or sensitive issues, particularly if they’re off-topic; this all too often leads to unnecessary fights, hurt feelings, and damaged trust; worse, it can drive people away from the community entirely.
 
-And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could have communicated better. Remember that it’s your responsibility to make your fellow community members comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology. 
+And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could have communicated better. Remember that it’s your responsibility to make your fellow community members comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology.
 
 You will find that people will be eager to assume good intent and forgive as long as you earn their trust.
 

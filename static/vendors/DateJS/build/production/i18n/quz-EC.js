@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: quz-EC
  * Name: Quechua (Ecuador)

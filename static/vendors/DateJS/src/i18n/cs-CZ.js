@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: cs-CZ
  * Name: Czech (Czech Republic)

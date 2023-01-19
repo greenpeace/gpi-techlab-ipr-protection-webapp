@@ -147,7 +147,7 @@ module.exports = function(Chart) {
 					fontFamily = valueOrDefault(opts.fontFamily, globalDefaults.defaultFontFamily),
 					titleFont = helpers.fontString(fontSize, fontStyle, fontFamily),
 					rotation = 0,
-					titleX, 
+					titleX,
 					titleY,
 					top = _this.top,
 					left = _this.left,

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: it-CH
  * Name: Italian (Switzerland)

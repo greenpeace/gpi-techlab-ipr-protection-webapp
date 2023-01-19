@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: nn-NO
  * Name: Norwegian, Nynorsk (Norway)

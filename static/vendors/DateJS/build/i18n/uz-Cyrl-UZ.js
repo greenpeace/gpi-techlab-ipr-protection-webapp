@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: uz-Cyrl-UZ
  * Name: Uzbek (Cyrillic, Uzbekistan)

@@ -53,7 +53,7 @@ PM> Install-Package Bootstrap.v3.Datetimepicker.CSS
   <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
   <script type="text/javascript" src="/scripts/bootstrap-datetimepicker.*js"></script>
   <!-- include your less or built css files  -->
-  <!-- 
+  <!--
   bootstrap-datetimepicker-build.less will pull in "../bootstrap/variables.less" and "bootstrap-datetimepicker.less";
   or
   <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
@@ -69,7 +69,7 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 ```
 Note: You may need to change the version number above to the version number on the badge above.
-Read the rest of the install instructions @ 
+Read the rest of the install instructions @
 [TrevorS/bootstrap3-datetimepicker-rails](https://github.com/TrevorS/bootstrap3-datetimepicker-rails)
 
 

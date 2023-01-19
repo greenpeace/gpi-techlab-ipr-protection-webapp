@@ -33,5 +33,3 @@ zip.folder("css").file("style.css", "body {background: #FF0000}");
 zip.remove("css");
 //result : empty zip
 ```
-
-

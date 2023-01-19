@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: zh-CN
  * Name: Chinese (People's Republic of China)

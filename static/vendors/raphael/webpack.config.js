@@ -46,12 +46,12 @@ module.exports = {
 
 	loaders: [
   		{
-  			test: /\.js$/, 
-  			loader: "eslint-loader", 
+  			test: /\.js$/,
+  			loader: "eslint-loader",
   			include: "./dev/"
   		}
 	],
-  	
+
 	eslint: {
     	configFile: './.eslintrc'
   	},

@@ -198,18 +198,18 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">core/format_parser.js</span></h1>
     <h2>
-        
+
         Statements: <span class="metric">96.95% <small>(159 / 164)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Branches: <span class="metric">86.13% <small>(118 / 137)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Functions: <span class="metric">94.29% <small>(33 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Lines: <span class="metric">96.95% <small>(159 / 164)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
+
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">core/</a> &#187; format_parser.js</div>
@@ -1164,7 +1164,7 @@
 			} else <span class="missing-if-branch" title="else path not taken" >E</span>if (last) {
 				return Date.today().last()[inc]().toString("d");
 			}
-			
+
 		},
 		buildRegexData: function (array) {
 			var arr = [];
@@ -1199,7 +1199,7 @@
 		}
 		return date;
 	};
-	
+
 	$P.ISO = {
 		regex : /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-3])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-4])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?\s?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$/,
 		parse : function (s) {
@@ -1309,7 +1309,7 @@
 			var __ = Date.i18n.__;
 			var tomorrowRE = new RegExp("(\\b\\d\\d?("+__("AM")+"|"+__("PM")+")? )("+$R.tomorrow.source.slice(1)+")", "i"); // adapted tomorrow regex for AM PM relative dates
 			var todayRE = new RegExp($R.today.source + "(?!\\s*([+-]))\\b"); // today, but excludes the math operators (eg "today + 2h")
-			
+
 			this.replaceFuncs = [
 				[todayRE, function (full) {
 					return (full.length &gt; 1) ? Date.today().toString("d") : full;
@@ -1322,7 +1322,7 @@
 				[$R.amThisMorning, <span class="fstat-no" title="function not covered" >function(str, am){<span class="cstat-no" title="statement not covered" ></span>return am;}</span>],
 				[$R.pmThisEvening, <span class="fstat-no" title="function not covered" >function(str, pm){<span class="cstat-no" title="statement not covered" ></span>return pm;}</span>]
 			];
-				
+
 		},
 		buildReplaceData: function () {
 			this.buildRegexFunctions();

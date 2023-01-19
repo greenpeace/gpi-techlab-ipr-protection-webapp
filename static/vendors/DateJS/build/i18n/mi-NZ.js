@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: mi-NZ
  * Name: Maori (New Zealand)

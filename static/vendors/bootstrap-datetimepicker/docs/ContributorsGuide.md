@@ -1,4 +1,4 @@
-This guide is aimed to contributors wishing to understand the internals of the code in order to change/evolve the component. 
+This guide is aimed to contributors wishing to understand the internals of the code in order to change/evolve the component.
 
 **Note:** this guide refers to **version 4** which is currently in beta and will be updated as we progress
 
@@ -91,7 +91,7 @@ The component uses on `jQuery`, `moment.js` and `bootstrap` libraries.
 
 * `doAction(e)` - Proxy function to call all the UI related click events
 
-* `keydown(e)` - Function to trap 
+* `keydown(e)` - Function to trap
 
 * `change(e)` - Listener function to track change events occuring on the `input` dom element the component is attached to
 

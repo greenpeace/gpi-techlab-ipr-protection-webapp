@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: fr-LU
  * Name: French (Luxembourg)

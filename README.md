@@ -37,14 +37,14 @@ gcloud auth activate-service-account <ypur service account name>@<project-id>.ia
 
 Where
 
-ACCOUNT is the service account name in the format 
+ACCOUNT is the service account name in the format
 ```
-[USERNAME]@[PROJECT-ID].iam.gserviceaccount.com. 
+[USERNAME]@[PROJECT-ID].iam.gserviceaccount.com.
 ```
 
 You can view existing service accounts on the Service Accounts page of console or with the command gcloud iam service-accounts list
 
-KEY-FILE is the service account key file. See the Identity and Access Management (IAM) 
+KEY-FILE is the service account key file. See the Identity and Access Management (IAM)
 
 documentation for information about creating a key.
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: smj-SE
  * Name: Sami (Lule) (Sweden)

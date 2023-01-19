@@ -198,18 +198,18 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">core/parsing_translator.js</span></h1>
     <h2>
-        
+
         Statements: <span class="metric">79.7% <small>(161 / 202)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Branches: <span class="metric">71.43% <small>(165 / 231)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Functions: <span class="metric">87.5% <small>(28 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Lines: <span class="metric">79.7% <small>(161 / 202)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
+
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">core/</a> &#187; parsing_translator.js</div>
@@ -978,19 +978,19 @@
 		if (!this.year) {
 			this.year = now.getFullYear();
 		}
-		
+
 		<span class="missing-if-branch" title="else path not taken" >E</span>if (!this.month &amp;&amp; this.month !== 0) {
 			this.month = now.getMonth();
 		}
-		
+
 		if (!this.day) {
 			this.day = 1;
 		}
-		
+
 		<span class="missing-if-branch" title="else path not taken" >E</span>if (!this.hour) {
 			this.hour = 0;
 		}
-		
+
 		<span class="missing-if-branch" title="else path not taken" >E</span>if (!this.minute) {
 			this.minute = 0;
 		}
@@ -1148,7 +1148,7 @@
 					x[i].call(this);
 				}
 			}
-			
+
 			setDefaults.call(this);
 			parseMeridian.call(this);
 &nbsp;
@@ -1165,7 +1165,7 @@
 			} else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.timezoneOffset) {
 <span class="cstat-no" title="statement not covered" >				d.set({ timezoneOffset: this.timezoneOffset });</span>
 			}
-			
+
 			return d;
 		},
 		finish: function (x) {
@@ -1187,7 +1187,7 @@
 			} else {
 				today = finishUtils.getToday.call(this);
 			}
-			
+
 			expression = !!(this.days &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.days !== null </span>|| this.orient || this.operator);
 			orient = ((this.orient === "past" || this.operator === "subtract") ? -1 : 1);
 &nbsp;
@@ -1254,7 +1254,7 @@
 &nbsp;
 			finishUtils.setUnitValue.call(this, orient);
 			parseMeridian.call(this);
-			
+
 			<span class="missing-if-branch" title="if path not taken" >I</span>if ((this.month || this.month === 0) &amp;&amp; !this.day) {
 <span class="cstat-no" title="statement not covered" >				this.day = 1;</span>
 			}
@@ -1276,7 +1276,7 @@
 			} else {
 				today.set(this);
 			}
-			
+
 			if (this.timezone) {
 				this.timezone = this.timezone.toUpperCase();
 				var offset = $D.getTimezoneOffset(this.timezone);

@@ -6,26 +6,26 @@ Guides for making the picker work better with rails, IE, etc
 
 by [dhulihan](https://github.com/dhulihan)
 
-You can easily override the default rails form helpers (`date_select` and `datetime_select`) with bootstrap-datetimepicker for a much nicer experience. 
+You can easily override the default rails form helpers (`date_select` and `datetime_select`) with bootstrap-datetimepicker for a much nicer experience.
 
 ```rb
 # Add to config/initializers/form.rb or the end of app/helpers/application_helper.rb
 module ActionView
   module Helpers
-    class FormBuilder 
+    class FormBuilder
       def date_select(method, options = {}, html_options = {})
-        existing_date = @object.send(method) 
+        existing_date = @object.send(method)
         formatted_date = existing_date.to_date.strftime("%F") if existing_date.present?
-        @template.content_tag(:div, :class => "input-group") do    
+        @template.content_tag(:div, :class => "input-group") do
           text_field(method, :value => formatted_date, :class => "form-control datepicker", :"data-date-format" => "YYYY-MM-DD") +
           @template.content_tag(:span, @template.content_tag(:span, "", :class => "glyphicon glyphicon-calendar") ,:class => "input-group-addon")
         end
       end
 
       def datetime_select(method, options = {}, html_options = {})
-        existing_time = @object.send(method) 
+        existing_time = @object.send(method)
         formatted_time = existing_time.to_time.strftime("%F %I:%M %p") if existing_time.present?
-        @template.content_tag(:div, :class => "input-group") do    
+        @template.content_tag(:div, :class => "input-group") do
           text_field(method, :value => formatted_time, :class => "form-control datetimepicker", :"data-date-format" => "YYYY-MM-DD hh:mm A") +
           @template.content_tag(:span, @template.content_tag(:span, "", :class => "glyphicon glyphicon-calendar") ,:class => "input-group-addon")
         end
@@ -59,11 +59,11 @@ Here is what I did.
 
 2. Z-index problem with IE 7. I added position: relative and `z-index: 10` to the parent container. Otherwise popup is shown under the next elements.
 
-3. JS events were not working well. 
+3. JS events were not working well.
 
 If you open the datetimepicker widget and click on some button or date inside it, widget is automatically closed.
-So I added `debug: true` as an option when initializing the widget. Why I did this? I saw on line 1121 from bootsrap-datetimepicker.js the code `'blur': options.debug ? '' : hide`. 
-And now widget window is not closed on every click inside it, but now you can't close it anyway :) 
+So I added `debug: true` as an option when initializing the widget. Why I did this? I saw on line 1121 from bootsrap-datetimepicker.js the code `'blur': options.debug ? '' : hide`.
+And now widget window is not closed on every click inside it, but now you can't close it anyway :)
 And closing should be done manually. I've added this document click handler. If you click something outside the widget, now closing works.
 
 ```

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: fr-MC
  * Name: French (Principality of Monaco)

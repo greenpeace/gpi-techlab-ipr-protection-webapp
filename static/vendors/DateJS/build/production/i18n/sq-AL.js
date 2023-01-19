@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sq-AL
  * Name: Albanian (Albania)

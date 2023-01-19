@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: mk-MK
  * Name: Macedonian (Former Yugoslav Republic of Macedonia)

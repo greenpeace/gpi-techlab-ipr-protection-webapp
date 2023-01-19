@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: nl-NL
  * Name: Dutch (Netherlands)

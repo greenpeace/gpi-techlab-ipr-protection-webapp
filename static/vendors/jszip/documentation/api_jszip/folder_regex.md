@@ -37,4 +37,3 @@ zip.folder(/videos/); // array of size 2
 
 zip.folder("home/Jean").folder(/^vid/); // array of 1
 ```
-

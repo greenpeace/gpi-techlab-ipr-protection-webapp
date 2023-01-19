@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sr-Latn-BA
  * Name: Serbian (Latin) (Bosnia and Herzegovina)

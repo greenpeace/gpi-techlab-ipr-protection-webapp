@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: es-PY
  * Name: Spanish (Paraguay)

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ar-IQ
  * Name: Arabic (Iraq)

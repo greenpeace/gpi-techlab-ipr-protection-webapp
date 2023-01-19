@@ -31,4 +31,3 @@ zip.file("css/font.css", "body {font-family: sans-serif}")
 
 // result : images/, css/, css/style.css, css/font.css
 ```
-

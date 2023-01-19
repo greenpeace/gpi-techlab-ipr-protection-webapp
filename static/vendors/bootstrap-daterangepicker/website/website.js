@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('#config-text').keyup(function() {
       eval($(this).val());
     });
-    
+
     $('.configurator input, .configurator select').change(function() {
       updateConfig();
     });
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
       if ($('#singleDatePicker').is(':checked'))
         options.singleDatePicker = true;
-      
+
       if ($('#showDropdowns').is(':checked'))
         options.showDropdowns = true;
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
 
       if ($('#timePicker').is(':checked'))
         options.timePicker = true;
-      
+
       if ($('#timePicker24Hour').is(':checked'))
         options.timePicker24Hour = true;
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
       if ($('#timePickerSeconds').is(':checked'))
         options.timePickerSeconds = true;
-      
+
       if ($('#autoApply').is(':checked'))
         options.autoApply = true;
 
@@ -105,12 +105,12 @@ $(document).ready(function() {
       if ($('#parentEl').val().length)
         options.parentEl = $('#parentEl').val();
 
-      if ($('#startDate').val().length) 
+      if ($('#startDate').val().length)
         options.startDate = $('#startDate').val();
 
       if ($('#endDate').val().length)
         options.endDate = $('#endDate').val();
-      
+
       if ($('#minDate').val().length)
         options.minDate = $('#minDate').val();
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
         options.cancelClass = $('#cancelButtonClasses').val();
 
       $('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
-      
+
       if (typeof options.ranges !== 'undefined') {
         options.ranges = {};
       }

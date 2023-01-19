@@ -198,18 +198,18 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">core/time_span.js</span></h1>
     <h2>
-        
+
         Statements: <span class="metric">20.65% <small>(19 / 92)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Branches: <span class="metric">1.72% <small>(1 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Functions: <span class="metric">16% <small>(4 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Lines: <span class="metric">20.65% <small>(19 / 92)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
+
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">core/</a> &#187; time_span.js</div>
@@ -573,7 +573,7 @@
 <span class="cstat-no" title="statement not covered" >			return this[attr];</span>
 		};
 	};
-	
+
 	var sFn = function (attr) {
 		return <span class="fstat-no" title="function not covered" >function (val) {</span>
 <span class="cstat-no" title="statement not covered" >			this[attr] = val;</span>
@@ -617,7 +617,7 @@
 					(this.getMinutes() * 60000) +
 					(this.getSeconds() * 1000);
 		};
-		
+
 <span class="cstat-no" title="statement not covered" >		this.compareTo = <span class="fstat-no" title="function not covered" >function (time) {</span></span>
 <span class="cstat-no" title="statement not covered" >			var t1 = new Date(1970, 1, 1, this.getHours(), this.getMinutes(), this.getSeconds()), t2;</span>
 <span class="cstat-no" title="statement not covered" >			if (time === null) {</span>
@@ -677,13 +677,13 @@
 <span class="cstat-no" title="statement not covered" >					return this.getHours() + ":" + this.p(this.getMinutes()) + ":" + this.p(this.getSeconds());</span>
 				}
 			};
-			
+
 <span class="cstat-no" title="statement not covered" >			this.p = <span class="fstat-no" title="function not covered" >function (s) {</span></span>
 <span class="cstat-no" title="statement not covered" >				return (s.toString().length &lt; 2) ? "0" + s : s;</span>
 			};
-			
+
 <span class="cstat-no" title="statement not covered" >			var me = this;</span>
-			
+
 <span class="cstat-no" title="statement not covered" >			return format ? format.replace(/dd?|HH?|hh?|mm?|ss?|tt?/g,</span>
 <span class="fstat-no" title="function not covered" >			function (format) {</span>
 <span class="cstat-no" title="statement not covered" >				switch (format) {</span>
@@ -728,7 +728,7 @@
 &nbsp;
 &nbsp;
 	/**
-	 * Gets the time of day for this date instances. 
+	 * Gets the time of day for this date instances.
 	 * @return {TimeSpan} TimeSpan
 	 */
 	Date.prototype.getTimeOfDay = <span class="fstat-no" title="function not covered" >function () {</span>
@@ -738,7 +738,7 @@
 	Date.TimeSpan = TimeSpan;
 &nbsp;
 	<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof window !== "undefined" ) {
-		// keeping API compatible for v1.x 
+		// keeping API compatible for v1.x
 		window.TimeSpan = TimeSpan;
 	}
 }());</pre></td></tr>

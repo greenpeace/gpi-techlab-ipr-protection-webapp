@@ -6,7 +6,7 @@
 			return this[attr];
 		};
 	};
-	
+
 	var sFn = function (attr) {
 		return function (val) {
 			this[attr] = val;
@@ -95,7 +95,7 @@
 	Date.TimePeriod = TimePeriod;
 
 	if (typeof window !== "undefined") {
-		// keeping API compatible for v1.x 
+		// keeping API compatible for v1.x
 		window.TimePeriod = TimePeriod;
 	}
 }());

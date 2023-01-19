@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: nb-NO
  * Name: Norwegian, Bokmål (Norway)

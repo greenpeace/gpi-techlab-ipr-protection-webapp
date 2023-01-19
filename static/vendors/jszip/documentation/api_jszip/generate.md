@@ -120,7 +120,7 @@ conf2.folder("menubar");
 conf2.folder("progressbar");
 conf2.folder("toolbar");
 
-var manifest = "<..."; //xml containing manifest.xml 
+var manifest = "<..."; //xml containing manifest.xml
 var styles = "<..."; //xml containing styles.xml
 var settings = "<..."; //xml containing settings.xml
 var meta = "<..."; //xml containing meta.xml
@@ -129,7 +129,7 @@ var content = "<..."; //xml containing content.xml
 var metaInf = zip.folder("META-INF");
 metaInf.file("manifest.xml", manifest);
 zip.file("styles.xml", styles);
-zip.file("settings.xml", settings); 
+zip.file("settings.xml", settings);
 zip.file("meta.xml", meta);
 zip.file("content.xml", content);
 
@@ -158,4 +158,3 @@ zip.generate({
     }
 });
 ```
-

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: uk-UA
  * Name: Ukrainian (Ukraine)

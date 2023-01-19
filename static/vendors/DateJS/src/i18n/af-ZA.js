@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: af-ZA
  * Name: Afrikaans (South Africa)

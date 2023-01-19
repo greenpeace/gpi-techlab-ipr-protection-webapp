@@ -1,4 +1,4 @@
-/** 
+/**
  * @overview datejs
  * @version 1.0.0-beta-2014-03-25
  * @author Gregory Wild-Smith <gregory@wild-smith.com>
@@ -6,7 +6,7 @@
  * @license MIT
  * @homepage https://github.com/abritinthebay/datejs
  */
-/* 
+/*
  * DateJS Culture String File
  * Country Code: en-US
  * Name: English (United States)
@@ -185,7 +185,7 @@ Date.CultureStrings["en-US"] = {
 };
 Date.CultureStrings.lang = "en-US";
 
-/** 
+/**
  * @overview datejs
  * @version 1.0.0-beta-2014-03-25
  * @author Gregory Wild-Smith <gregory@wild-smith.com>
@@ -265,7 +265,7 @@ Date.CultureStrings.lang = "en-US";
 		setTimeout(function() {
 			head.insertBefore(script, head.firstChild);
 		}, 0); // allows return to execute first
-		
+
 		return {
 			done: function (f) {
 				events.done = function() {
@@ -434,7 +434,7 @@ Date.CultureStrings.lang = "en-US";
 			abbreviatedTimeZoneDST: {},
 			abbreviatedTimeZoneStandard: {}
 		};
-		
+
 		info.abbreviatedTimeZoneDST[__("CHADT")] = "+1345";
 		info.abbreviatedTimeZoneDST[__("NZDT")] = "+1300";
 		info.abbreviatedTimeZoneDST[__("AEDT")] = "+1100";
@@ -533,7 +533,7 @@ Date.CultureStrings.lang = "en-US";
 						});
 					} else {
 						Date.console.error("The DateJS IETF language tag '" + code + "' is not available and has not been loaded.");
-				
+
 					}
 				}
 			}
@@ -556,7 +556,7 @@ Date.CultureStrings.lang = "en-US";
 			}
 			return ("000" + s).slice(l * -1);
 		};
-	
+
 	if (typeof window !== "undefined" && typeof window.console !== "undefined" && typeof window.console.log !== "undefined") {
 		$D.console = console; // used only to raise non-critical errors if available
 	} else {
@@ -569,12 +569,12 @@ Date.CultureStrings.lang = "en-US";
 	$D.Config = {};
 
 	$D.initOverloads = function() {
-		/** 
-		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the 
+		/**
+		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the
 		 * current Date as an object rather than just milliseconds since the Unix Epoch.
 		 *
 		 * Also provides an implementation of now() for browsers (IE<9) that don't have it.
-		 * 
+		 *
 		 * Backwards compatible so with work with either:
 		 *  Date.now() [returns ms]
 		 * or
@@ -608,7 +608,7 @@ Date.CultureStrings.lang = "en-US";
 				"Z";
 			};
 		}
-		
+
 		// private
 		if ( $P._toString === undefined ){
 			$P._toString = $P.toString;
@@ -643,7 +643,7 @@ Date.CultureStrings.lang = "en-US";
 		return this;
 	};
 
-	/** 
+	/**
 	 * Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
 	 * @return {Date}    The current date.
 	 */
@@ -651,7 +651,7 @@ Date.CultureStrings.lang = "en-US";
 		return new Date().clearTime();
 	};
 
-	/** 
+	/**
 	 * Gets a date that is set to the current date and time (same as new Date, but chainable)
 	 * @return {Date}    The current date.
 	 */
@@ -660,7 +660,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Compares the first date to the second date and returns an number indication of their relative values.  
+	 * Compares the first date to the second date and returns an number indication of their relative values.
 	 * @param {Date}     First Date object to compare [Required].
 	 * @param {Date}     Second Date object to compare to [Required].
 	 * @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
@@ -674,9 +674,9 @@ Date.CultureStrings.lang = "en-US";
 			throw new TypeError(date1 + " - " + date2);
 		}
 	};
-	
+
 	/**
-	 * Compares the first Date object to the second Date object and returns true if they are equal.  
+	 * Compares the first Date object to the second Date object and returns true if they are equal.
 	 * @param {Date}     First Date object to compare [Required]
 	 * @param {Date}     Second Date object to compare to [Required]
 	 * @return {Boolean} true if dates are equal. false if they are not equal.
@@ -708,7 +708,7 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return -1;
 	};
-	
+
 	/**
 	 * Gets the month number (0-11) if given a Culture Info specific string which is a valid monthName or abbreviatedMonthName.
 	 * @param {String}   The name of the month (eg. "February, "Feb", "october", "oct").
@@ -755,7 +755,7 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return [31, ($D.isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
 	};
- 
+
 	$D.getTimezoneAbbreviation = function (offset, dst) {
 		var p, n = (dst || false) ? Date.CultureInfo.abbreviatedTimeZoneDST : Date.CultureInfo.abbreviatedTimeZoneStandard;
 		for (p in n) {
@@ -767,7 +767,7 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return null;
 	};
-	
+
 	$D.getTimezoneOffset = function (name, dst) {
 		var i, a =[], z = Date.CultureInfo.timezones;
 		if (!name) { name = (new Date()).getTimezone()}
@@ -812,7 +812,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Compares this instance to a Date object and returns an number indication of their relative values.  
+	 * Compares this instance to a Date object and returns an number indication of their relative values.
 	 * @param {Date}     Date object to compare [Required]
 	 * @return {Number}  -1 = this is lessthan date. 0 = values are equal. 1 = this is greaterthan date.
 	 */
@@ -821,7 +821,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Compares this instance to another Date object and returns true if they are equal.  
+	 * Compares this instance to another Date object and returns true if they are equal.
 	 * @param {Date}     Date object to compare. If no date to compare, new Date() [now] is used.
 	 * @return {Boolean} true if dates are equal. false if they are not equal.
 	 */
@@ -861,19 +861,19 @@ Date.CultureStrings.lang = "en-US";
 	 * Determines if the current Date instance occurs today.
 	 * @return {Boolean} true if this date instance is 'today', otherwise false.
 	 */
-	
+
 	/**
-	 * Determines if the current Date instance occurs on the same Date as the supplied 'date'. 
-	 * If no 'date' to compare to is provided, the current Date instance is compared to 'today'. 
+	 * Determines if the current Date instance occurs on the same Date as the supplied 'date'.
+	 * If no 'date' to compare to is provided, the current Date instance is compared to 'today'.
 	 * @param {date}     Date object to compare. If no date to compare, the current Date ("now") is used.
 	 * @return {Boolean} true if this Date instance occurs on the same Day as the supplied 'date'.
 	 */
 	$P.isToday = $P.isSameDay = function (date) {
 		return this.clone().clearTime().equals((date || new Date()).clone().clearTime());
 	};
-	
+
 	/**
-	 * Adds the specified number of milliseconds to this instance. 
+	 * Adds the specified number of milliseconds to this instance.
 	 * @param {Number}   The number of milliseconds to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -884,7 +884,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of seconds to this instance. 
+	 * Adds the specified number of seconds to this instance.
 	 * @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -894,7 +894,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of seconds to this instance. 
+	 * Adds the specified number of seconds to this instance.
 	 * @param {Number}   The number of seconds to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -904,7 +904,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of hours to this instance. 
+	 * Adds the specified number of hours to this instance.
 	 * @param {Number}   The number of hours to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -914,7 +914,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of days to this instance. 
+	 * Adds the specified number of days to this instance.
 	 * @param {Number}   The number of days to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -925,7 +925,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of weekdays (ie - not sat or sun) to this instance. 
+	 * Adds the specified number of weekdays (ie - not sat or sun) to this instance.
 	 * @param {Number}   The number of days to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -957,7 +957,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of weeks to this instance. 
+	 * Adds the specified number of weeks to this instance.
 	 * @param {Number}   The number of weeks to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -967,7 +967,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of months to this instance. 
+	 * Adds the specified number of months to this instance.
 	 * @param {Number}   The number of months to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -989,7 +989,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 
 	/**
-	 * Adds the specified number of years to this instance. 
+	 * Adds the specified number of years to this instance.
 	 * @param {Number}   The number of years to add. The number can be positive or negative [Required]
 	 * @return {Date}    this
 	 */
@@ -1003,9 +1003,9 @@ Date.CultureStrings.lang = "en-US";
 	 * Example
 	<pre><code>
 	Date.today().add( { days: 1, months: 1 } )
-	 
+
 	new Date().add( { years: -1 } )
-	</code></pre> 
+	</code></pre>
 	 * @param {Object}   Configuration object containing attributes (months, days, etc.)
 	 * @return {Date}    this
 	 */
@@ -1014,7 +1014,7 @@ Date.CultureStrings.lang = "en-US";
 			this._orient = config;
 			return this;
 		}
-		
+
 		var x = config;
 
 		if (x.day) {
@@ -1050,15 +1050,15 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return this;
 	};
-	
+
 	/**
 	 * Get the week number. Week one (1) is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
-	 * The .getWeek() function does NOT convert the date to UTC. The local datetime is used. 
+	 * The .getWeek() function does NOT convert the date to UTC. The local datetime is used.
 	 * Please use .getISOWeek() to get the week of the UTC converted date.
 	 * @return {Number}  1 to 53
 	 */
 	$P.getWeek = function (utc) {
-		// Create a copy of this date object  
+		// Create a copy of this date object
 		var self, target = new Date(this.valueOf());
 		if (utc) {
 			target.addMinutes(target.getTimezoneOffset());
@@ -1066,27 +1066,27 @@ Date.CultureStrings.lang = "en-US";
 		} else {
 			self = this;
 		}
-		// ISO week date weeks start on monday  
-		// so correct the day number  
+		// ISO week date weeks start on monday
+		// so correct the day number
 		var dayNr = (self.getDay() + 6) % 7;
-		// ISO 8601 states that week 1 is the week  
-		// with the first thursday of that year.  
-		// Set the target date to the thursday in the target week  
+		// ISO 8601 states that week 1 is the week
+		// with the first thursday of that year.
+		// Set the target date to the thursday in the target week
 		target.setDate(target.getDate() - dayNr + 3);
-		// Store the millisecond value of the target date  
+		// Store the millisecond value of the target date
 		var firstThursday = target.valueOf();
-		// Set the target to the first thursday of the year  
-		// First set the target to january first  
+		// Set the target to the first thursday of the year
+		// First set the target to january first
 		target.setMonth(0, 1);
-		// Not a thursday? Correct the date to the next thursday  
+		// Not a thursday? Correct the date to the next thursday
 		if (target.getDay() !== 4) {
 			target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
 		}
-		// The weeknumber is the number of weeks between the   
-		// first thursday of the year and the thursday in the target week  
-		return 1 + Math.ceil((firstThursday - target) / 604800000); // 604800000 = 7 * 24 * 3600 * 1000  
+		// The weeknumber is the number of weeks between the
+		// first thursday of the year and the thursday in the target week
+		return 1 + Math.ceil((firstThursday - target) / 604800000); // 604800000 = 7 * 24 * 3600 * 1000
 	};
-	
+
 	/**
 	 * Get the ISO 8601 week number. Week one ("01") is the week which contains the first Thursday of the year. Monday is considered the first day of the week.
 	 * The .getISOWeek() function does convert the date to it's UTC value. Please use .getWeek() to get the week of the local date.
@@ -1134,8 +1134,8 @@ Date.CultureStrings.lang = "en-US";
 		} else if (typeof n !== "number") {
 			throw new TypeError(n + " is not a Number.");
 		} else if (n < min || n > max) {
-			// As failing validation is *not* an exceptional circumstance 
-			// lets not throw a RangeError Exception here. 
+			// As failing validation is *not* an exceptional circumstance
+			// lets not throw a RangeError Exception here.
 			// It's semantically correct but it's not sensible.
 			return false;
 		}
@@ -1212,10 +1212,10 @@ Date.CultureStrings.lang = "en-US";
 	 */
 	$D.validateYear = function (value) {
 		/**
-		 * Per ECMAScript spec the range of times supported by Date objects is 
-		 * exactly –100,000,000 days to 100,000,000 days measured relative to 
-		 * midnight at the beginning of 01 January, 1970 UTC. 
-		 * This gives a range of 8,640,000,000,000,000 milliseconds to either 
+		 * Per ECMAScript spec the range of times supported by Date objects is
+		 * exactly –100,000,000 days to 100,000,000 days measured relative to
+		 * midnight at the beginning of 01 January, 1970 UTC.
+		 * This gives a range of 8,640,000,000,000,000 milliseconds to either
 		 * side of 01 January, 1970 UTC.
 		 *
 		 * Earliest possible date: Tue, 20 Apr 271,822 B.C. 00:00:00 UTC
@@ -1233,7 +1233,7 @@ Date.CultureStrings.lang = "en-US";
 
 	new Date().set( { millisecond: 0 } )
 	</code></pre>
-	 * 
+	 *
 	 * @param {Object}   Configuration object containing attributes (month, day, etc.)
 	 * @return {Date}    this
 	 */
@@ -1241,19 +1241,19 @@ Date.CultureStrings.lang = "en-US";
 		if ($D.validateMillisecond(config.millisecond)) {
 			this.addMilliseconds(config.millisecond - this.getMilliseconds());
 		}
-		
+
 		if ($D.validateSecond(config.second)) {
 			this.addSeconds(config.second - this.getSeconds());
 		}
-		
+
 		if ($D.validateMinute(config.minute)) {
 			this.addMinutes(config.minute - this.getMinutes());
 		}
-		
+
 		if ($D.validateHour(config.hour)) {
 			this.addHours(config.hour - this.getHours());
 		}
-		
+
 		if ($D.validateMonth(config.month)) {
 			this.addMonths(config.month - this.getMonth());
 		}
@@ -1261,16 +1261,16 @@ Date.CultureStrings.lang = "en-US";
 		if ($D.validateYear(config.year)) {
 			this.addYears(config.year - this.getFullYear());
 		}
-		
+
 		/* day has to go last because you can't validate the day without first knowing the month */
 		if ($D.validateDay(config.day, this.getFullYear(), this.getMonth())) {
 			this.addDays(config.day - this.getDate());
 		}
-		
+
 		if (config.timezone) {
 			this.setTimezone(config.timezone);
 		}
-		
+
 		if (config.timezoneOffset) {
 			this.setTimezoneOffset(config.timezoneOffset);
 		}
@@ -1278,7 +1278,7 @@ Date.CultureStrings.lang = "en-US";
 		if (config.week && $D.validateWeek(config.week)) {
 			this.setWeek(config.week);
 		}
-		
+
 		return this;
 	};
 
@@ -1358,7 +1358,7 @@ Date.CultureStrings.lang = "en-US";
 	};
 	/**
 	 * Get the Ordinate of the current day ("th", "st", "rd").
-	 * @return {String} 
+	 * @return {String}
 	 */
 	$P.getOrdinate = function () {
 		var num = this.getDate();
@@ -1396,7 +1396,7 @@ Date.CultureStrings.lang = "en-US";
 	$P.hasDaylightSavingTime = function () {
 		return (Date.today().set({month: 0, day: 1}).getTimezoneOffset() !== Date.today().set({month: 6, day: 1}).getTimezoneOffset());
 	};
-	
+
 	/**
 	 * Indicates whether this Date instance is within the Daylight Saving Time range for the current time zone.
 	 * @return {Boolean} true|false
@@ -1438,21 +1438,21 @@ Date.CultureStrings.lang = "en-US";
 	------  ---------------------------------------------------------------------------  -----------------------
 	 s      The seconds of the minute between 0-59.                                      "0" to "59"
 	 ss     The seconds of the minute with leading zero if required.                     "00" to "59"
-	 
+
 	 m      The minute of the hour between 0-59.                                         "0"  or "59"
 	 mm     The minute of the hour with leading zero if required.                        "00" or "59"
-	 
+
 	 h      The hour of the day between 1-12.                                            "1"  to "12"
 	 hh     The hour of the day with leading zero if required.                           "01" to "12"
-	 
+
 	 H      The hour of the day between 0-23.                                            "0"  to "23"
 	 HH     The hour of the day with leading zero if required.                           "00" to "23"
-	 
+
 	 d      The day of the month between 1 and 31.                                       "1"  to "31"
 	 dd     The day of the month with leading zero if required.                          "01" to "31"
-	 ddd    Abbreviated day name. Date.CultureInfo.abbreviatedDayNames.                                "Mon" to "Sun" 
+	 ddd    Abbreviated day name. Date.CultureInfo.abbreviatedDayNames.                                "Mon" to "Sun"
 	 dddd   The full day name. Date.CultureInfo.dayNames.                                              "Monday" to "Sunday"
-	 
+
 	 M      The month of the year between 1-12.                                          "1" to "12"
 	 MM     The month of the year with leading zero if required.                         "01" to "12"
 	 MMM    Abbreviated month name. Date.CultureInfo.abbreviatedMonthNames.                            "Jan" to "Dec"
@@ -1460,12 +1460,12 @@ Date.CultureStrings.lang = "en-US";
 
 	 yy     The year as a two-digit number.                                              "99" or "08"
 	 yyyy   The full four digit year.                                                    "1999" or "2008"
-	 
+
 	 t      Displays the first character of the A.M./P.M. designator.                    "A" or "P"
 			Date.CultureInfo.amDesignator or Date.CultureInfo.pmDesignator
 	 tt     Displays the A.M./P.M. designator.                                           "AM" or "PM"
 			Date.CultureInfo.amDesignator or Date.CultureInfo.pmDesignator
-	 
+
 	 S      The ordinal suffix ("st, "nd", "rd" or "th") of the current day.            "st, "nd", "rd" or "th"
 
 || *Format* || *Description* || *Example* ||
@@ -1479,7 +1479,7 @@ Date.CultureStrings.lang = "en-US";
 || T      || The CultureInfo longTime Format Pattern                                      || "h:mm:ss tt" ||
 || u      || The CultureInfo universalSortableDateTime Format Pattern                     || "yyyy-MM-dd HH:mm:ssZ" ||
 || y      || The CultureInfo yearMonth Format Pattern                                     || "MMMM, yyyy" ||
-	 
+
 
 	STANDARD DATE AND TIME FORMAT STRINGS
 	Format  Description                                                                  Example ("en-US")
@@ -1498,7 +1498,7 @@ Date.CultureStrings.lang = "en-US";
 	 * @param {String}   A format string consisting of one or more format spcifiers [Optional].
 	 * @return {String}  A string representation of the current Date object.
 	 */
-	
+
 	var ord = function (n) {
 		switch (n * 1) {
 		case 1:
@@ -1517,9 +1517,9 @@ Date.CultureStrings.lang = "en-US";
 	};
 	$P.toString = function (format, ignoreStandards) {
 		var x = this;
-		
+
 		// Standard Date and Time Format Strings. Formats pulled from CultureInfo file and
-		// may vary by culture. 
+		// may vary by culture.
 		if (!ignoreStandards && format && format.length === 1) {
 			var y, c = Date.CultureInfo.formatPatterns;
 			x.t = x.toString;
@@ -1607,7 +1607,7 @@ Date.CultureStrings.lang = "en-US";
 				return "Q" + x.getQuarter();
 			case "q":
 				return String(x.getQuarter());
-			default: 
+			default:
 				return m;
 			}
 		}).replace(/\[|\]/g, "") : this._toString();
@@ -1683,7 +1683,7 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return date;
 	};
-	
+
 	$P.ISO = {
 		regex : /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-3])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-4])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?\s?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$/,
 		parse : function (s) {
@@ -1775,7 +1775,7 @@ Date.CultureStrings.lang = "en-US";
 			s = s.replace($R.nov, "November");
 			s = s.replace($R.dec, "December");
 
-			
+
 			s = s.replace($R.tomorrow, Date.today().addDays(1).toString("d"));
 			s = s.replace($R.yesterday, Date.today().addDays(-1).toString("d"));
 			// s = s.replace(new RegExp($R.today.source + "\\b", "i"), Date.today().toString("d"));
@@ -1854,7 +1854,7 @@ Date.CultureStrings.lang = "en-US";
 
 		//
 		// Atomic Operators
-		// 
+		//
 
 		until: function (p) {
 			return function (s) {
@@ -1991,7 +1991,7 @@ Date.CultureStrings.lang = "en-US";
 		sequence: function (px, d, c) {
 			d = d || _.rtoken(/^\s*/);
 			c = c || null;
-			
+
 			if (px.length == 1) {
 				return px[0];
 			}
@@ -2076,7 +2076,7 @@ Date.CultureStrings.lang = "en-US";
 					// since we are matching against a set of elements, the first
 					// thing to do is to add r[0] to matched elements
 					rx = [[r[0]], r[1]];
-					// if we matched and there is still input to parse and 
+					// if we matched and there is still input to parse and
 					// we don't already know this is the last element,
 					// we're going to next check for the delimiter ...
 					// if there's none, or if there's no input left to parse
@@ -2102,7 +2102,7 @@ Date.CultureStrings.lang = "en-US";
 					// so, if this isn't the last element, we're going to see if
 					// we can get any more matches from the remaining (unmatched)
 					// elements ...
-					if (!last) {	
+					if (!last) {
 						// build a list of the remaining rules we can match against,
 						// i.e., all but the one we just matched against
 						var qx = [];
@@ -2202,12 +2202,12 @@ Date.CultureStrings.lang = "en-US";
 			};
 		}
 	};
-	
+
 
 	// Generator Operators And Vector Operators
 
 	// Generators are operators that have a signature of F(R) => R,
-	// taking a given rule and returning another rule, such as 
+	// taking a given rule and returning another rule, such as
 	// ignore, which parses a given rule and throws away the result.
 
 	// Vector operators are those that have a signature of F(R1,R2,...) => R,
@@ -2225,7 +2225,7 @@ Date.CultureStrings.lang = "en-US";
 	// This also turns generators into vector operators, which allows
 	// constructs like:
 	// not(cache(foo, bar))
-	
+
 	var _generator = function (op) {
 		function gen() {
 			var args = null, rx = [], px, i;
@@ -2249,9 +2249,9 @@ Date.CultureStrings.lang = "en-US";
 
 		return gen;
 	};
-	
+
 	var gx = "optional not ignore cache".split(/\s/);
-	
+
 	for (var i = 0 ; i < gx.length ; i++) {
 		_[gx[i]] = _generator(_[gx[i]]);
 	}
@@ -2265,13 +2265,13 @@ Date.CultureStrings.lang = "en-US";
 			}
 		};
 	};
-	
+
 	var vx = "each any all".split(/\s/);
-	
+
 	for (var j = 0 ; j < vx.length ; j++) {
 		_[vx[j]] = _vector(_[vx[j]]);
 	}
-	
+
 }());
 
 (function () {
@@ -2290,9 +2290,9 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return rx;
 	};
-	
+
 	$D.Grammar = {};
-	
+
 	$D.Translator = {
 		hour: function (s) {
 			return function () {
@@ -2383,7 +2383,7 @@ Date.CultureStrings.lang = "en-US";
 					x[i].call(this);
 				}
 			}
-			
+
 			var now = new Date();
 			if ((this.hour || this.minute) && (!this.month && !this.year && !this.day)) {
 				this.day = now.getDate();
@@ -2392,19 +2392,19 @@ Date.CultureStrings.lang = "en-US";
 			if (!this.year) {
 				this.year = now.getFullYear();
 			}
-			
+
 			if (!this.month && this.month !== 0) {
 				this.month = now.getMonth();
 			}
-			
+
 			if (!this.day) {
 				this.day = 1;
 			}
-			
+
 			if (!this.hour) {
 				this.hour = 0;
 			}
-			
+
 			if (!this.minute) {
 				this.minute = 0;
 			}
@@ -2425,9 +2425,9 @@ Date.CultureStrings.lang = "en-US";
 					this.hour = this.hour + 12;
 				} else if (this.meridian == "a" && this.hour == 12) {
 					this.hour = 0;
-				} 
+				}
 			}
-			
+
 			if (this.day > $D.getDaysInMonth(this.year, this.month)) {
 				throw new RangeError(this.day + " is not a valid value for days.");
 			}
@@ -2441,7 +2441,7 @@ Date.CultureStrings.lang = "en-US";
 			} else if (this.timezoneOffset) {
 				r.set({ timezoneOffset: this.timezoneOffset });
 			}
-			
+
 			return r;
 		},
 		finish: function (x) {
@@ -2464,9 +2464,9 @@ Date.CultureStrings.lang = "en-US";
 			} else if (this.now) {
 				today = new Date();
 			}
-			
+
 			var expression = !!(this.days && this.days !== null || this.orient || this.operator);
-			
+
 			var gap, mod, orient;
 			orient = ((this.orient == "past" || this.operator == "subtract") ? -1 : 1);
 
@@ -2559,7 +2559,7 @@ Date.CultureStrings.lang = "en-US";
 					this.hour = this.hour + 12;
 				} else if (this.meridian == "a" && this.hour == 12) {
 					this.hour = 0;
-				} 
+				}
 			}
 
 			if (this.weekday && this.unit !== "week" && !this.day && !this.days) {
@@ -2569,7 +2569,7 @@ Date.CultureStrings.lang = "en-US";
 					this.month = temp.getMonth();
 				}
 			}
-			
+
 			if ((this.month || this.month === 0) && !this.day) {
 				this.day = 1;
 			}
@@ -2590,7 +2590,7 @@ Date.CultureStrings.lang = "en-US";
 			if (expression && this.timezone && this.day && this.days) {
 				this.day = this.days;
 			}
-			
+
 			return (expression) ? today.add(this) : today.set(this);
 		}
 	};
@@ -2601,7 +2601,7 @@ Date.CultureStrings.lang = "en-US";
 	g.timePartDelimiter = _.stoken(":");
 	g.whiteSpace = _.rtoken(/^\s*/);
 	g.generalDelimiter = _.rtoken(/^(([\s\,]|at|@|on)+)/);
-  
+
 	var _C = {};
 	g.ctoken = function (keys) {
 		var fn = _C[keys];
@@ -2630,17 +2630,17 @@ Date.CultureStrings.lang = "en-US";
 	g.ss = _.cache(_.process(_.rtoken(/^[0-5][0-9]/), t.second));
 	g["ss.s"] = _.cache(_.process(_.rtoken(/^[0-5][0-9]\.[0-9]{1,3}/), t.secondAndMillisecond));
 	g.hms = _.cache(_.sequence([g.H, g.m, g.s], g.timePartDelimiter));
-  
+
 	// _.min(1, _.set([ g.H, g.m, g.s ], g._t));
 	g.t = _.cache(_.process(g.ctoken2("shortMeridian"), t.meridian));
 	g.tt = _.cache(_.process(g.ctoken2("longMeridian"), t.meridian));
 	g.z = _.cache(_.process(_.rtoken(/^((\+|\-)\s*\d\d\d\d)|((\+|\-)\d\d\:?\d\d)/), t.timezone));
 	g.zz = _.cache(_.process(_.rtoken(/^((\+|\-)\s*\d\d\d\d)|((\+|\-)\d\d\:?\d\d)/), t.timezone));
-	
+
 	g.zzz = _.cache(_.process(g.ctoken2("timezone"), t.timezone));
 	g.timeSuffix = _.each(_.ignore(g.whiteSpace), _.set([ g.tt, g.zzz ]));
 	g.time = _.each(_.optional(_.ignore(_.stoken("T"))), g.hms, g.timeSuffix);
-		  
+
 	// days, months, years
 	g.d = _.cache(_.process(_.each(_.rtoken(/^([0-2]\d|3[0-1]|\d)/),
 		_.optional(g.ctoken2("ordinalSuffix"))), t.day));
@@ -2661,12 +2661,12 @@ Date.CultureStrings.lang = "en-US";
 	g.yy = _.cache(_.process(_.rtoken(/^(\d\d)/), t.year));
 	g.yyy = _.cache(_.process(_.rtoken(/^(\d\d?\d?\d?)/), t.year));
 	g.yyyy = _.cache(_.process(_.rtoken(/^(\d\d\d\d)/), t.year));
-	
+
 	// rolling these up into general purpose rules
 	_fn = function () {
 		return _.each(_.any.apply(null, arguments), _.not(g.ctoken2("timeContext")));
 	};
-	
+
 	g.day = _fn(g.d, g.dd);
 	g.month = _fn(g.M, g.MMM);
 	g.year = _fn(g.yyyy, g.yy);
@@ -2714,7 +2714,7 @@ Date.CultureStrings.lang = "en-US";
 		return ((g[Date.CultureInfo.dateElementOrder] || g.mdy).call(this, s));
 	};
 
-	// parsing date format specifiers - ex: "h:m:s tt" 
+	// parsing date format specifiers - ex: "h:m:s tt"
 	// this little guy will generate a custom parser based
 	// on the format string, ex: g.format("h:m:s tt")
 	g.format = _.process(_.many(
@@ -2731,7 +2731,7 @@ Date.CultureStrings.lang = "en-US";
 	}
 	),
 	// translate separator tokens into token rules
-	_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators 
+	_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators
 		function (s) {
 			return _.ignore(_.stoken(s));
 		}
@@ -2744,9 +2744,9 @@ Date.CultureStrings.lang = "en-US";
 	);
 
 	var _F = {
-		//"M/d/yyyy": function (s) { 
+		//"M/d/yyyy": function (s) {
 		//	var m = s.match(/^([0-2]\d|3[0-1]|\d)\/(1[0-2]|0\d|\d)\/(\d\d\d\d)/);
-		//	if (m!=null) { 
+		//	if (m!=null) {
 		//		var r =  [ t.month.call(this,m[1]), t.day.call(this,m[2]), t.year.call(this,m[3]) ];
 		//		r = t.finishExact.call(this,r);
 		//		return [ r, "" ];
@@ -2772,7 +2772,7 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return rx;
 	};
-  
+
 	g.formats = function (fx) {
 		if (fx instanceof Array) {
 			var rx = [];
@@ -2812,8 +2812,8 @@ Date.CultureStrings.lang = "en-US";
 	// starting rule for general purpose grammar
 	g._start = _.process(_.set([ g.date, g.time, g.expression ],
 		g.generalDelimiter, g.whiteSpace), t.finish);
-	
-	// real starting rule: tries selected formats first, 
+
+	// real starting rule: tries selected formats first,
 	// then general purpose rule
 	g.start = function (s) {
 		try {
@@ -2827,7 +2827,7 @@ Date.CultureStrings.lang = "en-US";
 
 	/**
 	 * @desc Converts the specified string value into its JavaScript Date equivalent using CultureInfo specific format information.
-	 * 
+	 *
 	 * Example
 	<pre><code>
 	///////////
@@ -2905,7 +2905,7 @@ Date.CultureStrings.lang = "en-US";
 	var d1 = Date.parse("today - 1 year");
 
 	// Today - 1 year
-	var d1 = Date.parse("t-1y"); 
+	var d1 = Date.parse("t-1y");
 
 
 	/////////////////////////////
@@ -2950,7 +2950,7 @@ Date.CultureStrings.lang = "en-US";
 				return null;
 			}
 			d = ((r[1].length === 0) ? r[0] : null);
-			
+
 			if (d !== null) {
 				return d;
 			} else {
@@ -2987,11 +2987,11 @@ Date.CultureStrings.lang = "en-US";
 			return null;
 		};
 	};
-	
+
 	/**
 	 * Converts the specified string value into its JavaScript Date equivalent using the specified format {String} or formats {Array} and the CultureInfo specific format information.
 	 * The format of the string value must match one of the supplied formats exactly.
-	 * 
+	 *
 	 * Example
 	<pre><code>
 	// 15-Oct-2004
@@ -3019,7 +3019,7 @@ Date.CultureStrings.lang = "en-US";
 /*************************************************************
  * SugarPak - Domain Specific Language -  Syntactical Sugar  *
  *************************************************************/
- 
+
 (function () {
 	var $D = Date, $P = $D.prototype, $N = Number.prototype;
 
@@ -3034,14 +3034,14 @@ Date.CultureStrings.lang = "en-US";
 
 	// private
 	$P._same = false;
-	
+
 	// private
 	$P._isSecond = false;
 
 	// private
 	$N._dateElement = "days";
 
-	/** 
+	/**
 	 * Moves the date to the next instance of a date as specified by the subsequent date element function (eg. .day(), .month()), month name function (eg. .january(), .jan()) or day name function (eg. .friday(), fri()).
 	 * Example
 	<pre><code>
@@ -3051,7 +3051,7 @@ Date.CultureStrings.lang = "en-US";
 	Date.today().next().mar();
 	Date.today().next().week();
 	</code></pre>
-	 * 
+	 *
 	 * @return {Date}    date
 	 */
 	$P.next = function () {
@@ -3060,7 +3060,7 @@ Date.CultureStrings.lang = "en-US";
 		return this;
 	};
 
-	/** 
+	/**
 	 * Creates a new Date (Date.today()) and moves the date to the next instance of the date as specified by the subsequent date element function (eg. .day(), .month()), month name function (eg. .january(), .jan()) or day name function (eg. .friday(), fri()).
 	 * Example
 	<pre><code>
@@ -3070,14 +3070,14 @@ Date.CultureStrings.lang = "en-US";
 	Date.next().mar();
 	Date.next().week();
 	</code></pre>
-	 * 
+	 *
 	 * @return {Date}    date
 	 */
 	$D.next = function () {
 		return $D.today().next();
 	};
 
-	/** 
+	/**
 	 * Moves the date to the previous instance of a date as specified by the subsequent date element function (eg. .day(), .month()), month name function (eg. .january(), .jan()) or day name function (eg. .friday(), fri()).
 	 * Example
 	<pre><code>
@@ -3087,7 +3087,7 @@ Date.CultureStrings.lang = "en-US";
 	Date.today().last().mar();
 	Date.today().last().week();
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    date
 	 */
 	$P.last = $P.prev = $P.previous = function () {
@@ -3096,7 +3096,7 @@ Date.CultureStrings.lang = "en-US";
 		return this;
 	};
 
-	/** 
+	/**
 	 * Creates a new Date (Date.today()) and moves the date to the previous instance of the date as specified by the subsequent date element function (eg. .day(), .month()), month name function (eg. .january(), .jan()) or day name function (eg. .friday(), fri()).
 	 * Example
 	<pre><code>
@@ -3106,14 +3106,14 @@ Date.CultureStrings.lang = "en-US";
 	Date.prev().mar();
 	Date.last().week();
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    date
 	 */
 	$D.last = $D.prev = $D.previous = function () {
 		return $D.today().last();
 	};
 
-	/** 
+	/**
 	 * Performs a equality check when followed by either a month name, day name or .weekday() function.
 	 * Example
 	<pre><code>
@@ -3122,7 +3122,7 @@ Date.CultureStrings.lang = "en-US";
 	Date.today().is().march();
 	Date.today().is().mar();
 	</code></pre>
-	 *  
+	 *
 	 * @return {Boolean}    true|false
 	 */
 	$P.is = function () {
@@ -3130,11 +3130,11 @@ Date.CultureStrings.lang = "en-US";
 		return this;
 	};
 
-	/** 
+	/**
 	 * Determines if two date objects occur on/in exactly the same instance of the subsequent date part function.
 	 * The function .same() must be followed by a date part function (example: .day(), .month(), .year(), etc).
 	 *
-	 * An optional Date can be passed in the date part function. If now date is passed as a parameter, 'Now' is used. 
+	 * An optional Date can be passed in the date part function. If now date is passed as a parameter, 'Now' is used.
 	 *
 	 * The following example demonstrates how to determine if two dates fall on the exact same day.
 	 *
@@ -3145,24 +3145,24 @@ Date.CultureStrings.lang = "en-US";
 
 	// Do they occur on the same day?
 	d1.same().day(d2); // true
-	
+
 	 // Do they occur on the same hour?
 	d1.same().hour(d2); // false, unless d2 hour is '00' (midnight).
-	
+
 	// What if it's the same day, but one year apart?
 	var nextYear = Date.today().add(1).year();
 
-	d1.same().day(nextYear); // false, because the dates must occur on the exact same day. 
+	d1.same().day(nextYear); // false, because the dates must occur on the exact same day.
 	</code></pre>
 	 *
-	 * Scenario: Determine if a given date occurs during some week period 2 months from now. 
+	 * Scenario: Determine if a given date occurs during some week period 2 months from now.
 	 *
 	 * Example
 	<pre><code>
 	var future = Date.today().add(2).months();
 	return someDate.same().week(future); // true|false;
 	</code></pre>
-	 *  
+	 *
 	 * @return {Boolean}    true|false
 	 */
 	$P.same = function () {
@@ -3171,7 +3171,7 @@ Date.CultureStrings.lang = "en-US";
 		return this;
 	};
 
-	/** 
+	/**
 	 * Determines if the current date/time occurs during Today. Must be preceded by the .is() function.
 	 * Example
 	<pre><code>
@@ -3180,20 +3180,20 @@ Date.CultureStrings.lang = "en-US";
 	Date.today().is().today();// true
 	Date.today().add(-1).day().is().today(); // false
 	</code></pre>
-	 *  
+	 *
 	 * @return {Boolean}    true|false
 	 */
 	$P.today = function () {
 		return this.same().day();
 	};
 
-	/** 
+	/**
 	 * Determines if the current date is a weekday. This function must be preceded by the .is() function.
 	 * Example
 	<pre><code>
 	Date.today().is().weekday(); // true|false
 	</code></pre>
-	 *  
+	 *
 	 * @return {Boolean}    true|false
 	 */
 	$P.weekday = function () {
@@ -3209,13 +3209,13 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return false;
 	};
-	/** 
+	/**
 	 * Determines if the current date is on the weekend. This function must be preceded by the .is() function.
 	 * Example
 	<pre><code>
 	Date.today().is().weekend(); // true|false
 	</code></pre>
-	 *  
+	 *
 	 * @return {Boolean}    true|false
 	 */
 	$P.weekend = function () {
@@ -3226,7 +3226,7 @@ Date.CultureStrings.lang = "en-US";
 		return false;
 	};
 
-	/** 
+	/**
 	 * Sets the Time of the current Date instance. A string "6:15 pm" or config object {hour:18, minute:15} are accepted.
 	 * Example
 	<pre><code>
@@ -3236,14 +3236,14 @@ Date.CultureStrings.lang = "en-US";
 	// Set time to 6:15pm with a config object
 	Date.today().at({hour:18, minute:15});
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    date
 	 */
 	$P.at = function (time) {
 		return (typeof time === "string") ? $D.parse(this.toString("d") + " " + time) : this.set(time);
 	};
-		
-	/** 
+
+	/**
 	 * Creates a new Date() and adds this (Number) to the date based on the preceding date element function (eg. second|minute|hour|day|month|year).
 	 * Example
 	<pre><code>
@@ -3251,11 +3251,11 @@ Date.CultureStrings.lang = "en-US";
 	(3).days().fromNow();
 	(6).months().fromNow();
 
-	// Declared Number variables do not require parentheses. 
+	// Declared Number variables do not require parentheses.
 	var n = 6;
 	n.months().fromNow();
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    A new Date instance
 	 */
 	$N.fromNow = $N.after = function (date) {
@@ -3264,7 +3264,7 @@ Date.CultureStrings.lang = "en-US";
 		return ((!date) ? new Date() : date.clone()).add(c);
 	};
 
-	/** 
+	/**
 	 * Creates a new Date() and subtract this (Number) from the date based on the preceding date element function (eg. second|minute|hour|day|month|year).
 	 * Example
 	<pre><code>
@@ -3272,11 +3272,11 @@ Date.CultureStrings.lang = "en-US";
 	(3).days().ago();
 	(6).months().ago();
 
-	// Declared Number variables do not require parentheses. 
+	// Declared Number variables do not require parentheses.
 	var n = 6;
 	n.months().ago();
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    A new Date instance
 	 */
 	$N.ago = $N.before = function (date) {
@@ -3295,20 +3295,20 @@ Date.CultureStrings.lang = "en-US";
 		nth = ("final first second third fourth fifth").split(/\s/),
 		de;
 
-   /** 
+   /**
 	 * Returns an object literal of all the date parts.
 	 * Example
 	<pre><code>
 	var o = new Date().toObject();
-	
+
 	// { year: 2008, month: 4, week: 20, day: 13, hour: 18, minute: 9, second: 32, millisecond: 812 }
-	
+
 	// The object properties can be referenced directly from the object.
-	
+
 	alert(o.day);  // alerts "13"
 	alert(o.year); // alerts "2008"
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    An object literal representing the original date object.
 	 */
 	$P.toObject = function () {
@@ -3320,28 +3320,28 @@ Date.CultureStrings.lang = "en-US";
 		}
 		return o;
 	};
-   
-   /** 
-	 * Returns a date created from an object literal. Ignores the .week property if set in the config. 
+
+   /**
+	 * Returns a date created from an object literal. Ignores the .week property if set in the config.
 	 * Example
 	<pre><code>
 	var o = new Date().toObject();
-	
-	return Date.fromObject(o); // will return the same date. 
+
+	return Date.fromObject(o); // will return the same date.
 
 	var o2 = {month: 1, day: 20, hour: 18}; // birthday party!
 	Date.fromObject(o2);
 	</code></pre>
-	 *  
+	 *
 	 * @return {Date}    An object literal representing the original date object.
 	 */
 	$D.fromObject = function(config) {
 		config.week = null;
 		return Date.today().set(config);
 	};
-		
+
 	// Create day name functions and abbreviated day name functions (eg. monday(), friday(), fri()).
-	
+
 	var df = function (n) {
 		return function () {
 			if (this._is) {
@@ -3350,18 +3350,18 @@ Date.CultureStrings.lang = "en-US";
 			}
 			if (this._move) { this._move = null; }
 			if (this._nth !== null) {
-				// If the .second() function was called earlier, remove the _orient 
+				// If the .second() function was called earlier, remove the _orient
 				// from the date, and then continue.
 				// This is required because 'second' can be used in two different context.
-				// 
+				//
 				// Example
 				//
 				//   Date.today().add(1).second();
 				//   Date.march().second().monday();
-				// 
+				//
 				// Things get crazy with the following...
 				//   Date.march().add(1).second().second().monday(); // but it works!!
-				//  
+				//
 				if (this._isSecond) {
 					this.addSeconds(this._orient * -1);
 				}
@@ -3380,7 +3380,7 @@ Date.CultureStrings.lang = "en-US";
 			return this.moveToDayOfWeek(n, this._orient);
 		};
 	};
-	
+
 	var sdf = function (n) {
 		return function () {
 			var t = $D.today(), shift = n - t.getDay();
@@ -3390,7 +3390,7 @@ Date.CultureStrings.lang = "en-US";
 			return t.addDays(shift);
 		};
 	};
-	
+
 	for (var i = 0; i < dx.length; i++) {
 		// Create constant static Day Name variables. Example: Date.MONDAY or Date.MON
 		$D[dx[i].toUpperCase()] = $D[dx[i].toUpperCase().substring(0, 3)] = i;
@@ -3401,7 +3401,7 @@ Date.CultureStrings.lang = "en-US";
 		// Create Day Name instance functions. Example: Date.today().next().monday()
 		$P[dx[i]] = $P[dx[i].substring(0, 3)] = df(i);
 	}
-	
+
 	// Create month name functions and abbreviated month name functions (eg. january(), march(), mar()).
 	var month_instance_functions = function (n) {
 		return function () {
@@ -3412,13 +3412,13 @@ Date.CultureStrings.lang = "en-US";
 			return this.moveToMonth(n, this._orient);
 		};
 	};
-	
+
 	var month_static_functions = function (n) {
 		return function () {
 			return $D.today().set({ month: n, day: 1 });
 		};
 	};
-	
+
 	for (var j = 0; j < mx.length; j++) {
 		// Create constant static Month Name variables. Example: Date.MARCH or Date.MAR
 		$D[mx[j].toUpperCase()] = $D[mx[j].toUpperCase().substring(0, 3)] = j;
@@ -3429,11 +3429,11 @@ Date.CultureStrings.lang = "en-US";
 		// Create Month Name instance functions. Example: Date.today().next().march()
 		$P[mx[j]] = $P[mx[j].substring(0, 3)] = month_instance_functions(j);
 	}
-	
+
 	// Create date element functions and plural date element functions used with Date (eg. day(), days(), months()).
 	var ef = function (j) {
 		return function () {
-			// if the .second() function was called earlier, the _orient 
+			// if the .second() function was called earlier, the _orient
 			// has alread been added. Just return this and reset _isSecond.
 			if (this._isSecond) {
 				this._isSecond = false;
@@ -3449,7 +3449,7 @@ Date.CultureStrings.lang = "en-US";
 
 				// the substr trick with -1 doesn't work in IE8 or less
 				k = (k[k.length-1] === "s") ? k.substring(0,k.length-1) : k;
-					
+
 				for (var m = (px.length - 1); m > -1; m--) {
 					v = px[m].toLowerCase();
 					if (o1[v] !== o2[v]) {
@@ -3461,7 +3461,7 @@ Date.CultureStrings.lang = "en-US";
 				}
 				return true;
 			}
-			
+
 			if (j.substring(j.length - 1) !== "s") {
 				j += "s";
 			}
@@ -3469,28 +3469,28 @@ Date.CultureStrings.lang = "en-US";
 			return this["add" + j](this._orient);
 		};
 	};
-	
-	
+
+
 	var nf = function (n) {
 		return function () {
 			this._dateElement = n;
 			return this;
 		};
 	};
-   
+
 	for (var k = 0; k < px.length; k++) {
 		de = px[k].toLowerCase();
 		if(de !== "weekday") {
 			// Create date element functions and plural date element functions used with Date (eg. day(), days(), months()).
 			$P[de] = $P[de + "s"] = ef(px[k]);
-			
+
 			// Create date element functions and plural date element functions used with Number (eg. day(), days(), months()).
 			$N[de] = $N[de + "s"] = nf(de + "s");
 		}
 	}
-	
+
 	$P._ss = ef("Second");
-	
+
 	var nthfn = function (n) {
 		return function (dayOfWeek) {
 			if (this._same) {
@@ -3527,7 +3527,7 @@ Date.CultureStrings.lang = "en-US";
 			return ("000" + s).slice(l * -1);
 		};
 	/**
-	 * Converts a PHP format string to Java/.NET format string. 
+	 * Converts a PHP format string to Java/.NET format string.
 	 * A PHP format string can be used with .$format or .format.
 	 * A Java/.NET format string can be used with .toString().
 	 * The .parseExact function will only accept a Java/.NET format string
@@ -3555,23 +3555,23 @@ Date.CultureStrings.lang = "en-US";
 	};
 	/**
 	 * Format a local Unix timestamp according to locale settings
-	 * 
+	 *
 	 * Example
 	 <pre>
 	 Date.strftime("%m/%d/%y", new Date());       // "04/13/08"
 	 Date.strftime("c", "2008-04-13T17:52:03Z");  // "04/13/08"
 	 </pre>
 	 * @param {String}   A format string consisting of one or more format spcifiers [Optional].
-	 * @param {Number}   The number representing the number of seconds that have elapsed since January 1, 1970 (local time). 
+	 * @param {Number}   The number representing the number of seconds that have elapsed since January 1, 1970 (local time).
 	 * @return {String}  A string representation of the current Date object.
 	 */
 	$D.strftime = function (format, time) {
 		return new Date(time * 1000).$format(format);
 	};
 	/**
-	 * Parse any textual datetime description into a Unix timestamp. 
+	 * Parse any textual datetime description into a Unix timestamp.
 	 * A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).
-	 * 
+	 *
 	 * Example
 	 <pre>
 	 Date.strtotime("04/13/08");              // 1208044800
@@ -3589,9 +3589,9 @@ Date.CultureStrings.lang = "en-US";
 	/**
 	 * Converts the value of the current Date object to its equivalent string representation using a PHP/Unix style of date format specifiers.
 	 *
-	 * The following descriptions are from http://www.php.net/strftime and http://www.php.net/manual/en/function.date.php. 
+	 * The following descriptions are from http://www.php.net/strftime and http://www.php.net/manual/en/function.date.php.
 	 * Copyright � 2001-2008 The PHP Group
-	 * 
+	 *
 	 * Format Specifiers
 	 <pre>
 	Format  Description                                                                  Example
@@ -3607,7 +3607,7 @@ Date.CultureStrings.lang = "en-US";
 	 %e     day of the month as a decimal number, a single digit is preceded by a space  "1" to "31"
 	 %g     like %G, but without the century                                             "08"
 	 %G     The 4-digit year corresponding to the ISO week number (see %V).              "2008"
-			This has the same format and value as %Y, except that if the ISO week number 
+			This has the same format and value as %Y, except that if the ISO week number
 			belongs to the previous or next year, that year is used instead.
 	 %h     same as %b                                                                   "Jan" through "Dec"
 	 %H     hour as a decimal number using a 24-hour clock                               "00" to "23"
@@ -3627,9 +3627,9 @@ Date.CultureStrings.lang = "en-US";
 	 %U     week number of the current year as a decimal number, starting with the       "0" to ("52" or "53")
 			first Sunday as the first day of the first week
 	 %V     The ISO 8601:1988 week number of the current year as a decimal number,       "00" to ("52" or "53")
-			range 01 to 53, where week 1 is the first week that has at least 4 days 
-			in the current year, and with Monday as the first day of the week. 
-			(Use %G or %g for the year component that corresponds to the week number 
+			range 01 to 53, where week 1 is the first week that has at least 4 days
+			in the current year, and with Monday as the first day of the week.
+			(Use %G or %g for the year component that corresponds to the week number
 			for the specified timestamp.)
 	 %W     week number of the current year as a decimal number, starting with the       "00" to ("52" or "53")
 			first Monday as the first day of the first week
@@ -3639,7 +3639,7 @@ Date.CultureStrings.lang = "en-US";
 	 %y     year as a decimal number without a century                                   "00" "99"
 	 %Y     year as a decimal number including the century                               "2008"
 	 %Z     time zone or name or abbreviation                                            "UTC", "EST", "PST"
-	 %z     same as %Z 
+	 %z     same as %Z
 	 %%     a literal "%" character                                                      "%"
 	 d      Day of the month, 2 digits with leading zeros                                "01" to "31"
 	 D      A textual representation of a day, three letters                             "Mon" through "Sun"
@@ -3648,7 +3648,7 @@ Date.CultureStrings.lang = "en-US";
 	 N      ISO-8601 numeric representation of the day of the week (added in PHP 5.1.0)  "1" (for Monday) through "7" (for Sunday)
 	 S      English ordinal suffix for the day of the month, 2 characters                "st", "nd", "rd" or "th". Works well with j
 	 w      Numeric representation of the day of the week                                "0" (for Sunday) through "6" (for Saturday)
-	 z      The day of the year (starting from "0")                                      "0" through "365"      
+	 z      The day of the year (starting from "0")                                      "0" through "365"
 	 W      ISO-8601 week number of year, weeks starting on Monday                       "00" to ("52" or "53")
 	 F      A full textual representation of a month, such as January or March           "January" through "December"
 	 m      Numeric representation of a month, with leading zeros                        "01" through "12"
@@ -3657,7 +3657,7 @@ Date.CultureStrings.lang = "en-US";
 	 t      Number of days in the given month                                            "28" through "31"
 	 L      Whether it's a leap year                                                     "1" if it is a leap year, "0" otherwise
 	 o      ISO-8601 year number. This has the same value as Y, except that if the       "2008"
-			ISO week number (W) belongs to the previous or next year, that year 
+			ISO week number (W) belongs to the previous or next year, that year
 			is used instead.
 	 Y      A full numeric representation of a year, 4 digits                            "2008"
 	 y      A two digit representation of a year                                         "08"
@@ -3680,7 +3680,7 @@ Date.CultureStrings.lang = "en-US";
 			always negative, and for those east of UTC is always positive.
 	 c      ISO 8601 date                                                                "2004-02-12T15:19:21+00:00"
 	 r      RFC 2822 formatted date                                                      "Thu, 21 Dec 2000 16:01:07 +0200"
-	 U      Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)                   "0"     
+	 U      Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)                   "0"
 	 </pre>
 	 * @param {String}   A format string consisting of one or more format spcifiers [Optional].
 	 * @return {String}  A string representation of the current Date object.
@@ -3832,27 +3832,27 @@ Date.CultureStrings.lang = "en-US";
 		$P.format = $P.$format;
 	}
 }());
-/* 
+/*
  * TimeSpan(milliseconds);
  * TimeSpan(days, hours, minutes, seconds);
  * TimeSpan(days, hours, minutes, seconds, milliseconds);
  */
 var TimeSpan = function (days, hours, minutes, seconds, milliseconds) {
 	var attrs = "days hours minutes seconds milliseconds".split(/\s+/);
-	
+
 	var gFn = function (attr) {
 		return function () {
 			return this[attr];
 		};
 	};
-	
+
 	var sFn = function (attr) {
 		return function (val) {
 			this[attr] = val;
 			return this;
 		};
 	};
-	
+
 	for (var i = 0; i < attrs.length ; i++) {
 		var $a = attrs[i], $b = $a.slice(0, 1).toUpperCase() + $a.slice(1);
 		TimeSpan.prototype[$a] = 0;
@@ -3874,7 +3874,7 @@ var TimeSpan = function (days, hours, minutes, seconds, milliseconds) {
 	} else if (arguments.length === 1 && typeof days === "number") {
 		var orient = (days < 0) ? -1 : +1;
 		this.setMilliseconds(Math.abs(days));
-		
+
 		this.setDays(Math.floor(this.getMilliseconds() / 86400000) * orient);
 		this.setMilliseconds(this.getMilliseconds() % 86400000);
 
@@ -3896,7 +3896,7 @@ var TimeSpan = function (days, hours, minutes, seconds, milliseconds) {
 				(this.getMinutes() * 60000) +
 				(this.getSeconds() * 1000);
 	};
-	
+
 	this.compareTo = function (time) {
 		var t1 = new Date(1970, 1, 1, this.getHours(), this.getMinutes(), this.getSeconds()), t2;
 		if (time === null) {
@@ -3956,13 +3956,13 @@ var TimeSpan = function (days, hours, minutes, seconds, milliseconds) {
 				return this.getHours() + ":" + this.p(this.getMinutes()) + ":" + this.p(this.getSeconds());
 			}
 		};
-		
+
 		this.p = function (s) {
 			return (s.toString().length < 2) ? "0" + s : s;
 		};
-		
+
 		var me = this;
-		
+
 		return format ? format.replace(/dd?|HH?|hh?|mm?|ss?|tt?/g,
 		function (format) {
 			switch (format) {
@@ -3998,40 +3998,40 @@ var TimeSpan = function (days, hours, minutes, seconds, milliseconds) {
 };
 
 /**
- * Gets the time of day for this date instances. 
+ * Gets the time of day for this date instances.
  * @return {TimeSpan} TimeSpan
  */
 Date.prototype.getTimeOfDay = function () {
 	return new TimeSpan(0, this.getHours(), this.getMinutes(), this.getSeconds(), this.getMilliseconds());
 };
 
-/* 
+/*
  * TimePeriod(startDate, endDate);
  * TimePeriod(years, months, days, hours, minutes, seconds, milliseconds);
  */
 var TimePeriod = function (years, months, days, hours, minutes, seconds, milliseconds) {
 	var attrs = "years months days hours minutes seconds milliseconds".split(/\s+/);
-	
+
 	var gFn = function (attr) {
 		return function () {
 			return this[attr];
 		};
 	};
-	
+
 	var sFn = function (attr) {
 		return function (val) {
 			this[attr] = val;
 			return this;
 		};
 	};
-	
+
 	for (var i = 0; i < attrs.length ; i++) {
 		var $a = attrs[i], $b = $a.slice(0, 1).toUpperCase() + $a.slice(1);
 		TimePeriod.prototype[$a] = 0;
 		TimePeriod.prototype["get" + $b] = gFn($a);
 		TimePeriod.prototype["set" + $b] = sFn($a);
 	}
-	
+
 	if (arguments.length === 7) {
 		this.years = years;
 		this.months = months;
@@ -4042,16 +4042,16 @@ var TimePeriod = function (years, months, days, hours, minutes, seconds, millise
 		this.setMilliseconds(milliseconds);
 	} else if (arguments.length === 2 && arguments[0] instanceof Date && arguments[1] instanceof Date) {
 		// startDate and endDate as arguments
-	
+
 		var d1 = years.clone();
 		var d2 = months.clone();
-	
+
 		var temp = d1.clone();
 		var orient = (d1 > d2) ? -1 : +1;
-		
+
 		this.years = d2.getFullYear() - d1.getFullYear();
 		temp.addYears(this.years);
-		
+
 		if (orient === +1) {
 			if (temp > d2) {
 				if (this.years !== 0) {
@@ -4065,7 +4065,7 @@ var TimePeriod = function (years, months, days, hours, minutes, seconds, millise
 				}
 			}
 		}
-		
+
 		d1.addYears(this.years);
 
 		if (orient === +1) {
@@ -4080,7 +4080,7 @@ var TimePeriod = function (years, months, days, hours, minutes, seconds, millise
 				this.months--;
 			}
 		}
-		
+
 		var diff = d2 - d1;
 
 		if (diff !== 0) {

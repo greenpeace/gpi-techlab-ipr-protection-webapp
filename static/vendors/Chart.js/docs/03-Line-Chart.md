@@ -50,13 +50,13 @@ borderJoinStyle | `String` | Line joint style. See [MDN](https://developer.mozil
 pointBorderColor | `Color or Array<Color>` | The border color for points.
 pointBackgroundColor | `Color or Array<Color>` | The fill color for points
 pointBorderWidth | `Number or Array<Number>` | The width of the point border in pixels
-pointRadius | `Number or Array<Number>` | The radius of the point shape. If set to 0, nothing is rendered. 
+pointRadius | `Number or Array<Number>` | The radius of the point shape. If set to 0, nothing is rendered.
 pointHoverRadius | `Number or Array<Number>` | The radius of the point when hovered
 pointHitRadius | `Number or Array<Number>` | The pixel size of the non-displayed point that reacts to mouse events
 pointHoverBackgroundColor | `Color or Array<Color>` | Point background color when hovered
 pointHoverBorderColor | `Color or Array<Color>` | Point border color when hovered
 pointHoverBorderWidth | `Number or Array<Number>` | Border width of point when hovered
-pointStyle | `String, Array<String>, Image, Array<Image>` | The style of point. Options are 'circle', 'triangle', 'rect', 'rectRot', 'cross', 'crossRot', 'star', 'line', and 'dash'. If the option is an image, that image is drawn on the canvas using `drawImage`. 
+pointStyle | `String, Array<String>, Image, Array<Image>` | The style of point. Options are 'circle', 'triangle', 'rect', 'rectRot', 'cross', 'crossRot', 'star', 'line', and 'dash'. If the option is an image, that image is drawn on the canvas using `drawImage`.
 
 An example data object using these attributes is shown below.
 ```javascript

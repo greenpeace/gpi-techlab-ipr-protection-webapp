@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: es-AR
  * Name: Spanish (Argentina)

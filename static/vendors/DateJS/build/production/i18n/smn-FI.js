@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: smn-FI
  * Name: Sami (Inari) (Finland)

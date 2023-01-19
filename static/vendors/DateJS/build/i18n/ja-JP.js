@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ja-JP
  * Name: Japanese (Japan)

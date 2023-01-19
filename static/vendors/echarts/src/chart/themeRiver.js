@@ -5,7 +5,7 @@ define(function (require) {
 
 
     require('./themeRiver/ThemeRiverSeries');
-    
+
     require('./themeRiver/ThemeRiverView');
 
     echarts.registerLayout(require('./themeRiver/themeRiverLayout'));
@@ -14,5 +14,5 @@ define(function (require) {
 
     echarts.registerProcessor(
         'filter', zrUtil.curry(require('../processor/dataFilter'), 'themeRiver')
-    );    
+    );
 });

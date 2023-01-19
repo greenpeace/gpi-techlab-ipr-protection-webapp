@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: hr-BA
  * Name: Croatian (Bosnia and Herzegovina)
