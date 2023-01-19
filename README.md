@@ -18,6 +18,21 @@ environment variable each time you start a new terminal session, we recommend th
 
 It goes without saying, but we'll repeat it anyway: don't commit these keys to github :)!
 
+Finally, we make use of a pre-commit hook to maintain some (basic) code styling. If you're committing to the repo for the first time, please do the following:
+
+```bash
+pre-commit install
+pre-commit run --all-files
+```
+Then, the next time you commit (particularly if you're working on a new branch), you might see an error like:
+
+```bash
+Check Yaml...............................................................Passed
+Fix End of Files.........................................................Failed
+```
+
+In this case, simply `git add .; git commit -m "your message"; git push` once more to push the cleaned code.
+
 # Deploy
 Log in to gcloud as the user that will run Docker commands. To configure authentication with user credentials, run the following command:
 
