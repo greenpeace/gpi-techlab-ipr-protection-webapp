@@ -22,22 +22,33 @@ def return_total_number_in_query_stream(
     return len(query_stream) if query_stream is not None else None
 
 
+def create_previous_month(current_month: int, current_year: int) -> str:
+    if current_month == 1:
+        previous_year_month = f"{current_year - 1}_{12}"
+    else:
+        previous_year_month = f"{current_year}_{current_month - 1}"
+    return previous_year_month
+
+
 # TODO (richard) add unit tests for this fn
 def calculate_count_diff_vs_x_period_ago(
     query_stream: List[DocumentSnapshot],
 ) -> Union[str, None]:
     if query_stream is None:
         return None
-    create_time_month = [doc.create_time.month for doc in query_stream]
-    current_month = datetime.date.today().month
-    if current_month == 1:
-        previous_month = 12
-    else:
-        previous_month = current_month - 1
-    previous_month_count = create_time_month.count(previous_month)
+    create_year_month = [
+        f"{doc.create_time.year}_{doc.create_time.month}" for doc in query_stream
+    ]
+    current_year_month, current_month, current_year = (
+        f"{datetime.date.today().year}_{datetime.date.today().month}",
+        datetime.date.today().month,
+        datetime.date.today().year,
+    )
+    previous_year_month = create_previous_month(current_month, current_year)
+    previous_month_count = create_year_month.count(previous_year_month)
     if previous_month_count == 0:
         previous_month_count = 1.0
-    return f"{np.round(100 * (create_time_month.count(current_month) - previous_month_count) / previous_month_count, 1)}%"
+    return f"{np.round(100 * (create_year_month.count(current_year_month) - previous_month_count) / previous_month_count, 1)}%"
 
 
 def calculate_most_frequent_field_in_collection(
