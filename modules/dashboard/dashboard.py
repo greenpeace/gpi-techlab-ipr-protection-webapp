@@ -3,7 +3,7 @@ import collections
 from functools import partial
 from typing import Dict, Callable, Any, Union, List, Tuple, Optional
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 import datetime
 
 # Set Blueprint’s name https://realpython.com/flask-blueprint/
@@ -14,6 +14,7 @@ dashboardblue = Blueprint("dashboardblue", __name__)
 
 from modules.auth.auth import login_is_required
 from google.cloud.firestore_v1 import Query, DocumentSnapshot
+import json
 
 
 def return_total_number_in_query_stream(
@@ -55,8 +56,7 @@ def calculate_most_frequent_field_in_collection(
     query_stream: List[DocumentSnapshot], key: str
 ) -> List[Tuple[str, int]]:
     list_of_selected_keys = [doc._data.get(key) for doc in query_stream]
-    top_key_count = collections.Counter(list_of_selected_keys).most_common(5)
-    return top_key_count
+    return collections.Counter(list_of_selected_keys).most_common(5)
 
 
 def create_date_array(query_stream: List[DocumentSnapshot]) -> List[datetime.date]:
@@ -74,8 +74,19 @@ def format_date_key_for_js_rendering(date_key: datetime.date) -> Tuple[int, int,
 
 def format_data_for_flot_graph(
     query_stream: List[DocumentSnapshot],
+    min_date: Optional[str] = None,
+    max_date: Optional[str] = None,
 ) -> List[Tuple[str, Tuple[int, int, int], int]]:
     datelist = create_date_array(query_stream)
+    if min_date is None:
+        min_date = min(datelist)
+    else:
+        min_date = datetime.datetime.strptime(min_date, "%Y-%m-%d").date()
+    if max_date is None:
+        max_date = max(datelist)
+    else:
+        max_date = datetime.datetime.strptime(max_date, "%Y-%m-%d").date()
+    datelist = [date for date in datelist if max_date >= date >= min_date]
     return [
         (str(key), format_date_key_for_js_rendering(key), value)
         for key, value in sorted(collections.Counter(datelist).items())
@@ -124,9 +135,16 @@ format_data_flot_partial = partial(
 
 
 @dashboardblue.route("/getdatecounts", methods=["GET"], endpoint="/getdatecounts")
-@login_is_required
 def format_data_for_flot_graph() -> Dict[str, int]:
     return format_data_flot_partial()
+
+
+@dashboardblue.route("/setdaterange", methods=["POST"], endpoint="setdaterange")
+def format_data_for_flot_graph() -> Dict[str, int]:
+    request_dict = json.loads(request.data.decode("utf-8"))
+    min_date = request_dict.get("min_date")
+    max_date = request_dict.get("max_date")
+    return format_data_flot_partial(min_date=min_date, max_date=max_date)
 
 
 KEY_COUNT_DICT = {
