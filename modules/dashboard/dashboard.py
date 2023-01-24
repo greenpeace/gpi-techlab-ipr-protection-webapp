@@ -142,6 +142,10 @@ def format_data_for_flot_graph() -> Dict[str, int]:
 @dashboardblue.route("/setdaterange", methods=["POST"], endpoint="setdaterange")
 def format_data_for_flot_graph() -> Dict[str, int]:
     request_dict = json.loads(request.data.decode("utf-8"))
+    request_dict = {
+        date_range: date_str.split("T")[0]
+        for date_range, date_str in request_dict.items()
+    }
     min_date = request_dict.get("min_date")
     max_date = request_dict.get("max_date")
     return format_data_flot_partial(min_date=min_date, max_date=max_date)
