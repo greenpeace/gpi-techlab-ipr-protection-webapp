@@ -16,4 +16,4 @@ class CollectionStreams(Enum):
     brandstopwords_ref_stream = list(brandstopwords_ref.stream())
 
 
-SEARCHLINK_KEYS: List[str] = ["shop"]
+SEARCHLINK_KEYS: List[str] = ["shop", "country"]

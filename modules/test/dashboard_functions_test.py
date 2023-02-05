@@ -4,6 +4,7 @@ import random
 import pytest
 from google.cloud.firestore_v1 import DocumentSnapshot
 
+import modules.dashboard.helpers
 from modules.dashboard import dashboard
 
 
@@ -35,12 +36,16 @@ list_of_dates = [
     [(10, 2023, "2023_9"), (1, 2023, "2022_12"), (12, 2022, "2022_11")],
 )
 def test_create_previous_month(current_month, current_year, expected):
-    assert expected == dashboard.create_previous_month(current_month, current_year)
+    assert expected == modules.dashboard.helpers.create_previous_month(
+        current_month, current_year
+    )
 
 
 def test_date_count_changes():
     mock_doc_stream = [
         MockQueryStreamObject(create_time=date) for date in list_of_dates
     ]
-    out = dashboard.calculate_count_diff_vs_x_period_ago(mock_doc_stream)
+    out = modules.dashboard.helpers.calculate_count_diff_vs_x_period_ago(
+        mock_doc_stream
+    )
     assert out == "-66.7%"
