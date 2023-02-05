@@ -22,7 +22,7 @@ Using with option parameters:
 ```javascript
 $('#wizard').smartWizard({
   // Properties
-    selected: 0,  // Selected Step, 0 = first step   
+    selected: 0,  // Selected Step, 0 = first step
     keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
     enableAllSteps: false,  // Enable/Disable all steps on first load
     transitionEffect: 'fade', // Effect on navigation, none/fade/slide/slideleft
@@ -35,13 +35,13 @@ $('#wizard').smartWizard({
     errorSteps:[],    // array of step numbers to highlighting as error steps
     labelNext:'Next', // label for Next button
     labelPrevious:'Previous', // label for Previous button
-    labelFinish:'Finish',  // label for Finish button        
+    labelFinish:'Finish',  // label for Finish button
     noForwardJumping:false,
   // Events
     onLeaveStep: null, // triggers when leaving a step
     onShowStep: null,  // triggers when showing a step
     onFinish: null  // triggers when Finish button is clicked
-}); 
+});
 ```
 
 Parameters and Events are describing on the table below.
@@ -50,13 +50,13 @@ Parameters and Events are describing on the table below.
 
 ### Step 1: Include Files
 
-Include the following JavaScript and css files on your page. 
+Include the following JavaScript and css files on your page.
 
-1. jQuery Library file (Don't include if you already have it on your page) 
-2. CSS(Style Sheet) file for Smart Wizard 
+1. jQuery Library file (Don't include if you already have it on your page)
+2. CSS(Style Sheet) file for Smart Wizard
 3. JavaScript plug-in file for Smart Wizard
 
-To include the files copy and paste the below lines inside the head tag (`<head> </head>`) of your page. 
+To include the files copy and paste the below lines inside the head tag (`<head> </head>`) of your page.
 Make sure the paths to the files are correct with your working environment.
 
 ```html
@@ -74,13 +74,13 @@ Inititialize the Smart Wizard, copy and paste the below lines inside the head ta
   $(document).ready(function() {
       // Initialize Smart Wizard
         $('#wizard').smartWizard();
-  }); 
+  });
 </script>
 ```
 
 ### Step 3: The HTML
 
-Finally the html, below shows the HTML markup for the Smart Wizard, You can customize it by including your on contents for each steps. 
+Finally the html, below shows the HTML markup for the Smart Wizard, You can customize it by including your on contents for each steps.
 Copy and paste the below html inside the body tag (`<body></body>`) of your page.
 
 ```html
@@ -105,31 +105,31 @@ Copy and paste the below html inside the body tag (`<body></body>`) of your page
           <span class="stepDesc">
              Step 3<br />
              <small>Step 3 description</small>
-          </span>                   
+          </span>
        </a></li>
     <li><a href="#step-4">
           <label class="stepNumber">4</label>
           <span class="stepDesc">
              Step 4<br />
              <small>Step 4 description</small>
-          </span>                   
+          </span>
       </a></li>
   </ul>
-  <div id="step-1">   
+  <div id="step-1">
       <h2 class="StepTitle">Step 1 Content</h2>
        <!-- step content -->
   </div>
   <div id="step-2">
-      <h2 class="StepTitle">Step 2 Content</h2> 
+      <h2 class="StepTitle">Step 2 Content</h2>
        <!-- step content -->
-  </div>                      
+  </div>
   <div id="step-3">
-      <h2 class="StepTitle">Step 3 Title</h2>   
+      <h2 class="StepTitle">Step 3 Title</h2>
        <!-- step content -->
   </div>
   <div id="step-4">
-      <h2 class="StepTitle">Step 4 Title</h2>   
-       <!-- step content -->                         
+      <h2 class="StepTitle">Step 4 Title</h2>
+       <!-- step content -->
   </div>
 </div>
 ```
@@ -138,7 +138,7 @@ Copy and paste the below html inside the body tag (`<body></body>`) of your page
 
 ### Load ajax content
 
-To load the content via ajax call you need to specify the property "*contentURL*". 
+To load the content via ajax call you need to specify the property "*contentURL*".
 
 example:
 
@@ -147,11 +147,11 @@ example:
   $(document).ready(function() {
       // Initialize Smart Wizard with ajax content load
         $('#wizard').smartWizard({contentURL:'services/ajaxcontents.php'});
-  }); 
+  });
 </script>
 ```
 
-When a step got focus the SmartWizard will post the step number to this contentURL and so you can write server side logic to format the content with the step number to be shown next. The response to this call should be the content of that step in HTML format. 
+When a step got focus the SmartWizard will post the step number to this contentURL and so you can write server side logic to format the content with the step number to be shown next. The response to this call should be the content of that step in HTML format.
 
 To get the step number in php:
 
@@ -159,7 +159,7 @@ To get the step number in php:
 $step_number = $_REQUEST["step_number"];
 ```
 
-By default the SmartWizard will fetch the step content only on the first focus of the step, and cache the content and use it on the further focus of that step. But you can turn off the content cache by specifying the property "*contentCache*" to false. 
+By default the SmartWizard will fetch the step content only on the first focus of the step, and cache the content and use it on the further focus of that step. But you can turn off the content cache by specifying the property "*contentCache*" to false.
 
 example:
 
@@ -168,7 +168,7 @@ example:
   $(document).ready(function() {
       // Initialize Smart Wizard with ajax content load and cache disabled
         $('#wizard').smartWizard({contentURL:'services/ajaxcontents.php',contentCache:false});
-  }); 
+  });
 </script>
 ```
 
@@ -179,14 +179,14 @@ Please see the ajax contents demo and following files on the source code to know
 
 ### Input validation
 
-Smart Wizard 3 does not have in-built form validation, but you can call you own validation function for each steps or for all steps with the events. Smart Wizard 3 has three events (*onLeaveStep*, *onShowStep*, *onFinish*). So you can write your step validation login in "*onLeaveStep*" event and on validation fail you can stay on that step by cancelling that event. Validation logic for all steps can be write on "*onFinish*" event and so you can avoid submitting the form with errors. 
+Smart Wizard 3 does not have in-built form validation, but you can call you own validation function for each steps or for all steps with the events. Smart Wizard 3 has three events (*onLeaveStep*, *onShowStep*, *onFinish*). So you can write your step validation login in "*onLeaveStep*" event and on validation fail you can stay on that step by cancelling that event. Validation logic for all steps can be write on "*onFinish*" event and so you can avoid submitting the form with errors.
 
 example:
 
 ```html
 <script type="text/javascript">
 $(document).ready(function(){
-    // Smart Wizard         
+    // Smart Wizard
     $('#wizard').smartWizard({
         onLeaveStep:leaveAStepCallback,
         onFinish:onFinishCallback
@@ -194,7 +194,7 @@ $(document).ready(function(){
 
     function leaveAStepCallback(obj, context){
         alert("Leaving step " + context.fromStep + " to go to step " + context.toStep);
-        return validateSteps(context.fromStep); // return false to stay on step and true to continue navigation 
+        return validateSteps(context.fromStep); // return false to stay on step and true to continue navigation
     }
 
     function onFinishCallback(objs, context){
@@ -211,13 +211,13 @@ $(document).ready(function(){
             // Your step validation logic
             // set isStepValid = false if has errors
         }
-        // ...      
+        // ...
     }
     function validateAllSteps(){
         var isStepValid = true;
-        // all step validation logic     
+        // all step validation logic
         return isStepValid;
-    }          
+    }
 });
 </script>
 ```
@@ -232,10 +232,10 @@ Highlighting error steps in Smart Wizard is easy
 $('#wizard').smartWizard('setError',{stepnum:3,iserror:true});
 ```
 
-It takes two arguments 
+It takes two arguments
 
-1. stepnum :- Step number to which is highlighted as error 
-2. iserror :- true = set the step as error step and false = remove the error highlighting 
+1. stepnum :- Step number to which is highlighted as error
+2. iserror :- true = set the step as error step and false = remove the error highlighting
 
 example:
 
@@ -248,7 +248,7 @@ example:
         function setError(stepnumber){
             $('#wizard').smartWizard('setError',{stepnum:stepnumber,iserror:true});
         }
-    }); 
+    });
 </script>
 ```
 
@@ -273,7 +273,7 @@ example:
             // You can call this line wherever to show message inside the wizard
             $('#wizard').smartWizard('showMessage',myMessage);
         }
-    }); 
+    });
 </script>
 ```
 
@@ -310,7 +310,7 @@ example:
         <td><strong>enableAllSteps</strong></td>
         <td>Enable/Disable all steps on first load</td>
         <td>
-            true = enabled 
+            true = enabled
             <br />
             false= disabled
         </td>
@@ -412,7 +412,7 @@ example:
         <td>false</td>
     </tr>
 </table>
- 
+
 ## Event Description:
 
 <table>
@@ -550,4 +550,3 @@ Here are the available methods:
         </td>
     </tr>
 </table>
- 

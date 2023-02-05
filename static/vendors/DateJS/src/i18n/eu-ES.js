@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: eu-ES
  * Name: Basque (Basque)

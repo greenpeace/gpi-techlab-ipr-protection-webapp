@@ -8,12 +8,12 @@
 		<link href="../bower_components/google-code-prettify/src/prettify.css" rel="stylesheet" />
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" />
-		<link href="../css/style.css" rel="stylesheet" />	
+		<link href="../css/style.css" rel="stylesheet" />
 	</head>
-	
+
 	<body>
 		<div class="container">
-		
+
 			<h1>Simple HTML Editor</h1>
 			<div class="btn-toolbar" data-role="editor-toolbar"
 				data-target="#editor">
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div id="editorPreview"></div>
-			
+
 			<form action="php/upload.php" method="post" enctype="multipart/form-data" id='submitForm'>
 					<div id="editor" class="lead" data-placeholder="This is a basic example with a simple toolbar."></div>
 					<a class="btn btn-large btn-default jumbo" href="#!" onClick="$('#mySubmission').val($('#editor').cleanHtml(true));$('#submitForm').submit();">Submit</a>
@@ -85,7 +85,7 @@
 					'seperate-binary': false
 				}
 			});
-		
+
 			$(".dropdown-menu > input").click(function (e) {
         		e.stopPropagation();
     		});

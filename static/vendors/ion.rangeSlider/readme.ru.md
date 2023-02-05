@@ -69,7 +69,7 @@
 * ion.rangeSlider.skinModern.css + sprite-skin-modern.png
 * ion.rangeSlider.skinNice.css + sprite-skin-nice.png
 * ion.rangeSlider.skinSimple.css + sprite-skin-simple.png
-                            
+
 Либо воспользуйтесь вложенным в архив PSD файлом, и нарисуйте собственный скин (не забудьте модифицировать размеры элементов в CSS файле)
 
 
@@ -343,7 +343,7 @@ $("#example_id").ionRangeSlider();
             <td>string</td>
             <td>Разделитель для близко расположенных значений. Используется для типа "double". Например: 10 — 100, 10 to 100, 10 + 100, 10 &rarr; 100 и т.д.</td>
         </tr>
-        
+
         <tr class="options__step">
             <td>input_values_separator<div><sup>data-input-values-separator</sup></div></td>
             <td>" ; "</td>

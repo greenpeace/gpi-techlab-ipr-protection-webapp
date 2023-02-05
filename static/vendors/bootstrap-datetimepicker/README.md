@@ -16,5 +16,3 @@
 Version 5 is being completely rewritten in ES6 and modularized as Tempus Dominus.
 
 v5 is [in alpha](https://github.com/tempusdominus/bootstrap-3).
-
-

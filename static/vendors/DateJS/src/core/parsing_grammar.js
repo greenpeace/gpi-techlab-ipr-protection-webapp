@@ -6,12 +6,12 @@
 	_fn = function () {
 		return _.each(_.any.apply(null, arguments), _.not(g.ctoken2("timeContext")));
 	};
-	
+
 	g.datePartDelimiter = _.rtoken(/^([\s\-\.\,\/\x27]+)/);
 	g.timePartDelimiter = _.stoken(":");
 	g.whiteSpace = _.rtoken(/^\s*/);
 	g.generalDelimiter = _.rtoken(/^(([\s\,]|at|@|on)+)/);
-  
+
 	var _C = {};
 	g.ctoken = function (keys) {
 		var fn = _C[keys];
@@ -56,7 +56,7 @@
 		}
 		return rx;
 	};
-  
+
 	g.formats = function (fx) {
 		if (fx instanceof Array) {
 			var rx = [];
@@ -185,7 +185,7 @@
 			g.mdy = _setfn(g.ddd, g.month, g.day, g.year);
 			g.ymd = _setfn(g.ddd, g.year, g.month, g.day);
 			g.dmy = _setfn(g.ddd, g.day, g.month, g.year);
-						
+
 			g.date = function (s) {
 				return ((g[Date.CultureInfo.dateElementOrder] || g.mdy).call(this, s));
 			};
@@ -226,7 +226,7 @@
 		grammarFormats.dateFormats();
 		grammarFormats.relative();
 
-		
+
 		g.value = _.process(_.rtoken(/^([-+]?\d+)?(st|nd|rd|th)?/),
 			function (s) {
 				return function () {
@@ -250,7 +250,7 @@
 						}
 					),
 					// translate separator tokens into token rules
-					_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators 
+					_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators
 						function (s) {
 							return _.ignore(_.stoken(s));
 						}
@@ -269,7 +269,7 @@
 	};
 
 	g.buildGrammarFormats();
-	// parsing date format specifiers - ex: "h:m:s tt" 
+	// parsing date format specifiers - ex: "h:m:s tt"
 	// this little guy will generate a custom parser based
 	// on the format string, ex: g.format("h:m:s tt")
 	// check for these formats first
@@ -295,8 +295,8 @@
 		"dMyy",
 		"d"
 	]);
-	
-	// real starting rule: tries selected formats first, 
+
+	// real starting rule: tries selected formats first,
 	// then general purpose rule
 	g.start = function (s) {
 		try {

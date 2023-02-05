@@ -26,9 +26,9 @@
  *
  * The regular expressions were adapted from:
  * https://github.com/hansstimer/llvm.tmbundle/blob/76fedd8f50fd6108b1780c51d79fbe3223de5f34/Syntaxes/LLVM.tmLanguage
- * 
+ *
  * http://llvm.org/docs/LangRef.html#constants describes the language grammar.
- * 
+ *
  * @author Nikhil Dabas
  */
 PR['registerLangHandler'](
@@ -51,7 +51,7 @@ PR['registerLangHandler'](
 
          // constant.numeric.float.llvm
          [PR['PR_LITERAL'],     /^\d+\.\d+/],
-         
+
          // constant.numeric.integer.llvm
          [PR['PR_LITERAL'],     /^(?:\d+|0[xX][a-fA-F0-9]+)/],
 

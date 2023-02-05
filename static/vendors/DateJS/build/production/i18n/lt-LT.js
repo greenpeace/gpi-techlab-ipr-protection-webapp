@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: lt-LT
  * Name: Lithuanian (Lithuania)

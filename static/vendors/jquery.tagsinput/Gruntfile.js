@@ -15,7 +15,7 @@ module.exports = function(grunt) {
    grunt.loadTasks('grunt-tasks');
 
    require('time-grunt')(grunt);
-   
+
    // Only load tasks when they are needed
    require('jit-grunt')(grunt, {
       ngtemplates: 'grunt-angular-templates'

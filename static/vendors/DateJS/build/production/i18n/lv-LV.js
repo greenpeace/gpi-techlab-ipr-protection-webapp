@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: lv-LV
  * Name: Latvian (Latvia)

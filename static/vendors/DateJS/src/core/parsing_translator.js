@@ -38,19 +38,19 @@
 		if (!this.year) {
 			this.year = now.getFullYear();
 		}
-		
+
 		if (!this.month && this.month !== 0) {
 			this.month = now.getMonth();
 		}
-		
+
 		if (!this.day) {
 			this.day = 1;
 		}
-		
+
 		if (!this.hour) {
 			this.hour = 0;
 		}
-		
+
 		if (!this.minute) {
 			this.minute = 0;
 		}
@@ -208,7 +208,7 @@
 					x[i].call(this);
 				}
 			}
-			
+
 			setDefaults.call(this);
 			parseMeridian.call(this);
 
@@ -225,7 +225,7 @@
 			} else if (this.timezoneOffset) {
 				d.set({ timezoneOffset: this.timezoneOffset });
 			}
-			
+
 			return d;
 		},
 		finish: function (x) {
@@ -247,7 +247,7 @@
 			} else {
 				today = finishUtils.getToday.call(this);
 			}
-			
+
 			expression = !!(this.days && this.days !== null || this.orient || this.operator);
 			orient = ((this.orient === "past" || this.operator === "subtract") ? -1 : 1);
 
@@ -314,7 +314,7 @@
 
 			finishUtils.setUnitValue.call(this, orient);
 			parseMeridian.call(this);
-			
+
 			if ((this.month || this.month === 0) && !this.day) {
 				this.day = 1;
 			}
@@ -336,7 +336,7 @@
 			} else {
 				today.set(this);
 			}
-			
+
 			if (this.timezone) {
 				this.timezone = this.timezone.toUpperCase();
 				var offset = $D.getTimezoneOffset(this.timezone);

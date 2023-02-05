@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: syr-SY
  * Name: Syriac (Syria)

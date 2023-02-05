@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: tn-ZA
  * Name: Tswana (South Africa)

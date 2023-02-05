@@ -249,12 +249,12 @@ describe("flot navigate plugin interactions", function () {
         expect(xaxis.max).toBe(initialXmax);
         expect(yaxis.min).toBe(initialYmin);
         expect(yaxis.max).toBe(initialYmax);
-        
+
         simulate.mouseDown(eventHolder, 50, 70);
         simulate.mouseMove(eventHolder, 50, 70);
         simulate.mouseMove(eventHolder, 50, 70 + plot.height());
         simulate.mouseUp(eventHolder, 50, 70 + plot.height());
-        
+
         expect(xaxis.min).toBe(initialXmin);
         expect(xaxis.max).toBe(initialXmax);
         expect(yaxis.min).toBe(initialYmin);

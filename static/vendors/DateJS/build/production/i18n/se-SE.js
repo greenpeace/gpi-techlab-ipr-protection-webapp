@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: se-SE
  * Name: Sami (Northern) (Sweden)

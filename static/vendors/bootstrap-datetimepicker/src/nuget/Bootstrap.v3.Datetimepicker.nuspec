@@ -28,7 +28,7 @@ For CSS version install Bootstrap.v3.Datetimepicker.CSS</description>
         <file src="..\..\src\js\bootstrap-datetimepicker.js" target="content\Scripts" />
         <file src="..\..\build\js\bootstrap-datetimepicker.min.js" target="content\Scripts" />
         <file src="..\..\src\less\_bootstrap-datetimepicker.less" target="content\Content\" />
-        <file src="..\..\src\less\bootstrap-datetimepicker-build.less" target="content\Content\" />		
+        <file src="..\..\src\less\bootstrap-datetimepicker-build.less" target="content\Content\" />
         <file src="install.ps1" target="tools\" />
     </files>
 </package>

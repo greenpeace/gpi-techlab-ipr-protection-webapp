@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sw-KE
  * Name: Kiswahili (Kenya)

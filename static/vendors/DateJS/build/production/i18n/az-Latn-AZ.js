@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: az-Latn-AZ
  * Name: Azeri (Latin, Azerbaijan)

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: hu-HU
  * Name: Hungarian (Hungary)

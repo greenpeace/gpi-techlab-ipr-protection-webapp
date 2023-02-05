@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ca-ES
  * Name: Catalan (Catalan)

@@ -107,9 +107,9 @@ the tooltip from webcharts).
 
         function doTriggerClickHoverEvent(event, eventType, searchDistance) {
             var series = plot.getData();
-            if (event !== undefined 
-                && series.length > 0 
-                && series[0].xaxis.c2p !== undefined 
+            if (event !== undefined
+                && series.length > 0
+                && series[0].xaxis.c2p !== undefined
                 && series[0].yaxis.c2p !== undefined) {
                 var eventToTrigger = "plot" + eventType;
                 var seriesFlag = eventType + "able";

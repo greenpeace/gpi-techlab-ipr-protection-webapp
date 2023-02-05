@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sr-Latn-CS
  * Name: Serbian (Latin, Serbia)

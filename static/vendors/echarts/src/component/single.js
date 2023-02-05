@@ -8,5 +8,5 @@ define(function (require) {
     echarts.extendComponentView({
         type: 'single'
     });
-    
+
 });

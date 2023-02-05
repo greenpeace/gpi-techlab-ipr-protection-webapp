@@ -102,5 +102,3 @@ fs.writeFile("test.zip", buffer, function(err) {
   if (err) throw err;
 });
 ```
-
-

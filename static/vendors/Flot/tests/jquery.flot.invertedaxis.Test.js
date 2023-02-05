@@ -30,13 +30,13 @@ describe('unit tests for the inverted scale functions', function () {
         var axis = plot.getAxes().xaxis;
         expect(axis.options.transform.name).toBe('invertedLogTransform');
         expect(axis.options.inverseTransform.name).toBe('invertedLogInverseTransform');
-    }); 
+    });
 });
 
 describe("integration tests for the inverted scale functions", function () {
     var queryPlotForYTicks = function () {
         var actualTicks = [];
-    
+
         var yAxisDivs = $('.yAxis');
         expect(yAxisDivs.length).toBe(1);
         var childDivs = yAxisDivs.find('.tickLabel');
@@ -46,15 +46,15 @@ describe("integration tests for the inverted scale functions", function () {
                 tickName: e.textContent,
             });
         });
-    
+
         return actualTicks
             .sort(function (a, b) { return b.yPos - a.yPos })
             .map(function (a) { return a.tickName });
     };
-    
+
     var queryPlotForXTicks = function () {
         var actualTicks = [];
-    
+
         var xAxisDivs = $('.xAxis');
         expect(xAxisDivs.length).toBe(1);
         var childDivs = xAxisDivs.find('.tickLabel');
@@ -64,12 +64,12 @@ describe("integration tests for the inverted scale functions", function () {
                 tickName: e.textContent,
             });
         });
-    
+
         return actualTicks
             .sort(function (a, b) { return a.xPos - b.xPos })
             .map(function (a) { return a.tickName });
     };
-    
+
     var placeholder;
     beforeEach(function () {
         placeholder = setFixtures('<div id="test-container" style="width: 800px;height: 400px">')

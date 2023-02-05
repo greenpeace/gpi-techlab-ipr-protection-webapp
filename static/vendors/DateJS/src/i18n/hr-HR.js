@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: hr-HR
  * Name: Croatian (Croatia)

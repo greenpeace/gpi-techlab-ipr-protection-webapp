@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: pt-BR
  * Name: Portuguese (Brazil)

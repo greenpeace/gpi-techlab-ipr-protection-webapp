@@ -96,7 +96,7 @@ $.extend( KeyTable.prototype, {
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * API methods for DataTables API interface
 	 */
-	
+
 	/**
 	 * Blur the table's cell focus
 	 */

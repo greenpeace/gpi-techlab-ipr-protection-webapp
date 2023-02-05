@@ -532,4 +532,3 @@ Changed date format from php date format to custom format.
 ### 0.1.0
 
 Initial release
-

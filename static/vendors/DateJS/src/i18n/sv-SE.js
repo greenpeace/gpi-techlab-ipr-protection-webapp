@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sv-SE
  * Name: Swedish (Sweden)

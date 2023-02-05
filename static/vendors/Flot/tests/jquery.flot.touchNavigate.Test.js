@@ -552,7 +552,7 @@ describe("flot touch navigate plugin", function () {
                     getPairOfCoords(xaxis, yaxis, canvasCoords[1].x, canvasCoords[1].y),
                     getPairOfCoords(xaxis, yaxis, canvasCoords[2].x, canvasCoords[2].y)
             ];
-        
+
         simulate.touchstart(eventHolder, pointCoords[0].x, pointCoords[0].y);
         simulate.touchmove(eventHolder, pointCoords[1].x, pointCoords[1].y);
         simulate.touchmove(eventHolder, pointCoords[2].x, pointCoords[2].y);
@@ -1097,7 +1097,7 @@ describe("flot touch navigate plugin", function () {
           //drag the plot
           simulate.touchstart(eventHolder, pointCoords[0].x, pointCoords[0].y);
           simulate.touchmove(eventHolder, pointCoords[1].x, pointCoords[1].y);
-          
+
           //check if the drag modified the plot correctly
           expect(xaxis.min).toBeCloseTo(initialXmin + (canvasCoords[0].x - canvasCoords[1].x), 6);
           expect(xaxis.max).toBeCloseTo(initialXmax + (canvasCoords[0].x - canvasCoords[1].x), 6);

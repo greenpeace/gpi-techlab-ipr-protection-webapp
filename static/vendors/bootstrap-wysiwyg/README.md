@@ -49,7 +49,7 @@ Optionally, also create a toolbar (see the source of this page for an example):
 <div class="btn-toolbar" data-role="editor-toolbar"
         data-target="#editor">
   ...
-</div> 
+</div>
 ```
 
 In the toolbar, execute simple commands by adding a data-edit attribute to a link.

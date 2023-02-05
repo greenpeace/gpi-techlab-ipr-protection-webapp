@@ -1,8 +1,6 @@
 from enum import Enum
 from typing import List
 
-from google.cloud.firestore_v1 import CollectionReference, DocumentSnapshot
-
 from system.firstoredb import brandlinks_ref, brandlinkdetails_ref, brandstopwords_ref
 
 

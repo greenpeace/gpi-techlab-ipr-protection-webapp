@@ -15,7 +15,7 @@
                 {% else %} 2500
                 {% endif %}
               </div>
-              <span class="count_bottom"><i class="green">
+              <span class="count_bottom"><i>
                 {% if output %}
                 {{output.change_vs_previous_month_count_illegal_items}}
                 {% else %} 4%
@@ -28,7 +28,7 @@
                 {% else %} 127.50
                 {% endif %}
               </div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>
+              <span class="count_bottom"><i><i></i>
                 {% if output %} {{output.change_vs_previous_month_count_total_merch}}
                 {% else %} 5%
                 {% endif %}
@@ -41,15 +41,15 @@
                 {% else %} 2500
                 {% endif %}
               </div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>
+              <span class="count_bottom"><i><i></i>
                 {% if output %} {{output.change_vs_previous_month_count_total_stopwords}}
                 {% else %} 2%
                 {% endif %}
-              </i> From last Month</span>
+              </i> From Last Month</span>
             </div>
         </div>
           <!-- /top tiles -->
-
+          <!-- Dashboard graph section -->
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
               <div class="dashboard_graph">
@@ -61,7 +61,7 @@
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                       <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - February 28, 2015</span> <b class="caret"></b>
+                      <span>December 30, 2014 - February 28, 2023</span> <b class="caret"></b>
                     </div>
                   </div>
                 </div>
@@ -136,6 +136,7 @@
             </div>
 
           </div>
+            <!-- Dashboard graph section -->
           <br />
 
           <div class="row">
@@ -177,12 +178,14 @@
                         <div class="block">
                           <div class="block_content">
                             <h2 class="title">
-                                    <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
+                                    <a>{{output.news_feed[0].shop}}</a>
                               </h2>
                             <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
+                              <span>{{output.news_feed[0].time_diff}}</span>
                             </div>
-                            <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                            <p class="excerpt">{{output.news_feed[0].search}}
+                            <p class="excerpt">{{output.news_feed[0].url}}
+                            <p class="excerpt">{{output.news_feed[0].country}}
                             </p>
                           </div>
                         </div>
@@ -191,12 +194,14 @@
                         <div class="block">
                           <div class="block_content">
                             <h2 class="title">
-                                              <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                          </h2>
+                                    <a>{{output.news_feed[1].shop}}</a>
+                              </h2>
                             <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
+                              <span>{{output.news_feed[1].time_diff}}</span>
                             </div>
-                            <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                            <p class="excerpt">{{output.news_feed[1].search}}
+                            <p class="excerpt">{{output.news_feed[1].url}}
+                            <p class="excerpt">{{output.news_feed[1].country}}
                             </p>
                           </div>
                         </div>
@@ -205,12 +210,14 @@
                         <div class="block">
                           <div class="block_content">
                             <h2 class="title">
-                                              <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                          </h2>
+                                    <a>{{output.news_feed[2].shop}}</a>
+                              </h2>
                             <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
+                              <span>{{output.news_feed[2].time_diff}}</span>
                             </div>
-                            <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                            <p class="excerpt">{{output.news_feed[2].search}}
+                            <p class="excerpt">{{output.news_feed[2].url}}
+                            <p class="excerpt">{{output.news_feed[2].country}}
                             </p>
                           </div>
                         </div>
@@ -287,7 +294,7 @@
               <div class="row">
 
 
-                
+
                 <!-- end of weather widget -->
               </div>
             </div>
@@ -296,4 +303,3 @@
         <!-- /page content -->
 
         {% include "footer.html" %}
-        

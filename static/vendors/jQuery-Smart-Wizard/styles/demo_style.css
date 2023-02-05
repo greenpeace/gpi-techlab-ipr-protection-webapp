@@ -1,18 +1,18 @@
 body {
   margin:0;
-  padding:0;      
+  padding:0;
 }
-.demoHead { 
-  display:block;  
-  margin-bottom:10px;   
+.demoHead {
+  display:block;
+  margin-bottom:10px;
   border: 0;
   padding: 0;
   padding-top: 8px;
-  padding-bottom:10px;    
+  padding-bottom:10px;
   border-bottom: 1px solid #CCC;
-  font: normal 12px Verdana, Arial, Helvetica, sans-serif; 
-  color: #5A5655;   
-  background-color: #FAFAFA;    
+  font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+  color: #5A5655;
+  background-color: #FAFAFA;
 }
 .demoHead .demoExampleLinks {
   text-align:center;
@@ -41,8 +41,8 @@ body {
   margin                : 2px 2px 0px 2px;
   padding               : 5px 12px 5px 12px;
   text-align            : center;
-  border                : 1px solid #7D7D7D;    
-  text-decoration       : none; 
+  border                : 1px solid #7D7D7D;
+  text-decoration       : none;
 }
 .demoHead .demoNavLinks a.btn {
   color:#FFF;
@@ -52,8 +52,8 @@ body {
 .demoHead a.btn:hover{
   background      : #EA8511;
   color           : #FFFFFF;
-  border          : 1px solid #EA8511; 
-  text-decoration : none; 
+  border          : 1px solid #EA8511;
+  text-decoration : none;
 }
 .demoHead .demoNavLinks a.btn:hover {
   color:#5A5655;
@@ -68,6 +68,6 @@ body {
   margin                : 2px 2px 0px 2px;
   padding               : 5px 12px 5px 12px;
   text-align            : center;
-  border                : 1px solid #EA8511;    
-  text-decoration       : none; 
+  border                : 1px solid #EA8511;
+  text-decoration       : none;
 }

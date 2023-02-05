@@ -1,4 +1,4 @@
-# FixedHeader for DataTables 
+# FixedHeader for DataTables
 
 This package contains distribution files for the [FixedHeader extension](https://datatables.net/extensions/fixedheader) for [DataTables](https://datatables.net/). Only the core software for this library is contained in this package - to be correctly styled, a styling package for FixedHeader must also be included. Styling options include DataTable's native styling, [Bootstrap](http://getboostrap.com) and [Foundation](http://foundation.zurb.com/).
 

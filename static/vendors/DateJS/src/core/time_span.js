@@ -5,7 +5,7 @@
 			return this[attr];
 		};
 	};
-	
+
 	var sFn = function (attr) {
 		return function (val) {
 			this[attr] = val;
@@ -49,7 +49,7 @@
 					(this.getMinutes() * 60000) +
 					(this.getSeconds() * 1000);
 		};
-		
+
 		this.compareTo = function (time) {
 			var t1 = new Date(1970, 1, 1, this.getHours(), this.getMinutes(), this.getSeconds()), t2;
 			if (time === null) {
@@ -109,13 +109,13 @@
 					return this.getHours() + ":" + this.p(this.getMinutes()) + ":" + this.p(this.getSeconds());
 				}
 			};
-			
+
 			this.p = function (s) {
 				return (s.toString().length < 2) ? "0" + s : s;
 			};
-			
+
 			var me = this;
-			
+
 			return format ? format.replace(/dd?|HH?|hh?|mm?|ss?|tt?/g,
 			function (format) {
 				switch (format) {
@@ -160,7 +160,7 @@
 
 
 	/**
-	 * Gets the time of day for this date instances. 
+	 * Gets the time of day for this date instances.
 	 * @return {TimeSpan} TimeSpan
 	 */
 	Date.prototype.getTimeOfDay = function () {
@@ -170,7 +170,7 @@
 	Date.TimeSpan = TimeSpan;
 
 	if (typeof window !== "undefined" ) {
-		// keeping API compatible for v1.x 
+		// keeping API compatible for v1.x
 		window.TimeSpan = TimeSpan;
 	}
 }());

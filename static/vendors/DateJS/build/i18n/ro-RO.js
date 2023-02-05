@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ro-RO
  * Name: Romanian (Romania)

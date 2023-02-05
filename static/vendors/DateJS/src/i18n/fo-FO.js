@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: fo-FO
  * Name: Faroese (Faroe Islands)

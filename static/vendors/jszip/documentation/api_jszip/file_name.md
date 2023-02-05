@@ -42,5 +42,3 @@ zip.file("sub/file.txt"); // the file
 // or
 zip.folder("sub").file("file.txt") // the file
 ```
-
-

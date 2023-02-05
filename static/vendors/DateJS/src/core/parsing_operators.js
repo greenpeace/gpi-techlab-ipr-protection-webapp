@@ -175,7 +175,7 @@
 		sequence: function (px, d, c) {
 			d = d || _.rtoken(/^\s*/);
 			c = c || null;
-			
+
 			if (px.length === 1) {
 				return px[0];
 			}
@@ -259,7 +259,7 @@
 					// since we are matching against a set of elements, the first
 					// thing to do is to add r[0] to matched elements
 					rx = [[r[0]], r[1]];
-					// if we matched and there is still input to parse and 
+					// if we matched and there is still input to parse and
 					// we don't already know this is the last element,
 					// we're going to next check for the delimiter ...
 					// if there's none, or if there's no input left to parse
@@ -385,12 +385,12 @@
 			};
 		}
 	};
-	
+
 
 	// Generator Operators And Vector Operators
 
 	// Generators are operators that have a signature of F(R) => R,
-	// taking a given rule and returning another rule, such as 
+	// taking a given rule and returning another rule, such as
 	// ignore, which parses a given rule and throws away the result.
 
 	// Vector operators are those that have a signature of F(R1,R2,...) => R,
@@ -408,7 +408,7 @@
 	// This also turns generators into vector operators, which allows
 	// constructs like:
 	// not(cache(foo, bar))
-	
+
 	var _generator = function (op) {
 		function gen() {
 			var args = null, rx = [], px, i;
@@ -432,9 +432,9 @@
 
 		return gen;
 	};
-	
+
 	var gx = "optional not ignore cache".split(/\s/);
-	
+
 	for (var i = 0 ; i < gx.length ; i++) {
 		_[gx[i]] = _generator(_[gx[i]]);
 	}
@@ -448,11 +448,11 @@
 			}
 		};
 	};
-	
+
 	var vx = "each any all".split(/\s/);
-	
+
 	for (var j = 0 ; j < vx.length ; j++) {
 		_[vx[j]] = _vector(_[vx[j]]);
 	}
-	
+
 }());

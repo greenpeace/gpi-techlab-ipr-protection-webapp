@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: mt-MT
  * Name: Maltese (Malta)

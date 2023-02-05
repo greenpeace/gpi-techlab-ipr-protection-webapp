@@ -106,7 +106,7 @@ don't work unless the canvas is attached to the DOM.
   X and Y coordinate of the text.
   Text is the string to remove, while the font is either a string of space-separated CSS
   classes or a font-spec object, defining the text's font and style.
- 
+
 
 - clearCache()
 

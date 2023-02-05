@@ -29,4 +29,3 @@ jQuery.fn.extend( {
 jQuery.fn.andSelf = jQuery.fn.addBack;
 
 } );
-

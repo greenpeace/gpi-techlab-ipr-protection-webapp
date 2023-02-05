@@ -13,14 +13,14 @@ To use the 2 together:
 * Ensure that your data is well formed. Each series should contain a bars object with an order integer, like so:
 ```javascript
   var series = [];
-  
+
   series.push({
       data: [], // your raw data
       bars: {
           order: 0
       }
   });
-  
+
   series.push({
       data: [], // your raw data
       bars: {
@@ -32,5 +32,3 @@ To use the 2 together:
 * Ensure that the order bars plugin is loaded __before__ the stack plugin.
 
 See the example for more information.
-
-

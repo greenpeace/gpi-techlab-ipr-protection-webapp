@@ -220,7 +220,7 @@ parser | String or Function | - | If defined as a string, it is interpreted as a
 round | String | - | If defined, dates will be rounded to the start of this unit. See [Time Units](#scales-time-units) below for the allowed units.
 tooltipFormat | String | '' | The moment js format string to use for the tooltip.
 unit | String | - | If defined, will force the unit to be a certain type. See [Time Units](#scales-time-units) section below for details.
-unitStepSize | Number | 1 | The number of units between grid lines. 
+unitStepSize | Number | 1 | The number of units between grid lines.
 
 #### Date Formats
 
@@ -230,8 +230,8 @@ When providing data for the time scale, Chart.js supports all of the formats tha
 
 The following display formats are used to configure how different time units are formed into strings for the axis tick marks. See [moment.js](http://momentjs.com/docs/#/displaying/format/) for the allowable format strings.
 
-Name | Default 
---- | --- 
+Name | Default
+--- | ---
 millisecond | 'SSS [ms]'
 second | 'h:mm:ss a'
 minute | 'h:mm:ss a'
@@ -316,7 +316,7 @@ The following options are used to configure angled lines that radiate from the c
 
 Name | Type | Default | Description
 --- | --- | --- | ---
-display | Boolean | true | If true, angle lines are shown. 
+display | Boolean | true | If true, angle lines are shown.
 color | Color | 'rgba(0, 0, 0, 0.1)' | Color of angled lines
 lineWidth | Number | 1 | Width of angled lines
 

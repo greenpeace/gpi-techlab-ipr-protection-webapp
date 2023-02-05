@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: th-TH
  * Name: Thai (Thailand)

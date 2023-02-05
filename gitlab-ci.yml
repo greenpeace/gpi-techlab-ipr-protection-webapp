@@ -6,7 +6,7 @@ image: registry.greenpeace.org/gp/git/git-devops/docker_images/alpine-ops-gitlab
 include:
    - project: 'gp/git/global-apps/gitlab/global-gitlab-ci-jobs'
      ref: master
-     file: 
+     file:
      # Stage (dependencies) Setup Jobs
        - '/dependencies/dependencies_get_greenpeace_root_ca_crt.yml'
        -  '/dependencies/dependencies_get_gitlab_project_wiki_artifact.yml'
@@ -123,10 +123,10 @@ Run terraform-instance-test QA:
 #Run QA and test onm review instance
 
    stage: QA-review-deploy
-   
+
    tags:
       - Namespace Vault Auth
-      
+
    variables:
       TF_VAR_Greenpeace_Environment: test
       project_Instance: test

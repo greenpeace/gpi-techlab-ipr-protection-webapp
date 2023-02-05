@@ -85,7 +85,7 @@ fullWidth | Boolean | true | Marks that this box should take the full width of t
 fontSize | Number | 12 | Font size inherited from global configuration
 fontFamily | String | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Font family inherited from global configuration
 fontColor | Color | "#666" | Font color inherited from global configuration
-fontStyle | String | 'bold' | Font styling of the title. 
+fontStyle | String | 'bold' | Font styling of the title.
 padding | Number | 10 | Number of pixels to add above and below the title text
 text | String | '' | Title text
 
@@ -159,7 +159,7 @@ Items passed to the legend `onClick` function are the ones returned from `labels
     // For box border. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
     lineJoin: String,
 
-    // Width of box border 
+    // Width of box border
     lineWidth: Number,
 
     // Stroke style of the legend box
@@ -192,7 +192,7 @@ The title configuration is passed into the `options.tooltips` namespace. The glo
 
 Name | Type | Default | Description
 --- | --- | --- | ---
-enabled | Boolean | true | Are tooltips 
+enabled | Boolean | true | Are tooltips
 custom | Function | null | See [section](#chart-configuration-custom-tooltips) below
 mode | String | 'single' | Sets which elements appear in the tooltip. Acceptable options are `'single'` or `'label'`. `single` highlights the closest element. `label` highlights elements in all datasets at the same `X` value.
 backgroundColor | Color | 'rgba(0,0,0,0.8)' | Background color of the tooltip
@@ -222,7 +222,7 @@ callbacks | Object | | See the [callbacks section](#chart-configuration-tooltip-
 
 #### Tooltip Callbacks
 
-The tooltip label configuration is nested below the tooltip configuration using the `callbacks` key. The tooltip has the following callbacks for providing text. For all functions, 'this' will be the tooltip object created from the Chart.Tooltip constructor. 
+The tooltip label configuration is nested below the tooltip configuration using the `callbacks` key. The tooltip has the following callbacks for providing text. For all functions, 'this' will be the tooltip object created from the Chart.Tooltip constructor.
 
 All functions are called with the same arguments: a [tooltip item](#chart-configuration-tooltip-item-interface) and the data object passed to the chart. All functions must return either a string or an array of strings. Arrays of strings are treated as multiple lines of text.
 
@@ -333,7 +333,7 @@ Arcs are used in the polar area, doughnut and pie charts. They can be configured
 
 Name | Type | Default | Description
 --- | --- | --- | ---
-backgroundColor | Color | 'rgba(0,0,0,0.1)' | Default fill color for arcs. Inherited from the global default 
+backgroundColor | Color | 'rgba(0,0,0,0.1)' | Default fill color for arcs. Inherited from the global default
 borderColor | Color | '#fff' | Default stroke color for arcs
 borderWidth | Number | 2 | Default stroke width for arcs
 

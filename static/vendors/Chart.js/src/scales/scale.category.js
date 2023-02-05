@@ -9,7 +9,7 @@ module.exports = function(Chart) {
 	};
 
 	var DatasetScale = Chart.Scale.extend({
-		// Implement this so that 
+		// Implement this so that
 		determineDataLimits: function() {
 			this.minIndex = 0;
 			this.maxIndex = this.chart.data.labels.length - 1;

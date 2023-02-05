@@ -30,7 +30,7 @@ $(document).on('keydown', null, 'ctrl+a', fn);
 // e.g. replace '$' sign with 'EUR'
 $('input.foo').on('keyup', null, '$', function(){
   this.value = this.value.replace('$', 'EUR');
-});     
+});
 ```
 
 ## Example

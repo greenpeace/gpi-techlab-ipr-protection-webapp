@@ -198,18 +198,18 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">core/parsing_grammar.js</span></h1>
     <h2>
-        
+
         Statements: <span class="metric">91.59% <small>(98 / 107)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Branches: <span class="metric">56.25% <small>(9 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Functions: <span class="metric">96.55% <small>(28 / 29)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Lines: <span class="metric">91.59% <small>(98 / 107)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
+
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">core/</a> &#187; parsing_grammar.js</div>
@@ -842,12 +842,12 @@
 	_fn = function () {
 		return _.each(_.any.apply(null, arguments), _.not(g.ctoken2("timeContext")));
 	};
-	
+
 	g.datePartDelimiter = _.rtoken(/^([\s\-\.\,\/\x27]+)/);
 	g.timePartDelimiter = _.stoken(":");
 	g.whiteSpace = _.rtoken(/^\s*/);
 	g.generalDelimiter = _.rtoken(/^(([\s\,]|at|@|on)+)/);
-  
+
 	var _C = {};
 	g.ctoken = function (keys) {
 		var fn = _C[keys];
@@ -892,7 +892,7 @@
 		}
 <span class="cstat-no" title="statement not covered" >		return rx;</span>
 	};
-  
+
 	g.formats = function (fx) {
 		<span class="missing-if-branch" title="else path not taken" >E</span>if (fx instanceof Array) {
 			var rx = [];
@@ -1021,7 +1021,7 @@
 			g.mdy = _setfn(g.ddd, g.month, g.day, g.year);
 			g.ymd = _setfn(g.ddd, g.year, g.month, g.day);
 			g.dmy = _setfn(g.ddd, g.day, g.month, g.year);
-						
+
 			g.date = function (s) {
 				return ((g[Date.CultureInfo.dateElementOrder] || <span class="branch-1 cbranch-no" title="branch not covered" >g.mdy)</span>.call(this, s));
 			};
@@ -1062,7 +1062,7 @@
 		grammarFormats.dateFormats();
 		grammarFormats.relative();
 &nbsp;
-		
+
 		g.value = _.process(_.rtoken(/^([-+]?\d+)?(st|nd|rd|th)?/),
 			function (s) {
 				return function () {
@@ -1086,7 +1086,7 @@
 						}
 					),
 					// translate separator tokens into token rules
-					_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators 
+					_.process(_.rtoken(/^[^dMyhHmstz]+/), // all legal separators
 						function (s) {
 							return _.ignore(_.stoken(s));
 						}
@@ -1105,7 +1105,7 @@
 	};
 &nbsp;
 	g.buildGrammarFormats();
-	// parsing date format specifiers - ex: "h:m:s tt" 
+	// parsing date format specifiers - ex: "h:m:s tt"
 	// this little guy will generate a custom parser based
 	// on the format string, ex: g.format("h:m:s tt")
 	// check for these formats first
@@ -1131,8 +1131,8 @@
 		"dMyy",
 		"d"
 	]);
-	
-	// real starting rule: tries selected formats first, 
+
+	// real starting rule: tries selected formats first,
 	// then general purpose rule
 	g.start = function (s) {
 		try {

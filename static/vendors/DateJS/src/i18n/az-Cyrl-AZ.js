@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: az-Cyrl-AZ
  * Name: Azeri (Cyrillic, Azerbaijan)

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: gu-IN
  * Name: Gujarati (India)

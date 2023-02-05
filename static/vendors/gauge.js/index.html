@@ -47,7 +47,7 @@
   <ul class="horiz-list" id="type-select">
   	<li class="active" type="gauge"><canvas width=100 height=50 id="select-1"></canvas></li>
   	<li type="donut"><canvas width=80 height=40 id="select-2"></canvas></li>
-  </ul>	
+  </ul>
   <div id="preview">
   	<canvas width=220 height=70 id="canvas-preview"></canvas>
   	<div id="preview-textfield"></div>
@@ -109,7 +109,7 @@ gauge.animationSpeed = <span id="opt-animationSpeed" class="lit">3000</span>; //
 gauge.set(<span id="opt-currval" class="lit">1500</span>); // set actual value
 </pre>
 <p>
-  The <code>Gauge</code> class handles drawing on canvas and starts the animation. 
+  The <code>Gauge</code> class handles drawing on canvas and starts the animation.
 </p>
 
 <h2 id="advanced-options">Advanced options</h2>
@@ -295,7 +295,7 @@ $.fn.gauge = function(opts) {
     $('#share').click(function() {
       window.location.replace(this.checked ? '#?' + $('form').serialize() : '#!');
     });
-    
+
     $("#type-select li").click(function(){
     	$("#type-select li").removeClass("active")
     	$(this).addClass("active");
@@ -343,14 +343,14 @@ $.fn.gauge = function(opts) {
     selectGaguge1 = new Gauge(document.getElementById("select-1"));
     selectGaguge1.maxValue = 3000;
     selectGaguge1.set(1552);
-    
+
     selectGaguge2 = new Donut(document.getElementById("select-2"));
     selectGaguge2.maxValue = 3000;
     selectGaguge2.set(1844);
-    
+
     initGauge();
     update();
-    
+
   });
 </script>
 <script type="text/javascript">

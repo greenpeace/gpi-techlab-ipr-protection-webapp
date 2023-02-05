@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: bs-Latn-BA
  * Name: Bosnian (Bosnia and Herzegovina)

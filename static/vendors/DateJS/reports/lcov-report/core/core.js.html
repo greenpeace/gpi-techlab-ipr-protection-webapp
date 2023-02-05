@@ -198,18 +198,18 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">core/core.js</span></h1>
     <h2>
-        
+
         Statements: <span class="metric">96.77% <small>(120 / 124)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Branches: <span class="metric">90.11% <small>(82 / 91)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Functions: <span class="metric">91.18% <small>(31 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
-        
+
+
         Lines: <span class="metric">98.36% <small>(120 / 122)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        
+
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">core/</a> &#187; core.js</div>
@@ -911,7 +911,7 @@
 			}
 			return ("000" + s).slice(l * -1);
 		};
-	
+
 	<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof window !== "undefined" &amp;&amp; typeof window.console !== "undefined" &amp;&amp; typeof window.console.log !== "undefined") {
 		$D.console = console; // used only to raise non-critical errors if available
 	} else {
@@ -924,12 +924,12 @@
 	$D.Config = $D.Config || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
 &nbsp;
 	$D.initOverloads = function() {
-		/** 
-		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the 
+		/**
+		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the
 		 * current Date as an object rather than just milliseconds since the Unix Epoch.
 		 *
 		 * Also provides an implementation of now() for browsers (IE&lt;9) that don't have it.
-		 * 
+		 *
 		 * Backwards compatible so with work with either:
 		 *  Date.now() [returns ms]
 		 * or
@@ -963,7 +963,7 @@
 				"Z";
 			};
 		}
-		
+
 		// private
 		if ( $P._toString === undefined ){
 			$P._toString = $P.toString;
@@ -973,7 +973,7 @@
 	$D.initOverloads();
 &nbsp;
 &nbsp;
-	/** 
+	/**
 	 * Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
 	 * @return {Date}    The current date.
 	 */
@@ -981,7 +981,7 @@
 		return new Date().clearTime();
 	};
 &nbsp;
-	/** 
+	/**
 	 * Gets a date that is set to the current date and time (same as new Date, but chainable)
 	 * @return {Date}    The current date.
 	 */
@@ -990,7 +990,7 @@
 	};
 &nbsp;
 	/**
-	 * Compares the first date to the second date and returns an number indication of their relative values.  
+	 * Compares the first date to the second date and returns an number indication of their relative values.
 	 * @param {Date}     First Date object to compare [Required].
 	 * @param {Date}     Second Date object to compare to [Required].
 	 * @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
@@ -1004,9 +1004,9 @@
 			throw new TypeError(date1 + " - " + date2);
 		}
 	};
-	
+
 	/**
-	 * Compares the first Date object to the second Date object and returns true if they are equal.  
+	 * Compares the first Date object to the second Date object and returns true if they are equal.
 	 * @param {Date}     First Date object to compare [Required]
 	 * @param {Date}     Second Date object to compare to [Required]
 	 * @return {Boolean} true if dates are equal. false if they are not equal.
@@ -1038,7 +1038,7 @@
 		}
 		return -1;
 	};
-	
+
 	/**
 	 * Gets the month number (0-11) if given a Culture Info specific string which is a valid monthName or abbreviatedMonthName.
 	 * @param {String}   The name of the month (eg. "February, "Feb", "october", "oct").
@@ -1089,7 +1089,7 @@
 	$P.getDaysInMonth = <span class="fstat-no" title="function not covered" >function () {</span>
 <span class="cstat-no" title="statement not covered" >		return $D.getDaysInMonth(this.getFullYear(), this.getMonth());</span>
 	};
- 
+
 	$D.getTimezoneAbbreviation = function (offset, dst) {
 		var p, n = (dst || false) ? Date.CultureInfo.abbreviatedTimeZoneDST : Date.CultureInfo.abbreviatedTimeZoneStandard;
 		for (p in n) {
@@ -1101,7 +1101,7 @@
 		}
 		return null;
 	};
-	
+
 	$D.getTimezoneOffset = function (name, dst) {
 		var i, a =[], z = Date.CultureInfo.timezones;
 		<span class="missing-if-branch" title="if path not taken" >I</span>if (!name) { <span class="cstat-no" title="statement not covered" >name = (new Date()).getTimezone();}</span>
@@ -1145,8 +1145,8 @@
 		} else if (typeof n !== "number") {
 			throw new TypeError(n + " is not a Number.");
 		} else if (n &lt; min || n &gt; max) {
-			// As failing validation is *not* an exceptional circumstance 
-			// lets not throw a RangeError Exception here. 
+			// As failing validation is *not* an exceptional circumstance
+			// lets not throw a RangeError Exception here.
 			// It's semantically correct but it's not sensible.
 			return false;
 		}
@@ -1224,10 +1224,10 @@
 	 */
 	$D.validateYear = function (value) {
 		/**
-		 * Per ECMAScript spec the range of times supported by Date objects is 
-		 * exactly -100,000,000 days to +100,000,000 days measured relative to 
-		 * midnight at the beginning of 01 January, 1970 UTC. 
-		 * This gives a range of 8,640,000,000,000,000 milliseconds to either 
+		 * Per ECMAScript spec the range of times supported by Date objects is
+		 * exactly -100,000,000 days to +100,000,000 days measured relative to
+		 * midnight at the beginning of 01 January, 1970 UTC.
+		 * This gives a range of 8,640,000,000,000,000 milliseconds to either
 		 * side of 01 January, 1970 UTC.
 		 *
 		 * Earliest possible date: Tue, 20 Apr 271,822 B.C. 00:00:00 UTC

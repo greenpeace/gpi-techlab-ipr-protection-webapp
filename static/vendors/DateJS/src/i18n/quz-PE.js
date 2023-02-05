@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: quz-PE
  * Name: Quechua (Peru)

@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: xh-ZA
  * Name: Xhosa (South Africa)

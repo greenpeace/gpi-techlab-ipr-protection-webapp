@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: ka-GE
  * Name: Georgian (Georgia)

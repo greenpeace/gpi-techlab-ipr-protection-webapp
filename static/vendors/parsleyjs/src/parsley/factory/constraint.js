@@ -38,4 +38,3 @@ ConstraintFactory.prototype = {
 };
 
 export default ConstraintFactory;
-

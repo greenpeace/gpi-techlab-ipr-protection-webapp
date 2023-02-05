@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: sma-NO
  * Name: Sami (Southern) (Norway)

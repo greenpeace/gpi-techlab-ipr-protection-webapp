@@ -1,4 +1,4 @@
-/* 
+/*
  * DateJS Culture String File
  * Country Code: zh-HK
  * Name: Chinese (Hong Kong S.A.R.)

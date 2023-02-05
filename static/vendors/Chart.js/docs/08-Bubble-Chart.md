@@ -3,7 +3,7 @@ title: Bubble Chart
 anchor: bubble-chart
 ---
 ### Introduction
-A bubble chart is used to display three dimensions of data at the same time. The location of the bubble is determined by the first two dimensions and the corresponding horizontal and vertical axes. The third dimension is represented by the size of the individual bubbles. 
+A bubble chart is used to display three dimensions of data at the same time. The location of the bubble is determined by the first two dimensions and the corresponding horizontal and vertical axes. The third dimension is represented by the size of the individual bubbles.
 
 <div class="canvas-holder">
     <canvas width="250" height="125"></canvas>
@@ -79,7 +79,7 @@ Data for the bubble chart is passed in the form of an object. The object must im
 
 ### Chart Options
 
-The bubble chart has no unique configuration options. To configure options common to all of the bubbles, the point element options are used. 
+The bubble chart has no unique configuration options. To configure options common to all of the bubbles, the point element options are used.
 
 For example, to give all bubbles a 1px wide black border, the following options would be used.
 

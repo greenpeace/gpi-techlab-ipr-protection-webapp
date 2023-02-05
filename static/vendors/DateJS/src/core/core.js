@@ -7,7 +7,7 @@
 			}
 			return ("000" + s).slice(l * -1);
 		};
-	
+
 	if (typeof window !== "undefined" && typeof window.console !== "undefined" && typeof window.console.log !== "undefined") {
 		$D.console = console; // used only to raise non-critical errors if available
 	} else {
@@ -20,12 +20,12 @@
 	$D.Config = $D.Config || {};
 
 	$D.initOverloads = function() {
-		/** 
-		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the 
+		/**
+		 * Overload of Date.now. Allows an alternate call for Date.now where it returns the
 		 * current Date as an object rather than just milliseconds since the Unix Epoch.
 		 *
 		 * Also provides an implementation of now() for browsers (IE<9) that don't have it.
-		 * 
+		 *
 		 * Backwards compatible so with work with either:
 		 *  Date.now() [returns ms]
 		 * or
@@ -59,7 +59,7 @@
 				"Z";
 			};
 		}
-		
+
 		// private
 		if ( $P._toString === undefined ){
 			$P._toString = $P.toString;
@@ -69,7 +69,7 @@
 	$D.initOverloads();
 
 
-	/** 
+	/**
 	 * Gets a date that is set to the current date. The time is set to the start of the day (00:00 or 12:00 AM).
 	 * @return {Date}    The current date.
 	 */
@@ -77,7 +77,7 @@
 		return new Date().clearTime();
 	};
 
-	/** 
+	/**
 	 * Gets a date that is set to the current date and time (same as new Date, but chainable)
 	 * @return {Date}    The current date.
 	 */
@@ -86,7 +86,7 @@
 	};
 
 	/**
-	 * Compares the first date to the second date and returns an number indication of their relative values.  
+	 * Compares the first date to the second date and returns an number indication of their relative values.
 	 * @param {Date}     First Date object to compare [Required].
 	 * @param {Date}     Second Date object to compare to [Required].
 	 * @return {Number}  -1 = date1 is lessthan date2. 0 = values are equal. 1 = date1 is greaterthan date2.
@@ -100,9 +100,9 @@
 			throw new TypeError(date1 + " - " + date2);
 		}
 	};
-	
+
 	/**
-	 * Compares the first Date object to the second Date object and returns true if they are equal.  
+	 * Compares the first Date object to the second Date object and returns true if they are equal.
 	 * @param {Date}     First Date object to compare [Required]
 	 * @param {Date}     Second Date object to compare to [Required]
 	 * @return {Boolean} true if dates are equal. false if they are not equal.
@@ -134,7 +134,7 @@
 		}
 		return -1;
 	};
-	
+
 	/**
 	 * Gets the month number (0-11) if given a Culture Info specific string which is a valid monthName or abbreviatedMonthName.
 	 * @param {String}   The name of the month (eg. "February, "Feb", "october", "oct").
@@ -185,7 +185,7 @@
 	$P.getDaysInMonth = function () {
 		return $D.getDaysInMonth(this.getFullYear(), this.getMonth());
 	};
- 
+
 	$D.getTimezoneAbbreviation = function (offset, dst) {
 		var p, n = (dst || false) ? Date.CultureInfo.abbreviatedTimeZoneDST : Date.CultureInfo.abbreviatedTimeZoneStandard;
 		for (p in n) {
@@ -197,7 +197,7 @@
 		}
 		return null;
 	};
-	
+
 	$D.getTimezoneOffset = function (name, dst) {
 		var i, a =[], z = Date.CultureInfo.timezones;
 		if (!name) { name = (new Date()).getTimezone();}
@@ -241,8 +241,8 @@
 		} else if (typeof n !== "number") {
 			throw new TypeError(n + " is not a Number.");
 		} else if (n < min || n > max) {
-			// As failing validation is *not* an exceptional circumstance 
-			// lets not throw a RangeError Exception here. 
+			// As failing validation is *not* an exceptional circumstance
+			// lets not throw a RangeError Exception here.
 			// It's semantically correct but it's not sensible.
 			return false;
 		}
@@ -320,10 +320,10 @@
 	 */
 	$D.validateYear = function (value) {
 		/**
-		 * Per ECMAScript spec the range of times supported by Date objects is 
-		 * exactly -100,000,000 days to +100,000,000 days measured relative to 
-		 * midnight at the beginning of 01 January, 1970 UTC. 
-		 * This gives a range of 8,640,000,000,000,000 milliseconds to either 
+		 * Per ECMAScript spec the range of times supported by Date objects is
+		 * exactly -100,000,000 days to +100,000,000 days measured relative to
+		 * midnight at the beginning of 01 January, 1970 UTC.
+		 * This gives a range of 8,640,000,000,000,000 milliseconds to either
 		 * side of 01 January, 1970 UTC.
 		 *
 		 * Earliest possible date: Tue, 20 Apr 271,822 B.C. 00:00:00 UTC

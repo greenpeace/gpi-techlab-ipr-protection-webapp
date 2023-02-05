@@ -28,18 +28,18 @@ describe("flot touch plugin", function () {
         expect(spy).toHaveBeenCalledWith('touchend', jasmine.any(Function));
     });
 
-    it('do not stop origin touch event propagation if it is allowed', () => {	
-        jasmine.clock().install().mockDate();	
+    it('do not stop origin touch event propagation if it is allowed', () => {
+        jasmine.clock().install().mockDate();
 
-        var oldPropagateSupportedGesture = options.propagateSupportedGesture ;	
-        options.propagateSupportedGesture = true;	
+        var oldPropagateSupportedGesture = options.propagateSupportedGesture ;
+        options.propagateSupportedGesture = true;
 
-        plot = $.plot(placeholder, [[]], options);	
-        var eventHolder = plot.getEventHolder(),	
-            spy = jasmine.createSpy('origin touch event handler');	
+        plot = $.plot(placeholder, [[]], options);
+        var eventHolder = plot.getEventHolder(),
+            spy = jasmine.createSpy('origin touch event handler');
 
-        eventHolder.parentNode.addEventListener('touchstart', spy, { once: true });	
-        eventHolder.parentNode.addEventListener('touchmove', spy, { once: true });	
+        eventHolder.parentNode.addEventListener('touchstart', spy, { once: true });
+        eventHolder.parentNode.addEventListener('touchmove', spy, { once: true });
         eventHolder.parentNode.addEventListener('touchend', spy, { once: true });
 
         var bubbleTouchEvents = [
@@ -52,10 +52,10 @@ describe("flot touch plugin", function () {
             eventHolder.dispatchEvent(event);
         });
 
-        expect(spy).toHaveBeenCalledTimes(3);	
+        expect(spy).toHaveBeenCalledTimes(3);
 
-        options.propagateSupportedGesture = oldPropagateSupportedGesture;	
-        jasmine.clock().uninstall();	
+        options.propagateSupportedGesture = oldPropagateSupportedGesture;
+        jasmine.clock().uninstall();
     });
 
     describe('long tap', function() {
