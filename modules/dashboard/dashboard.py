@@ -1,6 +1,8 @@
 # Get the Flask Files Required
 from functools import partial
 from typing import Dict, Callable, Any, List, Tuple, Union
+from modules.auth.auth import login_is_required
+import json
 
 from flask import Blueprint, render_template, request
 
@@ -16,12 +18,8 @@ from modules.dashboard.helpers import (
     create_country_location_counts,
 )
 
+
 dashboardblue = Blueprint("dashboardblue", __name__)
-
-from modules.auth.auth import login_is_required
-import json
-
-# TODO (richard) add unit tests for this fn
 
 
 format_data_flot_partial = partial(
