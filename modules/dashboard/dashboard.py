@@ -1,6 +1,6 @@
 # Get the Flask Files Required
 from functools import partial
-from typing import Dict, Callable, Any
+from typing import Dict, Callable, Any, List, Tuple, Union
 
 from flask import Blueprint, render_template, request
 
@@ -29,6 +29,17 @@ format_data_flot_partial = partial(
     query_stream=CollectionStreams.brandlinks_ref_stream.value,
 )
 
+KEY_COUNT_DICT = {
+    f"searchlink_{key}_count": partial(
+        calculate_most_frequent_field_in_collection,
+        query_stream=CollectionStreams.brandlinks_ref_stream.value,
+        key=key,
+        counter_fn=value[0],
+        fn_args=value[1],
+    )
+    for key, value in SEARCHLINK_KEYS.items()
+}
+
 
 @dashboardblue.route("/getdatecounts", methods=["GET"], endpoint="/getdatecounts")
 def format_data_for_flot_graph() -> Dict[str, int]:
@@ -47,14 +58,17 @@ def format_data_for_flot_graph() -> Dict[str, int]:
     return format_data_flot_partial(min_date=min_date, max_date=max_date)
 
 
-KEY_COUNT_DICT = {
-    f"searchlink_{key}_count": partial(
-        calculate_most_frequent_field_in_collection,
-        query_stream=CollectionStreams.brandlinks_ref_stream.value,
-        key=key,
-    )
-    for key in SEARCHLINK_KEYS
-}
+@dashboardblue.route("/getmapdata", methods=["GET"], endpoint="/getmapdata")
+def get_map_data_counts() -> Dict[str, float]:
+    country_counts: List[
+        Tuple[str, Union[float, int, str], float]
+    ] = KEY_COUNT_DICT.get("searchlink_country_count")()
+    return {
+        country_name.lower(): float(count)
+        for (country_name, _, count) in country_counts
+        if country_name not in [None, "Not found"]
+    }
+
 
 CONFIG_DICT = {
     "count_illegal_items": partial(

@@ -1,7 +1,7 @@
 import collections
 import datetime
 from functools import partial
-from typing import List, Union, Tuple, Callable, Optional
+from typing import List, Union, Tuple, Callable, Optional, Dict, Any
 
 import numpy as np
 from google.cloud.firestore_v1 import DocumentSnapshot
@@ -42,10 +42,18 @@ def calculate_count_diff_vs_x_period_ago(
 
 
 def calculate_most_frequent_field_in_collection(
-    query_stream: List[DocumentSnapshot], key: str
-) -> List[Tuple[str, int]]:
+    query_stream: List[DocumentSnapshot],
+    key: str,
+    counter_fn: Union[Callable, str],
+    fn_args: Dict[str, Any],
+) -> List[Tuple[str, Union[int, float]]]:
     list_of_selected_keys = [doc._data.get(key) for doc in query_stream]
-    return collections.Counter(list_of_selected_keys).most_common(5)
+    counter_ = collections.Counter(list_of_selected_keys)
+    if type(counter_fn) == str and counter_fn in dir(counter_):
+        fn = getattr(counter_, counter_fn)
+        return fn(**fn_args)
+    else:
+        return counter_fn(counter_, **fn_args)
 
 
 def create_item_array(
