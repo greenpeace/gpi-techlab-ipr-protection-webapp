@@ -918,6 +918,8 @@ function init_starrr() {
 };
 
 
+
+
 function init_JQVmap() {
 
     //console.log('check init_JQVmap [' + typeof (VectorCanvas) + '][' + typeof (jQuery.fn.vectorMap) + ']' );
@@ -925,6 +927,15 @@ function init_JQVmap() {
     if (typeof (jQuery.fn.vectorMap) === 'undefined') { return; }
 
     console.log('init_JQVmap');
+
+    var map_data = $.ajax({
+        type:"GET",
+        url: "getmapdata",
+        success: function (data) {
+            var result = data;
+        },
+        async: false,
+    });
 
     if ($('#world-map-gdp').length) {
 
@@ -936,7 +947,7 @@ function init_JQVmap() {
             selectedColor: '#666666',
             enableZoom: true,
             showTooltip: true,
-            values: sample_data,
+            values: map_data.responseJSON,
             scaleColors: ['#E6F2F0', '#149B7E'],
             normalizeFunction: 'polynomial'
         });
