@@ -49,11 +49,10 @@ def calculate_most_frequent_field_in_collection(
 ) -> List[Tuple[str, Union[int, float]]]:
     list_of_selected_keys = [doc._data.get(key) for doc in query_stream]
     counter_ = collections.Counter(list_of_selected_keys)
-    if type(counter_fn) == str and counter_fn in dir(counter_):
-        fn = getattr(counter_, counter_fn)
-        return fn(**fn_args)
-    else:
-        return counter_fn(counter_, **fn_args)
+    if isinstance(counter_fn, str):
+        return getattr(counter_, counter_fn)(**fn_args)
+
+    return counter_fn(counter_, **fn_args)
 
 
 def create_item_array(
