@@ -1,8 +1,10 @@
 from collections import Counter
 from enum import Enum
 from typing import List, Dict, Tuple, Any, Union
-import numpy as np
 from system.firstoredb import brandlinks_ref, brandlinkdetails_ref, brandstopwords_ref
+
+HUNDRED = 100
+THOUSAND = HUNDRED * 10
 
 
 class Collections(Enum):
@@ -56,7 +58,11 @@ def calculate_counter_proportions(
     counter_without_duplicates = clean_counter_of_duplicate_keys(counter)
     total = sum(counter_without_duplicates.values())
     return [
-        (key, f"{int(value / total * 100)}%", float(value / total * 100) * 1000)
+        (
+            key,
+            f"{int(value / total * HUNDRED)}%",
+            float(value / total * HUNDRED) * THOUSAND,
+        )
         for key, value in counter_without_duplicates.most_common(
             len(counter_without_duplicates)
         )
