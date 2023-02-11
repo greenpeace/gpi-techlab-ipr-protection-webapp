@@ -1,8 +1,11 @@
 locals {
-  image = "eu.gcr.io/${var.project_id}/${var.image_name}:v0.3"
   app_name = "iprprotection"
   services = [
-    "run.googleapis.com",
     "iam.googleapis.com",
+    "artifactregistry.googleapis.com",
+    "run.googleapis.com",
+    "secretmanager.googleapis.com",
+    "cloudresourcemanager.googleapis.com"
   ]
+  image = "europe-north1-docker.pkg.dev/${var.project_id}/${var.repository}/${var.docker_image}:v0.14"
 }

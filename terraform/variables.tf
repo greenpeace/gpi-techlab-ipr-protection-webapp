@@ -18,3 +18,15 @@ variable "project_id" {
   type = string
   default = "techlab-coding-team"
 }
+
+variable "repository" {
+  description = "The name of the Artifact Registry repository to be created"
+  type        = string
+  default     = "iprprotection"
+}
+
+variable "docker_image" {
+  description = "The name of the Docker image in the Artifact Registry repository to be deployed to Cloud Run"
+  type        = string
+  default     = "iprprotection"
+}
